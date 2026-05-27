@@ -66,15 +66,15 @@ Den findest Du immer oben rechts im Avatar-Menü → ganz oben.
 2. **Warten.** Kim klickt einmal und lädt Dich als „Collaborator" (Mitarbeiter) ein.
 
 3. **Du bekommst eine E-Mail von GitHub:**
-   Betreff: *„rdmgroenwoldt-cloud invited you to collaborate on hundestuben"*
+   Betreff: *„rdmgroenwoldt-cloud invited you to collaborate on Betrieb-Hund"*
 
 4. In der Mail steht ein grüner Knopf **„View invitation"** → klicken → Browser öffnet → **„Accept invitation"** klicken
 
-5. Du landest auf der Repository-Seite: `https://github.com/rdmgroenwoldt-cloud/hundestuben`
+5. Du landest auf der Repository-Seite: `https://github.com/rdmgroenwoldt-cloud/Betrieb-Hund`
 
 ### Was Du jetzt hast:
 
-Zugriff auf das `hundestuben`-Repository (privat — nur Kim, Du und eingeladene Personen sehen es).
+Zugriff auf das `Betrieb-Hund`-Repository (öffentlich — sichtbar für alle).
 
 ---
 
@@ -116,18 +116,18 @@ GitHub Desktop und Node.js installiert. Beide brauchst Du nicht selbst zu öffne
 ## Phase 4 — Das Repository auf Deinen PC holen (2 Min)
 
 1. **GitHub Desktop** ist offen (oder Windows-Suche → „GitHub Desktop" → Enter)
-2. Reiter **„Your repositories"** sollte aktiv sein — Du siehst dort `hundestuben` ODER:
+2. Reiter **„Your repositories"** sollte aktiv sein — Du siehst dort `Betrieb-Hund` ODER:
 3. Falls nicht: **„Clone a repository from the Internet…"** klicken
 4. Reiter **„GitHub.com"** wählen
-5. In der Liste **`rdmgroenwoldt-cloud/hundestuben`** anklicken (markiert)
-6. **„Local Path"**: lass den vorgeschlagenen Pfad **oder** wähle einen Ordner, in dem Du das speichern willst (z.B. `C:\Hundestuben` ist übersichtlich)
+5. In der Liste **`rdmgroenwoldt-cloud/Betrieb-Hund`** anklicken (markiert)
+6. **„Local Path"**: lass den vorgeschlagenen Pfad **oder** wähle einen Ordner, in dem Du das speichern willst (z.B. `C:\Betrieb-Hund` ist übersichtlich)
 7. **„Clone"** klicken
 
 GitHub Desktop lädt jetzt alle Dateien herunter (~5 MB, geht in Sekunden).
 
 ### Was Du jetzt hast:
 
-Eine vollständige Kopie der Landingpages auf Deinem Rechner, z.B. unter `C:\Hundestuben\`.
+Eine vollständige Kopie der Landingpages auf Deinem Rechner, z.B. unter `C:\Betrieb-Hund\`.
 
 Im Ordner siehst Du:
 - `index.html` — Übersichts-Seite
@@ -152,7 +152,7 @@ Bevor Du Änderungen machst — schau Dir die Pages erstmal an, damit Du weißt 
 
 2. **In den Hundestuben-Ordner wechseln** — gib ein (Pfad anpassen falls Du einen anderen gewählt hast):
    ```
-   cd C:\Hundestuben
+   cd C:\Betrieb-Hund
    ```
    Enter drücken.
 
@@ -199,7 +199,7 @@ Es gibt zwei Wege, mit Claude an den Pages zu arbeiten. Wähle den einfacheren �
    - Kostenlos: 10–20 Nachrichten pro Tag
    - **Pro (Empfehlung):** ~20 USD/Monat, viel mehr Nachrichten + bessere Modelle. Lohnt sich wenn Du regelmäßig arbeitest.
 3. **„Start new chat"** klicken
-4. **Dateien hochladen:** im Chat-Fenster gibt es ein Büroklammer-Icon 📎 → klick → wähle die Datei, die Du ändern willst (z.B. `C:\Hundestuben\tierschutzverein\index.html`)
+4. **Dateien hochladen:** im Chat-Fenster gibt es ein Büroklammer-Icon 📎 → klick → wähle die Datei, die Du ändern willst (z.B. `C:\Betrieb-Hund\tierschutzverein\index.html`)
 5. **Zusätzlich** lade auch `CLAUDE.md` und `README.md` mit hoch — die enthalten die Regeln, damit Claude keine Fehler macht
 6. **Erste Nachricht** an Claude:
 
@@ -217,7 +217,7 @@ Es gibt zwei Wege, mit Claude an den Pages zu arbeiten. Wähle den einfacheren �
 **Für wen:** technischer Hintergrund, größere Änderungen, mag Befehlszeile.
 
 1. Anleitung: `https://docs.anthropic.com/de/docs/claude-code/quickstart`
-2. Nach Installation: Eingabeaufforderung → `cd C:\Hundestuben` → `claude`
+2. Nach Installation: Eingabeaufforderung → `cd C:\Betrieb-Hund` → `claude`
 3. Claude liest automatisch alle Dateien im Ordner, weiß alle Regeln
 
 ### Empfehlung für den Start: **Variante A**
@@ -244,7 +244,7 @@ Claude antwortet mit einer geänderten Datei.
 #### 7.2 Datei herunterladen und ersetzen:
 
 1. Claude zeigt einen Download-Knopf für die geänderte Datei → klicken
-2. Die heruntergeladene `index.html` per Drag & Drop in den Ordner `C:\Hundestuben\tierschutzverein\` ziehen
+2. Die heruntergeladene `index.html` per Drag & Drop in den Ordner `C:\Betrieb-Hund\tierschutzverein\` ziehen
 3. Windows fragt: *„Datei ersetzen?"* → **„Ja, ersetzen"**
 
 #### 7.3 In GitHub Desktop nachschauen:
