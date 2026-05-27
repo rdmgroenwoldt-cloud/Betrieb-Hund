@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Natürlich Abgesichert — Hundestube für Tierschutzvereine (Flyer)</title>
+<link rel="icon" type="image/svg+xml" href="../assets/logo.svg">
+<style>
+  :root {
+    --royal-deep:  #0F1132;
+    --royal-mid:   #1E2153;
+    --wine-deep:   #4A0E1F;
+    --wine-mid:    #6E152E;
+    --wine-bright: #8B2540;
+    --gold:        #C9A14E;
+    --gold-soft:   #D4B87C;
+    --gold-bright: #E6C98F;
+    --gold-deep:   #A8862F;
+    --cream:       #F8F4E8;
+    --text-dark:   #14172A;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    font-family: Georgia, 'Times New Roman', serif;
+    color: var(--text-dark);
+    background: #5C5F6E;
+  }
+  /* Print: A4 hochformat, randlos */
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+  @media print {
+    body { background: #fff; }
+    .screen-hint { display: none !important; }
+  }
+  /* Screen: zentriert mit dezenter Vorschau-Schatten */
+  .screen-hint {
+    background: #14172A;
+    color: var(--gold-soft);
+    text-align: center;
+    padding: 18px;
+    font-size: 14px;
+    line-height: 1.6;
+    border-bottom: 2px solid var(--gold);
+  }
+  .screen-hint strong { color: var(--gold-bright); }
+  .screen-hint a { color: var(--gold-bright); text-decoration: underline; }
+
+  /* A4 Flyer-Sheet */
+  .sheet {
+    width: 210mm;
+    height: 297mm;
+    margin: 24px auto;
+    background:
+      radial-gradient(ellipse at top right, rgba(201, 161, 78, 0.18) 0%, transparent 55%),
+      radial-gradient(ellipse at bottom left, rgba(110, 21, 46, 0.45) 0%, transparent 55%),
+      linear-gradient(160deg, var(--royal-deep) 0%, var(--wine-deep) 65%, var(--royal-mid) 100%);
+    color: var(--cream);
+    padding: 18mm 16mm;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 24px 80px rgba(0,0,0,0.55);
+    display: flex;
+    flex-direction: column;
+  }
+  @media print {
+    .sheet { margin: 0; box-shadow: none; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+  /* Goldene Top-Akzentlinie */
+  .sheet::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, transparent 0%, var(--gold) 25%, var(--wine-bright) 50%, var(--gold) 75%, transparent 100%);
+  }
+
+  /* HEADER: Logo + Tagline */
+  .head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding-bottom: 12mm;
+    border-bottom: 1px solid rgba(212, 184, 124, 0.25);
+  }
+  .head img.logo { height: 56px; width: auto; }
+  .head .head-tag {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold-soft);
+    border: 1px solid rgba(212, 184, 124, 0.5);
+    padding: 6px 12px;
+    border-radius: 100px;
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  /* HEADLINE */
+  .headline {
+    margin-top: 10mm;
+    font-size: 38px;
+    line-height: 1.1;
+    font-weight: normal;
+    letter-spacing: -0.5px;
+    color: var(--cream);
+  }
+  .headline em {
+    color: var(--gold-soft);
+    font-style: italic;
+  }
+  .subhead {
+    margin-top: 6mm;
+    font-size: 15px;
+    line-height: 1.55;
+    color: rgba(248, 244, 232, 0.92);
+    max-width: 145mm;
+  }
+  .subhead strong { color: var(--gold-bright); font-weight: bold; }
+
+  /* CONTENT GRID */
+  .content {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 10mm;
+    margin-top: 10mm;
+    flex: 1;
+  }
+
+  /* Themen-Liste links */
+  .topics {
+    display: flex;
+    flex-direction: column;
+    gap: 5mm;
+  }
+  .topic {
+    display: grid;
+    grid-template-columns: 36px 1fr;
+    gap: 12px;
+    align-items: start;
+  }
+  .topic .num {
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-deep) 100%);
+    color: var(--royal-deep);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 14px;
+    font-style: italic;
+    flex-shrink: 0;
+  }
+  .topic .text h3 {
+    font-size: 13px;
+    color: var(--gold-bright);
+    margin-bottom: 3px;
+    font-weight: bold;
+    line-height: 1.25;
+  }
+  .topic .text p {
+    font-size: 11.5px;
+    color: rgba(248, 244, 232, 0.85);
+    line-height: 1.45;
+  }
+
+  /* Highlight-Box rechts */
+  .highlight {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(110, 21, 46, 0.40) 100%);
+    border: 1px solid rgba(212, 184, 124, 0.45);
+    border-radius: 8px;
+    padding: 8mm 7mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .highlight .h-eyebrow {
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--gold-soft);
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  .highlight h2 {
+    font-size: 22px;
+    line-height: 1.15;
+    color: var(--cream);
+    margin-bottom: 8px;
+    font-weight: normal;
+  }
+  .highlight h2 em { color: var(--gold-bright); font-style: italic; }
+  .highlight p {
+    font-size: 12px;
+    color: rgba(248, 244, 232, 0.88);
+    line-height: 1.5;
+    margin-bottom: 6mm;
+  }
+  .highlight ul { list-style: none; margin-bottom: 6mm; }
+  .highlight ul li {
+    font-size: 12px;
+    color: rgba(248, 244, 232, 0.92);
+    padding-left: 18px;
+    margin-bottom: 5px;
+    position: relative;
+    line-height: 1.45;
+  }
+  .highlight ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--gold-bright);
+    font-weight: bold;
+  }
+
+  /* QR + CTA-Block */
+  .cta-block {
+    margin-top: auto;
+    background: rgba(0,0,0,0.30);
+    border: 1px solid var(--gold);
+    border-radius: 6px;
+    padding: 5mm;
+    display: flex;
+    align-items: center;
+    gap: 6mm;
+  }
+  .cta-block img.qr {
+    width: 36mm;
+    height: 36mm;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background: #fff;
+    padding: 2mm;
+  }
+  .cta-block .cta-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .cta-block .cta-text strong {
+    font-size: 14px;
+    color: var(--gold-bright);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 4px;
+  }
+  .cta-block .cta-text span {
+    font-size: 12px;
+    line-height: 1.45;
+    color: var(--cream);
+  }
+  .cta-block .cta-text .url {
+    font-size: 10px;
+    color: var(--gold-soft);
+    margin-top: 4px;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 0;
+  }
+
+  /* FOOTER: Otto-Kontakt + Vereinsplatz */
+  .foot {
+    margin-top: 8mm;
+    padding-top: 6mm;
+    border-top: 1px solid rgba(212, 184, 124, 0.30);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8mm;
+    font-size: 10px;
+    color: rgba(248, 244, 232, 0.78);
+    line-height: 1.5;
+  }
+  .foot .contact strong { color: var(--gold-bright); display: block; margin-bottom: 2px; font-size: 11px; }
+  .foot .verein-slot {
+    text-align: center;
+    padding: 4mm 8mm;
+    border: 1px dashed rgba(212, 184, 124, 0.45);
+    border-radius: 4px;
+    min-width: 50mm;
+  }
+  .foot .verein-slot span {
+    display: block;
+    font-size: 9px;
+    color: var(--gold-soft);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .foot .verein-slot strong {
+    color: var(--cream);
+    font-style: italic;
+    font-size: 12px;
+  }
+</style>
+</head>
+<body>
+
+<div class="screen-hint">
+  <strong>Vorschau-Modus</strong> · Drucken mit <strong>Strg + P</strong> →
+  „Als PDF speichern" für die digitale Version (WhatsApp/E-Mail), oder direkt auf <strong>A4-Papier</strong> für den Aushang.<br>
+  Vor dem Druck: im Druck-Dialog die Option <strong>„Hintergrundgrafiken"</strong> aktivieren — sonst kommt das Royal+Wein nicht durch.
+</div>
+
+<div class="sheet">
+
+  <!-- HEADER -->
+  <div class="head">
+    <img src="../assets/logo.svg" alt="Natürlich Abgesichert" class="logo">
+    <div class="head-tag">Förder-Kooperation<br>für Tierschutzvereine</div>
+  </div>
+
+  <!-- HEADLINE -->
+  <h1 class="headline">Damit eine Adoption <em>nicht am Ersparten scheitert.</em></h1>
+  <p class="subhead">
+    Eine kostenfreie Online-<strong>Hundestube</strong> für Adoptanten von
+    Hunden und Katzen — von Menschen, die den Tierarzt-Alltag kennen.
+    Ehrlich. Unverbindlich. Ohne Verkaufsdruck.
+  </p>
+
+  <!-- CONTENT -->
+  <div class="content">
+
+    <!-- TOPICS -->
+    <div class="topics">
+      <div class="topic">
+        <div class="num">I</div>
+        <div class="text">
+          <h3>GOT-Erhöhung 2022 — was steckt dahinter?</h3>
+          <p>Wir ordnen ein, warum Tierarzt-Rechnungen heute explodieren.</p>
+        </div>
+      </div>
+      <div class="topic">
+        <div class="num">II</div>
+        <div class="text">
+          <h3>OP- oder Krankenvoll — was passt zu uns?</h3>
+          <p>Vor- und Nachteile beider Tarife, ohne Verkaufsdruck.</p>
+        </div>
+      </div>
+      <div class="topic">
+        <div class="num">III</div>
+        <div class="text">
+          <h3>Tarifdschungel &amp; Kleingedrucktes</h3>
+          <p>Welche Klauseln gerne verschwiegen werden — und wo's wirklich zählt.</p>
+        </div>
+      </div>
+      <div class="topic">
+        <div class="num">IV</div>
+        <div class="text">
+          <h3>Haftpflicht — gerne unterschätzt</h3>
+          <p>Welche Deckung wirklich reicht, wo typische Lücken liegen.</p>
+        </div>
+      </div>
+      <div class="topic">
+        <div class="num">V</div>
+        <div class="text">
+          <h3>Bin ich selbst gut versichert?</h3>
+          <p>Warum Unfall- und Rechtsschutz mit neuem Tier zum Thema werden.</p>
+        </div>
+      </div>
+      <div class="topic">
+        <div class="num">VI</div>
+        <div class="text">
+          <h3>Tier mit Vorgeschichte — was geht?</h3>
+          <p>Auslandshunde, FIV/FeLV-Katzen, unklare Anamnese: ehrlich erklärt.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- HIGHLIGHT BOX -->
+    <div class="highlight">
+      <div>
+        <div class="h-eyebrow">Eure Eckdaten</div>
+        <h2>Was Euch in <em>90 Minuten</em> erwartet</h2>
+        <ul>
+          <li>Online via Zoom — bequem von zuhause</li>
+          <li>Kostenfrei — für alle Beteiligten</li>
+          <li>Im Dialog — keine PowerPoint-Schlacht</li>
+          <li>Mit Eurem Vereins­logo eingebunden</li>
+          <li>Für jeden Vertrag: <strong>Spende an Euren Verein</strong></li>
+        </ul>
+      </div>
+
+      <div class="cta-block">
+        <img src="qr-tierschutzverein.png" alt="QR-Code zur Anmeldung" class="qr">
+        <div class="cta-text">
+          <strong>Hier anmelden:</strong>
+          <span>Scannt den QR-Code oder besucht uns online — wir melden uns innerhalb von 2 Werktagen.</span>
+          <span class="url">rdmgroenwoldt-cloud.github.io/Betrieb-Hund/tierschutzverein</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="foot">
+    <div class="contact">
+      <strong>Natürlich Abgesichert · Otto Boldt</strong>
+      Richard-Wagner-Str. 1 · 04109 Leipzig<br>
+      Tel +49 179 1194096 · Info@natuerlichabgesichert.de<br>
+      Versicherungs­vertreter nach §34d Abs. 7 GewO · Reg.-Nr. D-L5WZ-XHTN0-22
+    </div>
+    <div class="verein-slot">
+      <span>Vorgestellt von</span>
+      <strong>Euer Vereinsname</strong>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
