@@ -63,17 +63,22 @@ Hundestuben/
     └── _server.cjs                     ← Einzel-Server (Port 8090)
 ```
 
-## Was noch offen ist (Platzhalter im Code)
+## Status der Live-Daten
 
-Beim Live-Deploy ersetzen:
+Alle echten Kontakt- und Rechtsdaten sind eingetragen:
 
-- `49XXXXXXXXXX` → echte WhatsApp-Nummer
-- `[CALENDLY-USERNAME]/...` → echte Calendly-Event-Types
-- `[FORM-BACKEND-URL]` → Formular-Backend (z. B. Formspree, Web3Forms, oder eigener Endpoint)
-- `[E-Mail einfügen]`, `[Telefon einfügen]` → Otto's echte Kontaktdaten
-- `[D-XXXX-XXXX-XX]` → Vermittlerregister-Nummer
-- `impressum.html`, `datenschutz.html`, `erstinformation.pdf` → echte Rechtsseiten anlegen
-- Stock-Fotos (Unsplash) → eigene Bilder
+- ✅ WhatsApp / Telefon: +49 179 1194096
+- ✅ E-Mail: Info@natuerlichabgesichert.de
+- ✅ Adresse: Richard-Wagner-Str. 1, 04109 Leipzig
+- ✅ Vermittlerregister-Nr.: D-L5WZ-XHTN0-22
+- ✅ Status: Gebundener Versicherungsvertreter §34d Abs. 7 GewO (Barmenia / Gothaer / Roland)
+- ✅ Impressum, Datenschutz: verlinkt auf natuerlichabgesichert.de
+- ✅ Formular: mailto-Fallback (Otto bekommt Mail mit Formularinhalt)
+
+Noch optional/künftig:
+- Eigenes Form-Backend (Formspree, Web3Forms) statt mailto, falls Otto saubere Lead-Verwaltung will
+- Calendly-Termin-Buchung (aktuell „Termin per Telefon" als Ersatz)
+- Eigene Fotos statt Unsplash-Stock-Bildern
 
 ## Online stellen — Optionen
 
