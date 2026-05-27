@@ -20,14 +20,15 @@
     --gold-soft:  #D4B87C;
     --gold-bright:#E6C98F;
     --gold-deep:  #A8862F;
-    --cream:      #FBF8F0;
-    --cream-warm: #F2EBDB;
-    --ivory:      #FDFCF7;
+    --cream:      #ECE9F2;
+    --cream-warm: #D9D3E3;
+    --ivory:      #F5F2F8;
+    --wine-tint:  #E8D8DC;
     --text-dark:  #14172A;
     --text-muted: #5C5F6E;
     --text-soft:  #8A8B97;
-    --line:       #E5DCC7;
-    --line-strong:#C9B998;
+    --line:       #CFC7D8;
+    --line-strong:#A89DBA;
     --shadow-xs: 0 2px 6px rgba(15, 17, 50, 0.06);
     --shadow-sm: 0 4px 14px rgba(15, 17, 50, 0.10);
     --shadow-md: 0 14px 36px rgba(15, 17, 50, 0.18);
@@ -240,6 +241,68 @@
   /* SECTIONS */
   section { padding: 100px 0; position: relative; }
   section.cream { background: var(--cream-warm); }
+  section.wine-tint { background: var(--wine-tint); }
+  section.wine-tint::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--wine-deep) 0%, var(--wine-bright) 50%, var(--wine-deep) 100%);
+  }
+
+  /* Dunkle Royal+Wein-Sections — bringt mehr Royal-Wein-Anteil */
+  section.section-dark {
+    background:
+      radial-gradient(ellipse at top left, rgba(110, 21, 46, 0.35) 0%, transparent 50%),
+      radial-gradient(ellipse at bottom right, rgba(201, 161, 78, 0.10) 0%, transparent 55%),
+      linear-gradient(135deg, var(--royal-deep) 0%, var(--wine-deep) 55%, var(--royal-mid) 100%);
+    color: var(--cream);
+  }
+  section.section-dark::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, transparent 0%, var(--gold) 30%, var(--wine-bright) 50%, var(--gold) 70%, transparent 100%);
+  }
+  section.section-dark h2 { color: #FBF8F0; }
+  section.section-dark h2 em { color: var(--gold-soft); }
+  section.section-dark h3 { color: #FBF8F0; }
+  section.section-dark p { color: rgba(250, 247, 242, 0.85); }
+  section.section-dark p strong { color: var(--gold-bright); font-weight: bold; }
+  section.section-dark .section-eyebrow { color: var(--gold-soft); }
+  section.section-dark .section-eyebrow::before { background: var(--gold-soft); }
+  section.section-dark .divider { background: var(--gold-soft); }
+  section.section-dark .topic-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(212, 184, 124, 0.20);
+  }
+  section.section-dark .topic-card:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: var(--gold);
+  }
+  section.section-dark .topic-card .topic-num,
+  section.section-dark .topic-card .num-roman { color: var(--gold-soft); }
+  section.section-dark .topic-card h3 { color: #FBF8F0; }
+  section.section-dark .topic-card p { color: rgba(250, 247, 242, 0.75); }
+  section.section-dark .value-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-top-color: var(--gold);
+    color: #FBF8F0;
+  }
+  section.section-dark .value-card h3 { color: #FBF8F0; }
+  section.section-dark .value-card p { color: rgba(250, 247, 242, 0.78); }
+  section.section-dark .value-icon {
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-deep) 100%);
+    color: var(--royal-deep);
+  }
+  section.section-dark .teaser {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(212, 184, 124, 0.20);
+  }
+  section.section-dark .teaser h3 { color: #FBF8F0; }
+  section.section-dark .teaser p { color: rgba(250, 247, 242, 0.75); }
+  section.section-dark .teaser-num { color: var(--gold-soft); }
 
   .section-eyebrow {
     display: inline-flex;
@@ -745,7 +808,7 @@
     background: var(--cream-warm);
     border-left: 3px solid var(--gold);
   }
-  .consent:hover { background: #EFE7D5; }
+  .consent:hover { background: #C9C0DA; }
   .consent input[type="checkbox"] {
     margin-top: 4px;
     width: 18px; height: 18px;
@@ -1247,7 +1310,7 @@
 </section>
 
 <!-- ====== SPORT-HUND: BESONDERE RISIKEN ====== -->
-<section class="reveal">
+<section class="wine-tint reveal">
   <div class="container">
     <div class="section-eyebrow">Speziell für Hundesportvereine</div>
     <h2>Sport-Hunde haben <em>andere Risiken.</em></h2>
@@ -1288,7 +1351,7 @@
 </section>
 
 <!-- ====== DREI SÄULEN: HUNDESTUBE + LINK + MATERIALIEN ====== -->
-<section class="cream reveal">
+<section class="section-dark reveal">
   <div class="container">
     <div class="section-eyebrow">Drei Säulen der Trainer-Partnerschaft</div>
     <h2>Was Ihr von uns bekommt — <em>kein Aufwand, voll einsatzbereit.</em></h2>
@@ -1470,7 +1533,7 @@
 </section>
 
 <!-- ====== AUCH FÜR EUCH ALS TRAINER / VEREIN ====== -->
-<section class="reveal">
+<section class="section-dark reveal">
   <div class="container">
     <div class="section-eyebrow">Auch für Euch als Trainer:in oder Verein</div>
     <h2>Was Trainer &amp; Sportvereine <em>selbst brauchen.</em></h2>
