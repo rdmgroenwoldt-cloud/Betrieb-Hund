@@ -46,6 +46,20 @@ WhatsApp zeigt Bilder direkt in der Chatansicht — viel besser als ein PDF-Anha
    https://www.ilovepdf.com/de/pdf_zu_jpg
 3. Das PNG/JPG in WhatsApp einfügen
 
+## QR-Codes aufkleben (personalisiert pro Verein)
+
+Der Flyer hat **zwei leere QR-Code-Felder** mit gestrichelter Umrandung
+direkt unter den Eckdaten:
+
+1. **Anmeldung zum Beratungsabend** — Code zur Eintragungs-Liste
+2. **Termin direkt buchen** — Code zum Calendly/Kalender für ein
+   persönliches Vorgespräch
+
+Beide werden pro Verein **individuell erzeugt** (jeder Stall bekommt
+seinen eigenen Tracking-Link) und nach dem Druck einfach
+**auf das jeweilige Feld geklebt**. Die Felder sind 42 × 42 mm groß —
+passt für klassische QR-Code-Aufkleber.
+
 ## Anpassungen
 
 Den **Vereinsnamen** unten rechts (aktuell „Euer Vereinsname")
@@ -63,7 +77,6 @@ ich baue Euch eine Version mit Platz für Euer Logo neben dem Vorgestellt-Block.
 - 6 Themen (GOT-Erhöhung, OP vs Krankenvoll, Tarifdschungel,
   Haftpflicht, Eigenversicherung, Tier mit Vorgeschichte)
 - Eckdaten-Box (Online-Zoom · Kostenfrei · Dialog · Mit Eurem Logo · Spende pro Vertrag)
-- **QR-Code** zur Tierschutz-Landingpage
-- URL ausgeschrieben (für Leute ohne Scanner-App)
+- **Zwei leere QR-Code-Felder** (zum Aufkleben): Anmeldung + Termin-Buchung
 - Otto-Kontakt (Adresse · Tel · E-Mail · §34d-Reg.-Nr.)
 - Platz für „Vorgestellt von [Vereinsname]"

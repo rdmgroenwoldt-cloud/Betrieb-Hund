@@ -216,50 +216,89 @@
     font-weight: bold;
   }
 
-  /* QR + CTA-Block */
-  .cta-block {
-    margin-top: auto;
+  /* QR-Section — zwei Platzhalter zum Aufkleben */
+  .qr-section {
+    margin-top: 8mm;
     background: rgba(0,0,0,0.30);
     border: 1px solid var(--gold);
     border-radius: 6px;
-    padding: 5mm;
-    display: flex;
-    align-items: center;
+    padding: 6mm;
+  }
+  .qr-section .qr-eyebrow {
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--gold-soft);
+    font-weight: bold;
+    margin-bottom: 6px;
+    text-align: center;
+  }
+  .qr-section .qr-headline {
+    font-size: 16px;
+    color: var(--gold-bright);
+    text-align: center;
+    margin-bottom: 5mm;
+    font-style: italic;
+  }
+  .qr-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 6mm;
   }
-  .cta-block img.qr {
-    width: 36mm;
-    height: 36mm;
-    flex-shrink: 0;
-    border-radius: 4px;
-    background: #fff;
-    padding: 2mm;
-  }
-  .cta-block .cta-text {
+  .qr-slot {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    align-items: center;
+    gap: 3mm;
   }
-  .cta-block .cta-text strong {
-    font-size: 14px;
+  .qr-placeholder {
+    width: 42mm;
+    height: 42mm;
+    background: rgba(255,255,255,0.05);
+    border: 2px dashed rgba(212, 184, 124, 0.55);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: rgba(212, 184, 124, 0.7);
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    line-height: 1.4;
+    padding: 4mm;
+  }
+  .qr-label {
+    text-align: center;
+    line-height: 1.4;
+  }
+  .qr-label .num {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background: var(--gold);
+    color: var(--royal-deep);
+    border-radius: 50%;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 18px;
+    margin-right: 4px;
+  }
+  .qr-label strong {
+    font-size: 12px;
     color: var(--gold-bright);
     text-transform: uppercase;
-    letter-spacing: 1.5px;
-    margin-bottom: 4px;
+    letter-spacing: 1.2px;
   }
-  .cta-block .cta-text span {
-    font-size: 12px;
-    line-height: 1.45;
-    color: var(--cream);
-  }
-  .cta-block .cta-text .url {
-    font-size: 10px;
-    color: var(--gold-soft);
-    margin-top: 4px;
-    font-family: 'Courier New', monospace;
+  .qr-label span {
+    display: block;
+    font-size: 11px;
+    color: rgba(248, 244, 232, 0.85);
+    margin-top: 2px;
+    font-family: Georgia, serif;
     letter-spacing: 0;
+    text-transform: none;
   }
-
   /* FOOTER: Otto-Kontakt + Vereinsplatz */
   .foot {
     margin-top: 8mm;
@@ -381,17 +420,30 @@
           <li>Für jeden Vertrag: <strong>Spende an Euren Verein</strong></li>
         </ul>
       </div>
+    </div>
 
-      <div class="cta-block">
-        <img src="qr-tierschutzverein.png" alt="QR-Code zur Anmeldung" class="qr">
-        <div class="cta-text">
-          <strong>Hier anmelden:</strong>
-          <span>Scannt den QR-Code oder besucht uns online — wir melden uns innerhalb von 2 Werktagen.</span>
-          <span class="url">rdmgroenwoldt-cloud.github.io/Betrieb-Hund/tierschutzverein</span>
+  </div>
+
+  <!-- QR-CODE-BEREICH zum Aufkleben (personalisiert pro Verein) -->
+  <div class="qr-section">
+    <div class="qr-eyebrow">Direkt loslegen</div>
+    <div class="qr-headline">Einfach Scannen — zwei Wege zu Eurer Hundestube</div>
+    <div class="qr-grid">
+      <div class="qr-slot">
+        <div class="qr-placeholder">QR-Code<br>hier aufkleben</div>
+        <div class="qr-label">
+          <strong><span class="num">1</span> Anmeldung zum Beratungsabend</strong>
+          <span>Eintragen, Termin abwarten — wir melden uns mit den Zugangsdaten</span>
+        </div>
+      </div>
+      <div class="qr-slot">
+        <div class="qr-placeholder">QR-Code<br>hier aufkleben</div>
+        <div class="qr-label">
+          <strong><span class="num">2</span> Termin direkt buchen</strong>
+          <span>Persönliches Vorgespräch im Kalender wählen — feste Zeit für Eure Fragen</span>
         </div>
       </div>
     </div>
-
   </div>
 
   <!-- FOOTER -->
