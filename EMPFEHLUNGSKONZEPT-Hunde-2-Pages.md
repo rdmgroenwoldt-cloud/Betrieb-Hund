@@ -111,7 +111,7 @@ Beide Pages liegen unter `Hundestuben/`, optisch identisch zum Pferde-Design (Ro
    - **Null zusätzliche Stunden, null Beratungspflicht** — die Versicherungsfragen landen bei uns
 
 4. **Passives Einkommen zwischen den Trainingsstunden.**
-   Ein Trainer mit 60 Stammkunden hat realistisch 8–15 Vertragsabschlüsse pro Jahr über den Link. Das sind bei mittleren Tarifen **400–1.500 € im Jahr passives Einkommen** — ohne eine einzige Extra-Trainingsstunde.
+   Ein Trainer mit 60 Stammkunden hat realistisch 8–15 Vertragsabschlüsse pro Jahr über den Link. Bei 25 € pro Vertrag sind das **200–375 € im Jahr passives Einkommen**, ohne eine einzige Extra-Trainingsstunde. Plus 100 € extra für jeden 25. Vertrag, sobald die Anzahl steigt.
 
 5. **Co-Branding möglich — Ihr seid sichtbar.**
    Hundestuben können mit Eurem Logo, Eurem Namen, Eurem Trainer-Profilfoto laufen. Ihr seid der Gastgeber, wir sind die fachlichen Gäste. Eure Marke profitiert, Ihr seid sichtbar, Eure Kunden bleiben bei Euch.
