@@ -97,51 +97,86 @@
     line-height: 1.4;
   }
 
-  /* HEADLINE */
-  .headline {
+  /* INTRO: Headline + Subhead + Bild */
+  .intro {
+    display: grid;
+    grid-template-columns: 1.7fr 1fr;
+    gap: 8mm;
     margin-top: 6mm;
-    font-size: 30px;
-    line-height: 1.1;
+    align-items: center;
+  }
+  .intro-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(212, 184, 124, 0.45);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.30);
+  }
+  .intro-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .headline {
+    font-size: 26px;
+    line-height: 1.12;
     font-weight: normal;
-    letter-spacing: -0.5px;
+    letter-spacing: -0.4px;
     color: var(--cream);
   }
   .headline em {
     color: var(--gold-soft);
     font-style: italic;
   }
+  .headline strong {
+    color: var(--gold-bright);
+    font-weight: normal;
+  }
   .subhead {
     margin-top: 4mm;
-    font-size: 12.5px;
+    font-size: 12px;
     line-height: 1.5;
     color: rgba(248, 244, 232, 0.92);
-    max-width: 160mm;
   }
   .subhead strong { color: var(--gold-bright); font-weight: bold; }
 
-  /* CONTENT GRID */
-  .content {
-    display: grid;
-    grid-template-columns: 1.4fr 1fr;
-    gap: 8mm;
-    margin-top: 6mm;
+  /* WHAT-SECTION: "Was Dich erwartet" + 6 Themen-Grid */
+  .what {
+    margin-top: 7mm;
   }
-
-  /* Themen-Liste links */
-  .topics {
-    display: flex;
-    flex-direction: column;
-    gap: 3.5mm;
+  .what-eyebrow {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold-soft);
+    font-weight: bold;
+    margin-bottom: 4mm;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .what-eyebrow::after {
+    content: '';
+    width: 60px;
+    height: 1px;
+    background: var(--gold-soft);
+  }
+  .topics-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4mm 8mm;
   }
   .topic {
     display: grid;
-    grid-template-columns: 28px 1fr;
-    gap: 10px;
+    grid-template-columns: 26px 1fr;
+    gap: 9px;
     align-items: start;
   }
   .topic .num {
-    width: 26px;
-    height: 26px;
+    width: 24px;
+    height: 24px;
     background: linear-gradient(135deg, var(--gold) 0%, var(--gold-deep) 100%);
     color: var(--royal-deep);
     border-radius: 50%;
@@ -149,62 +184,21 @@
     align-items: center;
     justify-content: center;
     font-weight: bold;
-    font-size: 12px;
+    font-size: 11px;
     font-style: italic;
     flex-shrink: 0;
   }
   .topic .text h3 {
-    font-size: 11.5px;
+    font-size: 11px;
     color: var(--gold-bright);
     margin-bottom: 2px;
     font-weight: bold;
     line-height: 1.25;
   }
   .topic .text p {
-    font-size: 10px;
-    color: rgba(248, 244, 232, 0.85);
+    font-size: 9.5px;
+    color: rgba(248, 244, 232, 0.82);
     line-height: 1.4;
-  }
-
-  /* Highlight-Box rechts */
-  .highlight {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(110, 21, 46, 0.40) 100%);
-    border: 1px solid rgba(212, 184, 124, 0.45);
-    border-radius: 8px;
-    padding: 6mm 5mm;
-  }
-  .highlight .h-eyebrow {
-    font-size: 9px;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    color: var(--gold-soft);
-    font-weight: bold;
-    margin-bottom: 6px;
-  }
-  .highlight h2 {
-    font-size: 16px;
-    line-height: 1.2;
-    color: var(--cream);
-    margin-bottom: 6px;
-    font-weight: normal;
-  }
-  .highlight h2 em { color: var(--gold-bright); font-style: italic; }
-  .highlight ul { list-style: none; margin-top: 4mm; }
-  .highlight ul li {
-    font-size: 10.5px;
-    color: rgba(248, 244, 232, 0.92);
-    padding-left: 16px;
-    margin-bottom: 5px;
-    position: relative;
-    line-height: 1.4;
-  }
-  .highlight ul li strong { color: var(--gold-bright); }
-  .highlight ul li::before {
-    content: '✓';
-    position: absolute;
-    left: 0;
-    color: var(--gold-bright);
-    font-weight: bold;
   }
 
   /* QR-Section — zwei Platzhalter zum Aufkleben */
@@ -325,19 +319,26 @@
     <div class="head-tag">Pfotenstube<br>für Adoptanten</div>
   </div>
 
-  <!-- HEADLINE -->
-  <h1 class="headline">Damit eine Adoption <em>nicht am Ersparten scheitert.</em></h1>
-  <p class="subhead">
-    <strong>Von der ersten Sekunde im neuen Zuhause gut abgesichert!</strong>
-    Ein Start in ein neues, sorgenfreies Leben — von Menschen,
-    die den Tierarzt-Alltag kennen, egal ob beruflich oder privat.
-  </p>
+  <!-- INTRO: Headline + Bild -->
+  <div class="intro">
+    <div class="intro-text">
+      <h1 class="headline">Von der ersten Sekunde im neuen Zuhause <em>gut abgesichert.</em></h1>
+      <p class="subhead">
+        Ein Start in ein neues, sorgenfreies Leben — von Menschen,
+        die den Tierarzt-Alltag kennen, egal ob beruflich oder privat.
+        <strong>Kein Verkauf, kein Markenname</strong> — nur ein
+        ehrlicher Überblick zum aktuellen Stand am Versicherungsmarkt.
+      </p>
+    </div>
+    <div class="intro-image">
+      <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=900&q=80&auto=format&fit=crop" alt="Adoptiertes Tier im neuen Zuhause">
+    </div>
+  </div>
 
-  <!-- CONTENT -->
-  <div class="content">
-
-    <!-- TOPICS -->
-    <div class="topics">
+  <!-- WAS DICH ERWARTET: 6 Themen -->
+  <div class="what">
+    <div class="what-eyebrow">Was Dich erwartet</div>
+    <div class="topics-grid">
       <div class="topic">
         <div class="num">I</div>
         <div class="text">
@@ -381,20 +382,6 @@
         </div>
       </div>
     </div>
-
-    <!-- HIGHLIGHT BOX -->
-    <div class="highlight">
-      <div>
-        <div class="h-eyebrow">Was Dich erwartet</div>
-        <h2>90 Minuten <em>Marktüberblick</em> — sachlich und neutral</h2>
-        <ul>
-          <li>Online via Zoom — bequem von zuhause</li>
-          <li>Kostenfrei — keine versteckten Gebühren</li>
-          <li>Im offenen Dialog — Deine Fragen, unsere Erfahrung</li>
-        </ul>
-      </div>
-    </div>
-
   </div>
 
   <!-- QR-CODE-BEREICH zum Aufkleben (personalisiert pro Verein) -->
