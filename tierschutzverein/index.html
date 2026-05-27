@@ -53,8 +53,8 @@
   html { scroll-behavior: smooth; }
   body {
     font-family: Georgia, 'Times New Roman', serif;
-    background: var(--cream);
-    color: var(--text-dark);
+    background: var(--royal-deep);
+    color: #F8F4E8;
     line-height: 1.65;
     font-size: 17px;
     overflow-x: hidden;
@@ -272,59 +272,219 @@
     background: linear-gradient(90deg, var(--wine-deep) 0%, var(--wine-bright) 50%, var(--wine-deep) 100%);
   }
 
-  /* Dunkle Royal+Wein-Sections — bringt mehr Royal-Wein-Anteil */
+  /* Dunkle Royal+Wein-Sections — Royal+Wein dominiert die Seite */
   section.section-dark {
     background:
       radial-gradient(ellipse at top left, rgba(110, 21, 46, 0.35) 0%, transparent 50%),
       radial-gradient(ellipse at bottom right, rgba(201, 161, 78, 0.10) 0%, transparent 55%),
       linear-gradient(135deg, var(--royal-deep) 0%, var(--wine-deep) 55%, var(--royal-mid) 100%);
-    color: var(--cream);
+    color: #F8F4E8;
   }
-  section.section-dark::before {
+  /* Variante: Wein dominiert (für emotionalere Sections) */
+  section.section-dark-wine {
+    background:
+      radial-gradient(ellipse at top right, rgba(15, 17, 50, 0.45) 0%, transparent 50%),
+      radial-gradient(ellipse at bottom left, rgba(201, 161, 78, 0.12) 0%, transparent 55%),
+      linear-gradient(135deg, var(--wine-deep) 0%, var(--wine-mid) 45%, var(--royal-deep) 100%);
+    color: #F8F4E8;
+  }
+  /* Variante: Royal dominiert (kühler, sachlicher) */
+  section.section-dark-royal {
+    background:
+      radial-gradient(ellipse at bottom right, rgba(110, 21, 46, 0.25) 0%, transparent 55%),
+      radial-gradient(ellipse at top left, rgba(201, 161, 78, 0.08) 0%, transparent 50%),
+      linear-gradient(160deg, var(--royal-deep) 0%, var(--royal-mid) 60%, var(--wine-deep) 100%);
+    color: #F8F4E8;
+  }
+  section.section-dark::before,
+  section.section-dark-wine::before,
+  section.section-dark-royal::before {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0;
     height: 4px;
     background: linear-gradient(90deg, transparent 0%, var(--gold) 30%, var(--wine-bright) 50%, var(--gold) 70%, transparent 100%);
   }
-  section.section-dark h2 { color: var(--cream); }
-  section.section-dark h2 em { color: var(--gold-soft); }
-  section.section-dark h3 { color: var(--cream); }
-  section.section-dark p { color: rgba(250, 247, 242, 0.85); }
-  section.section-dark p strong { color: var(--gold-bright); font-weight: bold; }
-  section.section-dark .section-eyebrow { color: var(--gold-soft); }
-  section.section-dark .section-eyebrow::before { background: var(--gold-soft); }
-  section.section-dark .divider { background: var(--gold-soft); }
-  section.section-dark .topic-card {
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(212, 184, 124, 0.20);
+  /* Shared dark-section text styling */
+  section.section-dark h2,
+  section.section-dark-wine h2,
+  section.section-dark-royal h2 { color: #F8F4E8; }
+  section.section-dark h2 em,
+  section.section-dark-wine h2 em,
+  section.section-dark-royal h2 em { color: var(--gold-soft); }
+  section.section-dark h3,
+  section.section-dark-wine h3,
+  section.section-dark-royal h3 { color: #F8F4E8; }
+  section.section-dark p,
+  section.section-dark-wine p,
+  section.section-dark-royal p { color: rgba(248, 244, 232, 0.88); }
+  section.section-dark p.lead,
+  section.section-dark-wine p.lead,
+  section.section-dark-royal p.lead { color: rgba(248, 244, 232, 0.92); }
+  section.section-dark p strong,
+  section.section-dark-wine p strong,
+  section.section-dark-royal p strong { color: var(--gold-bright); font-weight: bold; }
+  section.section-dark .section-eyebrow,
+  section.section-dark-wine .section-eyebrow,
+  section.section-dark-royal .section-eyebrow { color: var(--gold-soft); }
+  section.section-dark .section-eyebrow::before,
+  section.section-dark-wine .section-eyebrow::before,
+  section.section-dark-royal .section-eyebrow::before { background: var(--gold-soft); }
+  section.section-dark .divider,
+  section.section-dark-wine .divider,
+  section.section-dark-royal .divider { background: var(--gold-soft); }
+  /* Karten + Komponenten innerhalb aller dark-Sections */
+  .dark-scope { color: #F8F4E8; }
+  section.section-dark .topic-card,
+  section.section-dark-wine .topic-card,
+  section.section-dark-royal .topic-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(212, 184, 124, 0.22);
   }
-  section.section-dark .topic-card:hover {
-    background: rgba(255, 255, 255, 0.07);
+  section.section-dark .topic-card:hover,
+  section.section-dark-wine .topic-card:hover,
+  section.section-dark-royal .topic-card:hover {
+    background: rgba(255, 255, 255, 0.08);
     border-color: var(--gold);
   }
   section.section-dark .topic-card .topic-num,
-  section.section-dark .topic-card .num-roman { color: var(--gold-soft); }
-  section.section-dark .topic-card h3 { color: var(--cream); }
-  section.section-dark .topic-card p { color: rgba(250, 247, 242, 0.75); }
-  section.section-dark .value-card {
-    background: rgba(255, 255, 255, 0.05);
+  section.section-dark-wine .topic-card .topic-num,
+  section.section-dark-royal .topic-card .topic-num,
+  section.section-dark .topic-card .num-roman,
+  section.section-dark-wine .topic-card .num-roman,
+  section.section-dark-royal .topic-card .num-roman { color: var(--gold-soft); }
+  section.section-dark .topic-card h3,
+  section.section-dark-wine .topic-card h3,
+  section.section-dark-royal .topic-card h3 { color: #F8F4E8; }
+  section.section-dark .topic-card p,
+  section.section-dark-wine .topic-card p,
+  section.section-dark-royal .topic-card p { color: rgba(248, 244, 232, 0.80); }
+
+  section.section-dark .value-card,
+  section.section-dark-wine .value-card,
+  section.section-dark-royal .value-card {
+    background: rgba(255, 255, 255, 0.06);
     border-top-color: var(--gold);
-    color: var(--cream);
+    color: #F8F4E8;
   }
-  section.section-dark .value-card h3 { color: var(--cream); }
-  section.section-dark .value-card p { color: rgba(250, 247, 242, 0.78); }
-  section.section-dark .value-icon {
+  section.section-dark .value-card h3,
+  section.section-dark-wine .value-card h3,
+  section.section-dark-royal .value-card h3 { color: #F8F4E8; }
+  section.section-dark .value-card p,
+  section.section-dark-wine .value-card p,
+  section.section-dark-royal .value-card p { color: rgba(248, 244, 232, 0.82); }
+  section.section-dark .value-icon,
+  section.section-dark-wine .value-icon,
+  section.section-dark-royal .value-icon {
     background: linear-gradient(135deg, var(--gold) 0%, var(--gold-deep) 100%);
     color: var(--royal-deep);
   }
-  section.section-dark .teaser {
+
+  section.section-dark .teaser,
+  section.section-dark-wine .teaser,
+  section.section-dark-royal .teaser {
     background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(212, 184, 124, 0.20);
+    border: 1px solid rgba(212, 184, 124, 0.22);
   }
-  section.section-dark .teaser h3 { color: #FBF8F0; }
-  section.section-dark .teaser p { color: rgba(250, 247, 242, 0.75); }
-  section.section-dark .teaser-num { color: var(--gold-soft); }
+  section.section-dark .teaser h3,
+  section.section-dark-wine .teaser h3,
+  section.section-dark-royal .teaser h3 { color: #F8F4E8; }
+  section.section-dark .teaser p,
+  section.section-dark-wine .teaser p,
+  section.section-dark-royal .teaser p { color: rgba(248, 244, 232, 0.80); }
+  section.section-dark .teaser-num,
+  section.section-dark-wine .teaser-num,
+  section.section-dark-royal .teaser-num { color: var(--gold-soft); }
+
+  /* Highlight-Banner innerhalb dark-Sections — wein-akzent statt cream */
+  section.section-dark .highlight-banner,
+  section.section-dark-wine .highlight-banner,
+  section.section-dark-royal .highlight-banner {
+    background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(110,21,46,0.20) 100%);
+    border-left: 4px solid var(--gold);
+  }
+  section.section-dark .highlight-banner h3,
+  section.section-dark-wine .highlight-banner h3,
+  section.section-dark-royal .highlight-banner h3 { color: var(--gold-bright); }
+  section.section-dark .highlight-banner p,
+  section.section-dark-wine .highlight-banner p,
+  section.section-dark-royal .highlight-banner p { color: rgba(248, 244, 232, 0.88); }
+  section.section-dark .highlight-banner p strong,
+  section.section-dark-wine .highlight-banner p strong,
+  section.section-dark-royal .highlight-banner p strong { color: var(--gold-bright); }
+
+  /* Process-steps innerhalb dark-Sections */
+  section.section-dark .step,
+  section.section-dark-wine .step,
+  section.section-dark-royal .step {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(212, 184, 124, 0.22);
+  }
+  section.section-dark .step:hover,
+  section.section-dark-wine .step:hover,
+  section.section-dark-royal .step:hover { border-color: var(--gold); }
+  section.section-dark .step-num,
+  section.section-dark-wine .step-num,
+  section.section-dark-royal .step-num {
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-deep) 100%);
+    color: var(--royal-deep);
+  }
+
+  /* Flex-Options (3-Wege Wahl) innerhalb dark-Sections */
+  section.section-dark .flex-option,
+  section.section-dark-wine .flex-option,
+  section.section-dark-royal .flex-option {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(212, 184, 124, 0.22);
+    color: #F8F4E8;
+  }
+  section.section-dark .flex-option:hover,
+  section.section-dark-wine .flex-option:hover,
+  section.section-dark-royal .flex-option:hover {
+    background: rgba(255,255,255,0.08);
+    border-color: var(--gold);
+  }
+  section.section-dark .flex-option h3,
+  section.section-dark-wine .flex-option h3,
+  section.section-dark-royal .flex-option h3 { color: #F8F4E8; }
+  section.section-dark .flex-option p,
+  section.section-dark-wine .flex-option p,
+  section.section-dark-royal .flex-option p { color: rgba(248, 244, 232, 0.78); }
+  section.section-dark .flex-option-icon,
+  section.section-dark-wine .flex-option-icon,
+  section.section-dark-royal .flex-option-icon {
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-deep) 100%);
+    color: var(--royal-deep);
+  }
+
+  /* FAQ innerhalb dark-Sections */
+  section.section-dark .faq-item,
+  section.section-dark-wine .faq-item,
+  section.section-dark-royal .faq-item {
+    border-top: 1px solid rgba(212, 184, 124, 0.30);
+  }
+  section.section-dark .faq-item:hover,
+  section.section-dark-wine .faq-item:hover,
+  section.section-dark-royal .faq-item:hover { border-top-color: var(--gold); }
+  section.section-dark .faq-item h3,
+  section.section-dark-wine .faq-item h3,
+  section.section-dark-royal .faq-item h3 { color: var(--gold-bright); }
+  section.section-dark .faq-item h3::before,
+  section.section-dark-wine .faq-item h3::before,
+  section.section-dark-royal .faq-item h3::before { color: var(--gold); }
+  section.section-dark .faq-item p,
+  section.section-dark-wine .faq-item p,
+  section.section-dark-royal .faq-item p { color: rgba(248, 244, 232, 0.78); }
+
+  /* Process-section in dark-Variante */
+  section.process-section.section-dark,
+  section.process-section.section-dark-wine,
+  section.process-section.section-dark-royal {
+    background-image:
+      radial-gradient(ellipse at top left, rgba(110, 21, 46, 0.35) 0%, transparent 50%),
+      radial-gradient(ellipse at bottom right, rgba(201, 161, 78, 0.10) 0%, transparent 55%),
+      linear-gradient(135deg, var(--royal-deep) 0%, var(--wine-deep) 55%, var(--royal-mid) 100%);
+  }
 
   .section-eyebrow {
     display: inline-flex;
@@ -1109,17 +1269,17 @@
 
   /* COMPLIANCE + FOOTER */
   .compliance {
-    background: var(--cream-warm);
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
+    background: linear-gradient(135deg, var(--wine-deep) 0%, var(--royal-deep) 100%);
+    border-top: 1px solid rgba(212, 184, 124, 0.25);
+    border-bottom: 1px solid rgba(212, 184, 124, 0.25);
     padding: 36px 0;
     text-align: center;
     font-size: 14px;
-    color: var(--text-muted);
+    color: rgba(248, 244, 232, 0.78);
     line-height: 1.7;
   }
-  .compliance strong { color: var(--royal-deep); }
-  .compliance a { color: var(--royal-deep); text-decoration: underline; }
+  .compliance strong { color: var(--gold-bright); }
+  .compliance a { color: var(--gold-bright); text-decoration: underline; }
   footer {
     background: var(--royal-deep);
     color: rgba(250, 247, 242, 0.7);
@@ -1240,7 +1400,7 @@
 </header>
 
 <!-- ====== LEITSATZ ====== -->
-<section class="cream reveal">
+<section class="section-dark-wine reveal">
   <div class="container">
     <div class="section-eyebrow">Unser Leitsatz</div>
     <h2>Tierschutz bedeutet <em>auch Absicherung.</em></h2>
@@ -1267,7 +1427,7 @@
 </section>
 
 <!-- ====== RISIKOMOMENTE NACH DER ADOPTION ====== -->
-<section class="wine-tint reveal">
+<section class="section-dark-royal reveal">
   <div class="container">
     <div class="section-eyebrow">Diese Momente trifft jede Adoptionsfamilie</div>
     <h2>Vier typische Situationen, in denen es <em>kippen kann.</em></h2>
@@ -1344,7 +1504,7 @@
 </section>
 
 <!-- ====== INHALT — WAS LERNEN ADOPTANTEN ====== -->
-<section class="reveal">
+<section class="section-dark-royal reveal">
   <div class="container">
     <div class="section-eyebrow">Inhalt in der Hundestube</div>
     <h2>Was die Teilnehmer mitnehmen</h2>
@@ -1395,7 +1555,7 @@
 </section>
 
 <!-- ====== HUNDESTUBE-SHOWCASE ====== -->
-<section class="cream reveal">
+<section class="section-dark-wine reveal">
   <div class="container">
     <div class="showcase">
       <div class="showcase-img-wrap">
@@ -1426,7 +1586,7 @@
 </section>
 
 <!-- ====== FLEXIBILITÄT — WIE & WO ====== -->
-<section class="reveal">
+<section class="section-dark-royal reveal">
   <div class="container">
     <div class="section-eyebrow">Flexibel</div>
     <h2>Wann und wie — <em>genau so wie es zu Euch passt.</em></h2>
@@ -1458,7 +1618,7 @@
 </section>
 
 <!-- ====== ABLAUF ====== -->
-<section id="wie-laeuft" class="process-section reveal">
+<section id="wie-laeuft" class="process-section section-dark reveal">
   <div class="container">
     <div class="section-eyebrow">Ablauf</div>
     <h2>So einfach läuft das ab</h2>
@@ -1630,7 +1790,7 @@
 </section>
 
 <!-- ====== FAQ ====== -->
-<section class="reveal">
+<section class="section-dark-wine reveal">
   <div class="container">
     <div class="section-eyebrow">Häufige Fragen</div>
     <h2>Bevor Ihr anfragt</h2>
