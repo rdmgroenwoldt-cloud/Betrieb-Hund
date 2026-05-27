@@ -71,43 +71,28 @@
     background: linear-gradient(90deg, transparent 0%, var(--gold) 25%, var(--wine-bright) 50%, var(--gold) 75%, transparent 100%);
   }
 
-  /* HEADER */
-  .head {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-    padding-bottom: 4mm;
+  /* HERO LOGO: groß mittig statt Bild */
+  .hero-logo {
+    margin-top: 8mm;
+    margin-bottom: 4mm;
+    text-align: center;
+    padding: 10mm 0;
+    border-top: 1px solid rgba(212, 184, 124, 0.25);
     border-bottom: 1px solid rgba(212, 184, 124, 0.25);
   }
-  .head img.logo { height: 36px; width: auto; }
-  .head .head-tag {
-    font-size: 8.5px;
-    letter-spacing: 2px;
+  .hero-logo img {
+    height: 80px;
+    width: auto;
+    display: inline-block;
+  }
+  .hero-logo .hero-tag {
+    display: block;
+    margin-top: 6mm;
+    font-size: 10px;
+    letter-spacing: 3px;
     text-transform: uppercase;
     color: var(--gold-soft);
-    border: 1px solid rgba(212, 184, 124, 0.5);
-    padding: 4px 9px;
-    border-radius: 100px;
-    text-align: center;
-    line-height: 1.3;
-  }
-
-  /* HERO: Bild gross */
-  .hero-image {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    border-radius: 8px;
-    overflow: hidden;
-    border: 1px solid rgba(212, 184, 124, 0.4);
-    box-shadow: 0 5px 14px rgba(0,0,0,0.30);
-    margin-top: 5mm;
-  }
-  .hero-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+    font-weight: bold;
   }
 
   /* HEADLINE BLOCK */
@@ -277,15 +262,10 @@
 
 <div class="sheet">
 
-  <!-- HEADER -->
-  <div class="head">
-    <img src="../assets/logo.svg" alt="Natürlich Abgesichert" class="logo">
-    <div class="head-tag">Persönliche Beratung<br>für neue Tierhalter</div>
-  </div>
-
-  <!-- HERO BILD -->
-  <div class="hero-image">
-    <img src="https://images.unsplash.com/photo-1563460716037-460a3ad24ba9?w=900&q=80&auto=format&fit=crop" alt="Hund und Katze zusammen — Adoptionstiere">
+  <!-- HERO LOGO mittig -->
+  <div class="hero-logo">
+    <img src="../assets/logo.svg" alt="Natürlich Abgesichert">
+    <span class="hero-tag">Persönliche Beratung für neue Tierhalter</span>
   </div>
 
   <!-- HEADLINE + LEAD -->
