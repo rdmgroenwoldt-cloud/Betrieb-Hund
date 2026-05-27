@@ -196,8 +196,12 @@
     transform: translateY(-3px);
     box-shadow: 0 16px 32px rgba(201, 161, 78, 0.55), 0 0 0 1px var(--gold);
   }
-  .option-cta span.arrow { transition: transform 0.3s ease; display: inline-block; }
-  .option:hover .option-cta span.arrow { transform: translateX(4px); }
+  .option-cta .paw {
+    display: inline-block;
+    font-size: 16px;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .option:hover .option-cta .paw { transform: rotate(-18deg) scale(1.2) translateX(2px); }
 
   .links-footer {
     margin-top: 24px;
@@ -239,14 +243,9 @@
         Vertragsabschluss eine Spende in Eure Vereinskasse bringt.
         Auf Wunsch gemeinnützig korrekt verbucht.
       </p>
-      <div class="option-meta">
-        <span class="meta-pill">Hund &amp; Katze</span>
-        <span class="meta-pill">2–4 Hundestuben / Jahr</span>
-        <span class="meta-pill">Spende für Eure Vereinskasse</span>
-      </div>
       <span class="option-cta">
         <span>Hier sind wir richtig</span>
-        <span class="arrow">→</span>
+        <span class="paw" aria-hidden="true">🐾</span>
       </span>
     </a>
 
@@ -259,14 +258,9 @@
         passiver Vergütung. Training, Sport und Tiergesundheit gehören
         zusammen — wir liefern den Versicherungs-Part.
       </p>
-      <div class="option-meta">
-        <span class="meta-pill">Trainer · Schulen · Sportvereine</span>
-        <span class="meta-pill">Mit Eurem Logo</span>
-        <span class="meta-pill">Spende oder Provision · je nach Eintragung</span>
-      </div>
       <span class="option-cta">
         <span>Hier sind wir richtig</span>
-        <span class="arrow">→</span>
+        <span class="paw" aria-hidden="true">🐾</span>
       </span>
     </a>
 
