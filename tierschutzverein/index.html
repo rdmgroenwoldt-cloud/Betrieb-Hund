@@ -1,0 +1,1761 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Online-Hundestuben rund um Hunde- und Katzenversicherung — exklusiv für Tierschutzvereine, Tierheime und Pflegestellen-Netze. Ehrliche Beratung für Adoptanten von Hunden und Katzen, von Menschen, die den Tierarztalltag kennen. Förder-Kooperation als Spende für Eure Vereinskasse. Kostenfrei.">
+<title>Natürlich Abgesichert — Förder-Kooperation für Tierschutzvereine & Tierheime (Hund & Katze)</title>
+
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<style>
+  :root {
+    --royal-deep: #2D2A6B;
+    --royal-mid: #4A4290;
+    --royal-light: #6B5FB5;
+    --royal-glow: rgba(107, 95, 181, 0.4);
+    --gold: #B89A5C;
+    --gold-soft: #D4BC83;
+    --gold-bright: #E5CB97;
+    --cream: #FAF7F2;
+    --cream-warm: #F4EFE4;
+    --text-dark: #1F1E2E;
+    --text-muted: #6B6678;
+    --line: #E2D9C8;
+    --shadow-sm: 0 2px 8px rgba(45, 42, 107, 0.08);
+    --shadow-md: 0 8px 28px rgba(45, 42, 107, 0.14);
+    --shadow-lg: 0 16px 48px rgba(45, 42, 107, 0.22);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    line-height: 1.65;
+    font-size: 17px;
+    overflow-x: hidden;
+  }
+  .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    color: var(--cream);
+    overflow: hidden;
+    padding: 120px 0 80px;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image:
+      linear-gradient(135deg, rgba(45, 42, 107, 0.88) 0%, rgba(74, 66, 144, 0.78) 100%),
+      url('https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=2000&q=80&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    animation: heroZoom 30s ease-in-out infinite alternate;
+  }
+  @keyframes heroZoom {
+    from { transform: scale(1); }
+    to { transform: scale(1.08); }
+  }
+  .hero-content { position: relative; z-index: 2; }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, transparent 0%, var(--gold) 50%, transparent 100%);
+    z-index: 3;
+  }
+
+  .brand-line {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 13px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold-soft);
+    margin-bottom: 40px;
+    font-weight: bold;
+    opacity: 0;
+    animation: fadeUp 0.8s ease-out 0.1s forwards;
+  }
+  .brand-line::before {
+    content: '';
+    width: 40px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .hero-tag {
+    display: inline-block;
+    background: rgba(184, 154, 92, 0.15);
+    border: 1px solid var(--gold);
+    color: var(--gold-bright);
+    padding: 8px 18px;
+    border-radius: 100px;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease-out 0.2s forwards;
+  }
+
+  .hero h1 {
+    font-size: clamp(34px, 5.5vw, 62px);
+    line-height: 1.1;
+    margin-bottom: 28px;
+    font-weight: normal;
+    letter-spacing: -0.5px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease-out 0.3s forwards;
+  }
+  .hero h1 em {
+    color: var(--gold-soft);
+    font-style: italic;
+  }
+
+  .hero-sub {
+    font-size: clamp(18px, 2.3vw, 23px);
+    line-height: 1.5;
+    margin-bottom: 48px;
+    max-width: 780px;
+    color: rgba(250, 247, 242, 0.92);
+    opacity: 0;
+    animation: fadeUp 0.8s ease-out 0.5s forwards;
+  }
+
+  .meta-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 36px;
+    margin-bottom: 56px;
+    padding: 28px 32px;
+    background: rgba(250, 247, 242, 0.05);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(184, 154, 92, 0.25);
+    border-radius: 4px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease-out 0.7s forwards;
+  }
+  .meta-item { display: flex; flex-direction: column; gap: 6px; }
+  .meta-label {
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--gold-soft);
+    font-weight: bold;
+  }
+  .meta-value { font-size: 17px; color: var(--cream); }
+
+  .cta-group {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 0.8s ease-out 0.9s forwards;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* BUTTONS */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--gold);
+    color: var(--royal-deep);
+    padding: 20px 44px;
+    text-decoration: none;
+    font-family: Georgia, serif;
+    font-size: 17px;
+    font-weight: bold;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    border-radius: 100px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 16px rgba(184, 154, 92, 0.35);
+  }
+  .btn::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: left 0.6s ease;
+  }
+  .btn:hover {
+    background: var(--gold-bright);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(184, 154, 92, 0.5);
+  }
+  .btn:hover::before { left: 100%; }
+  .btn:active { transform: translateY(-1px); }
+  .btn .btn-arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+  }
+  .btn:hover .btn-arrow { transform: translateX(6px); }
+
+  .btn-primary-glow { animation: ctaPulse 2.5s ease-in-out infinite; }
+  @keyframes ctaPulse {
+    0%, 100% { box-shadow: 0 4px 16px rgba(184, 154, 92, 0.35), 0 0 0 0 rgba(184, 154, 92, 0); }
+    50% { box-shadow: 0 8px 24px rgba(184, 154, 92, 0.45), 0 0 0 16px rgba(184, 154, 92, 0); }
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--cream);
+    border: 2px solid rgba(184, 154, 92, 0.6);
+    box-shadow: none;
+  }
+  .btn-ghost:hover {
+    background: rgba(184, 154, 92, 0.12);
+    border-color: var(--gold);
+    color: var(--gold-bright);
+    box-shadow: 0 6px 20px rgba(184, 154, 92, 0.25);
+  }
+
+  /* SECTIONS */
+  section { padding: 100px 0; position: relative; }
+  section.cream { background: var(--cream-warm); }
+
+  .section-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 12px;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  .section-eyebrow::before {
+    content: '';
+    width: 32px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  h2 {
+    font-size: clamp(30px, 4.2vw, 46px);
+    line-height: 1.15;
+    margin-bottom: 28px;
+    color: var(--royal-deep);
+    font-weight: normal;
+    letter-spacing: -0.5px;
+    max-width: 880px;
+  }
+  h2 em { color: var(--gold); font-style: italic; }
+
+  h3 {
+    font-size: 22px;
+    line-height: 1.35;
+    color: var(--royal-deep);
+    margin-bottom: 14px;
+    font-weight: normal;
+  }
+
+  p { margin-bottom: 20px; color: var(--text-dark); }
+  p.lead {
+    font-size: 21px;
+    color: var(--text-dark);
+    margin-bottom: 36px;
+    max-width: 800px;
+    line-height: 1.55;
+  }
+
+  .divider {
+    width: 60px;
+    height: 2px;
+    background: var(--gold);
+    margin: 36px 0;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+  .js-reveal .reveal { opacity: 0; transform: translateY(40px); }
+  .js-reveal .reveal.is-visible { opacity: 1; transform: translateY(0); }
+  @media (prefers-reduced-motion: reduce) {
+    .js-reveal .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+  }
+
+  /* VALUE GRID */
+  .value-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px;
+    margin-top: 56px;
+  }
+  .value-card {
+    background: var(--cream);
+    padding: 40px 32px;
+    border-top: 3px solid var(--gold);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+  .value-card::after {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    background: var(--royal-mid);
+    transition: width 0.5s ease;
+  }
+  .value-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+  }
+  .value-card:hover::after { width: 100%; }
+
+  .value-icon {
+    width: 60px; height: 60px;
+    background: linear-gradient(135deg, var(--royal-deep), var(--royal-mid));
+    color: var(--gold-soft);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-style: italic;
+    margin-bottom: 24px;
+    font-family: Georgia, serif;
+    box-shadow: var(--shadow-sm);
+  }
+  .value-card h3 { font-size: 22px; margin-bottom: 14px; }
+  .value-card p { color: var(--text-muted); font-size: 16px; margin-bottom: 0; }
+
+  /* PROCESS-STEPS */
+  .process-section { background: linear-gradient(180deg, var(--cream) 0%, var(--cream-warm) 100%); }
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-top: 56px;
+    position: relative;
+  }
+  @media (max-width: 900px) { .steps { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 540px) { .steps { grid-template-columns: 1fr; } }
+  .step {
+    background: var(--cream);
+    padding: 36px 28px;
+    text-align: center;
+    border: 1px solid var(--line);
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  .step:hover {
+    border-color: var(--gold);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
+  .step-num {
+    width: 48px; height: 48px;
+    margin: 0 auto 20px;
+    background: var(--royal-deep);
+    color: var(--gold-soft);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: bold;
+    transition: all 0.3s ease;
+  }
+  .step:hover .step-num {
+    background: var(--gold);
+    color: var(--royal-deep);
+    transform: scale(1.1) rotate(-5deg);
+  }
+  .step h3 { font-size: 18px; margin-bottom: 10px; }
+  .step p { font-size: 14px; color: var(--text-muted); margin: 0; line-height: 1.55; }
+
+  /* SHOWCASE */
+  .showcase {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 64px;
+    align-items: center;
+    margin-top: 24px;
+  }
+  @media (max-width: 900px) { .showcase { grid-template-columns: 1fr; gap: 40px; } }
+  .showcase-img-wrap {
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    aspect-ratio: 4/5;
+    box-shadow: var(--shadow-lg);
+  }
+  .showcase-img-wrap::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, transparent 60%, rgba(45,42,107,0.25));
+    z-index: 1;
+  }
+  .showcase-img-wrap img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .showcase-img-wrap:hover img { transform: scale(1.06); }
+  .showcase-img-wrap .img-tag {
+    position: absolute;
+    bottom: 24px; left: 24px;
+    background: rgba(45, 42, 107, 0.92);
+    color: var(--gold-soft);
+    padding: 12px 20px;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-left: 2px solid var(--gold);
+    z-index: 2;
+  }
+
+  /* ABOUT */
+  .about {
+    background: linear-gradient(135deg, var(--royal-deep) 0%, var(--royal-mid) 100%);
+    color: var(--cream);
+    position: relative;
+    overflow: hidden;
+  }
+  .about::before {
+    content: '';
+    position: absolute;
+    top: -200px; right: -200px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(184, 154, 92, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .about h2 { color: var(--cream); }
+  .about p { color: rgba(250, 247, 242, 0.88); }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 80px;
+    margin-top: 48px;
+    align-items: center;
+  }
+  @media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; gap: 48px; } }
+  .about-portrait {
+    aspect-ratio: 4/5;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.35);
+    position: relative;
+  }
+  .about-portrait img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 1s ease;
+  }
+  .about-portrait:hover img { transform: scale(1.04); }
+  .about-portrait .portrait-badge {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 24px;
+    background: linear-gradient(180deg, transparent, rgba(45, 42, 107, 0.95));
+    color: var(--cream);
+  }
+  .about-portrait .portrait-badge strong {
+    display: block;
+    font-size: 20px;
+    color: var(--gold-soft);
+    margin-bottom: 4px;
+    font-style: italic;
+    font-weight: normal;
+  }
+  .about-portrait .portrait-badge span {
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(250, 247, 242, 0.8);
+  }
+  .competence-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin: 32px 0;
+  }
+  @media (max-width: 600px) { .competence-row { grid-template-columns: 1fr; } }
+  .competence-pill {
+    background: rgba(184, 154, 92, 0.10);
+    border: 1px solid rgba(184, 154, 92, 0.35);
+    padding: 18px 14px;
+    border-radius: 10px;
+    text-align: center;
+    transition: all 0.35s ease;
+  }
+  .competence-pill:hover {
+    background: rgba(184, 154, 92, 0.18);
+    transform: translateY(-3px);
+    border-color: var(--gold);
+  }
+  .competence-icon {
+    width: 36px; height: 36px;
+    margin: 0 auto 10px;
+    background: var(--gold);
+    color: var(--royal-deep);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .competence-pill h4 {
+    color: var(--cream);
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0 0 4px;
+    line-height: 1.3;
+  }
+  .competence-pill span {
+    font-size: 12px;
+    color: rgba(212, 188, 131, 0.85);
+    font-style: italic;
+    letter-spacing: 0.5px;
+  }
+
+  /* TEASER-GRID */
+  .teaser-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-top: 48px;
+  }
+  .teaser-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+  @media (max-width: 900px) {
+    .teaser-grid { grid-template-columns: repeat(2, 1fr); }
+    .teaser-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 540px) {
+    .teaser-grid { grid-template-columns: 1fr; }
+    .teaser-grid.cols-2 { grid-template-columns: 1fr; }
+  }
+  .teaser {
+    padding: 36px 30px;
+    border: 1px solid var(--line);
+    background: var(--cream);
+    border-radius: 10px;
+    transition: all 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+  .teaser::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.55s ease;
+  }
+  .teaser:hover {
+    background: var(--cream-warm);
+    border-color: transparent;
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+  }
+  .teaser:hover::before { transform: scaleX(1); }
+  .teaser-num {
+    display: inline-block;
+    font-size: 32px;
+    color: var(--gold);
+    font-style: italic;
+    line-height: 1;
+    margin-bottom: 16px;
+    font-family: Georgia, serif;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(184, 154, 92, 0.35);
+    min-width: 50px;
+  }
+  .teaser h3 { font-size: 20px; margin-bottom: 12px; line-height: 1.3; }
+  .teaser p { font-size: 15px; color: var(--text-muted); margin: 0; line-height: 1.65; }
+
+  /* FORM */
+  .form-section {
+    background:
+      linear-gradient(180deg, rgba(250, 247, 242, 0.96) 0%, rgba(250, 247, 242, 0.99) 100%),
+      url('https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=1800&q=70&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  @media (max-width: 768px) { .form-section { background-attachment: scroll; } }
+  .form-wrap {
+    max-width: 720px;
+    margin: 48px auto 0;
+    background: var(--cream);
+    padding: 56px 48px;
+    border-top: 4px solid var(--gold);
+    box-shadow: var(--shadow-lg);
+    position: relative;
+  }
+  @media (max-width: 600px) { .form-wrap { padding: 36px 24px; } }
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  @media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } }
+  label {
+    display: block;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--royal-deep);
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+  label .opt {
+    font-weight: normal;
+    text-transform: none;
+    color: var(--text-muted);
+    letter-spacing: 0;
+    font-size: 13px;
+    font-style: italic;
+    margin-left: 6px;
+  }
+  input[type="text"], input[type="email"], input[type="tel"], input[type="number"],
+  select, textarea {
+    width: 100%;
+    padding: 14px 18px;
+    font-family: Georgia, serif;
+    font-size: 16px;
+    background: var(--cream-warm);
+    border: 1px solid var(--line);
+    color: var(--text-dark);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+  input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--gold);
+    background: var(--cream);
+    box-shadow: 0 0 0 4px rgba(184, 154, 92, 0.12);
+  }
+  textarea { min-height: 100px; resize: vertical; font-family: Georgia, serif; }
+  .consent {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    margin: 20px 0;
+    padding: 18px;
+    background: var(--cream-warm);
+    border-left: 3px solid var(--gold);
+    transition: background 0.3s ease;
+  }
+  .consent:hover { background: #EFE7D5; }
+  .consent input[type="checkbox"] {
+    margin-top: 4px;
+    width: 18px; height: 18px;
+    accent-color: var(--royal-deep);
+    flex-shrink: 0;
+    cursor: pointer;
+  }
+  .consent label {
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.55;
+    color: var(--text-dark);
+    margin: 0;
+    cursor: pointer;
+  }
+  .consent a { color: var(--royal-mid); text-decoration: underline; }
+  .form-submit {
+    width: 100%;
+    margin-top: 24px;
+    background: var(--royal-deep);
+    color: var(--cream);
+    box-shadow: 0 6px 20px rgba(45, 42, 107, 0.3);
+    justify-content: center;
+  }
+  .form-submit:hover {
+    background: var(--royal-mid);
+    box-shadow: 0 12px 28px rgba(45, 42, 107, 0.42);
+  }
+  .form-note {
+    text-align: center;
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 22px;
+    font-style: italic;
+  }
+
+  /* FAQ */
+  .faq-list {
+    margin-top: 48px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px 56px;
+  }
+  @media (max-width: 800px) { .faq-list { grid-template-columns: 1fr; } }
+  .faq-item {
+    padding: 24px 0;
+    border-top: 1px solid var(--line);
+    transition: border-color 0.3s ease;
+  }
+  .faq-item:hover { border-top-color: var(--gold); }
+  .faq-item h3 {
+    font-size: 18px;
+    color: var(--royal-deep);
+    margin-bottom: 8px;
+    display: flex;
+    gap: 12px;
+    align-items: baseline;
+  }
+  .faq-item h3::before {
+    content: '—';
+    color: var(--gold);
+    font-style: italic;
+    flex-shrink: 0;
+  }
+  .faq-item p { font-size: 15px; color: var(--text-muted); margin: 0; padding-left: 24px; }
+
+  /* FLEX-OPTIONS */
+  .flex-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-top: 56px;
+  }
+  @media (max-width: 900px) { .flex-options { grid-template-columns: 1fr; } }
+  .flex-option {
+    padding: 40px 32px;
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    position: relative;
+    transition: all 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+  }
+  .flex-option::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease;
+  }
+  .flex-option:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+    border-color: transparent;
+  }
+  .flex-option:hover::before { transform: scaleX(1); }
+  .flex-icon {
+    width: 56px; height: 56px;
+    margin-bottom: 24px;
+    background: linear-gradient(135deg, var(--royal-deep), var(--royal-mid));
+    color: var(--gold-soft);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    transition: transform 0.4s ease;
+  }
+  .flex-option:hover .flex-icon { transform: rotate(-6deg) scale(1.05); }
+  .flex-option h3 { font-size: 21px; margin-bottom: 12px; }
+  .flex-option p { font-size: 15px; color: var(--text-muted); margin: 0; line-height: 1.6; }
+  .flex-tagline {
+    text-align: center;
+    margin-top: 48px;
+    font-size: 22px;
+    font-style: italic;
+    color: var(--royal-mid);
+    letter-spacing: 0.3px;
+  }
+  .flex-tagline strong { color: var(--gold); font-style: normal; font-weight: bold; }
+
+  /* REFERRAL */
+  .referral-section { padding: 80px 0; background: var(--cream-warm); }
+  .referral-card {
+    background: linear-gradient(135deg, var(--royal-deep) 0%, var(--royal-mid) 100%);
+    color: var(--cream);
+    border-radius: 12px;
+    padding: 56px 48px;
+    box-shadow: var(--shadow-lg);
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 48px;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .referral-card::before {
+    content: '';
+    position: absolute;
+    top: -120px; right: -120px;
+    width: 380px; height: 380px;
+    background: radial-gradient(circle, rgba(184,154,92,0.22) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  @media (max-width: 800px) {
+    .referral-card { grid-template-columns: 1fr; gap: 32px; padding: 40px 28px; }
+  }
+  .referral-tag {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--royal-deep);
+    padding: 5px 14px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 100px;
+    margin-bottom: 18px;
+  }
+  .referral-card h2 {
+    color: var(--cream);
+    font-size: clamp(26px, 3.6vw, 36px);
+    line-height: 1.2;
+    margin-bottom: 16px;
+    font-weight: normal;
+  }
+  .referral-card h2 em { color: var(--gold-soft); font-style: italic; }
+  .referral-card p { color: rgba(250, 247, 242, 0.88); margin-bottom: 28px; line-height: 1.65; font-size: 16px; }
+  .referral-stages { display: grid; gap: 14px; position: relative; z-index: 2; }
+  .referral-stage {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(184, 154, 92, 0.35);
+    border-radius: 10px;
+    padding: 18px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    transition: all 0.3s ease;
+  }
+  .referral-stage:hover {
+    background: rgba(184, 154, 92, 0.18);
+    transform: translateX(4px);
+    border-color: var(--gold);
+  }
+  .referral-stage strong {
+    color: var(--gold-bright);
+    font-size: 22px;
+    font-weight: normal;
+    font-style: italic;
+    white-space: nowrap;
+  }
+  .referral-stage span {
+    color: rgba(250, 247, 242, 0.78);
+    font-size: 13px;
+    text-align: right;
+    line-height: 1.4;
+  }
+  .btn-referral {
+    background: var(--gold);
+    color: var(--royal-deep);
+    box-shadow: 0 6px 20px rgba(184, 154, 92, 0.4);
+  }
+  .btn-referral:hover {
+    background: var(--gold-bright);
+    box-shadow: 0 12px 28px rgba(184, 154, 92, 0.55);
+  }
+
+  /* HIGHLIGHT-Block für „Tierschutz bedeutet auch Absicherung" */
+  .highlight-banner {
+    margin: 48px 0 0;
+    padding: 40px 36px;
+    background: linear-gradient(135deg, var(--cream-warm) 0%, #EFE7D5 100%);
+    border-left: 4px solid var(--gold);
+    border-radius: 4px;
+    box-shadow: var(--shadow-sm);
+  }
+  .highlight-banner h3 {
+    color: var(--royal-deep);
+    font-style: italic;
+    font-size: 26px;
+    margin-bottom: 14px;
+  }
+  .highlight-banner p {
+    color: var(--text-dark);
+    font-size: 17px;
+    margin: 0;
+    line-height: 1.7;
+  }
+
+  /* WHATSAPP */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 28px; right: 28px;
+    width: 64px; height: 64px;
+    background: #25D366;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+    z-index: 999;
+    transition: all 0.3s ease;
+    animation: waPulse 2.5s ease-in-out infinite;
+  }
+  .whatsapp-float:hover {
+    transform: scale(1.1) rotate(-8deg);
+    box-shadow: 0 14px 32px rgba(37, 211, 102, 0.55);
+  }
+  .whatsapp-float svg { width: 32px; height: 32px; fill: currentColor; }
+  @keyframes waPulse {
+    0%, 100% { box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4), 0 0 0 0 rgba(37, 211, 102, 0); }
+    50% { box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4), 0 0 0 14px rgba(37, 211, 102, 0); }
+  }
+  .whatsapp-float-label {
+    position: absolute;
+    right: 76px;
+    background: var(--royal-deep);
+    color: var(--cream);
+    padding: 10px 16px;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(10px);
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-md);
+  }
+  .whatsapp-float:hover .whatsapp-float-label { opacity: 1; transform: translateX(0); }
+  @media (max-width: 600px) {
+    .whatsapp-float { width: 56px; height: 56px; bottom: 20px; right: 20px; }
+    .whatsapp-float-label { display: none; }
+  }
+  .btn-whatsapp { background: #25D366; color: #fff; box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35); }
+  .btn-whatsapp:hover { background: #1FAE54; color: #fff; box-shadow: 0 12px 28px rgba(37, 211, 102, 0.5); }
+  .btn-whatsapp svg { width: 22px; height: 22px; fill: currentColor; }
+  .btn-calendly { background: var(--royal-deep); color: var(--cream); box-shadow: 0 6px 20px rgba(45, 42, 107, 0.3); }
+  .btn-calendly:hover { background: var(--royal-mid); box-shadow: 0 12px 28px rgba(45, 42, 107, 0.45); }
+
+  /* COMPLIANCE + FOOTER */
+  .compliance {
+    background: var(--cream-warm);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 36px 0;
+    text-align: center;
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+  .compliance strong { color: var(--royal-deep); }
+  .compliance a { color: var(--royal-deep); text-decoration: underline; }
+  footer {
+    background: var(--royal-deep);
+    color: rgba(250, 247, 242, 0.7);
+    padding: 56px 0 32px;
+    font-size: 14px;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 36px;
+  }
+  @media (max-width: 700px) { .footer-grid { grid-template-columns: 1fr; gap: 28px; } }
+  footer h4 {
+    color: var(--gold-soft);
+    font-size: 13px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    font-weight: bold;
+  }
+  .footer-meta {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 4px 16px;
+    font-size: 12.5px;
+    line-height: 1.5;
+    color: rgba(250, 247, 242, 0.55);
+  }
+  .footer-meta dt { color: rgba(250, 247, 242, 0.42); font-style: italic; white-space: nowrap; }
+  .footer-meta dd { color: rgba(250, 247, 242, 0.7); }
+  footer a {
+    color: rgba(250, 247, 242, 0.78);
+    text-decoration: none;
+    display: block;
+    padding: 5px 0;
+    transition: all 0.2s ease;
+    position: relative;
+    padding-left: 0;
+  }
+  footer a::before {
+    content: '→';
+    position: absolute;
+    left: -16px;
+    opacity: 0;
+    transition: all 0.3s ease;
+    color: var(--gold);
+  }
+  footer a:hover { color: var(--gold-soft); padding-left: 8px; }
+  footer a:hover::before { opacity: 1; left: -4px; }
+  .footer-bottom {
+    border-top: 1px solid rgba(184, 154, 92, 0.2);
+    padding-top: 28px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 18px;
+    font-size: 13px;
+  }
+  img { display: block; max-width: 100%; }
+</style>
+</head>
+<body>
+
+<!-- ====== HERO ====== -->
+<header class="hero">
+  <div class="hero-bg"></div>
+  <div class="container hero-content">
+    <div class="brand-line">Natürlich Abgesichert · Spezialist für Tierversicherung</div>
+
+    <span class="hero-tag">Für Hund &amp; Katze · exklusiv für Tierschutzvereine, Tierheime & Pflegestellen-Netze</span>
+
+    <h1>Damit eine Adoption — Hund oder Katze — <em>nicht am Ersparten scheitert.</em></h1>
+
+    <p class="hero-sub">
+      Online-Hundestuben für Eure Adoptanten — kostenfrei, ehrlich,
+      ohne Verkaufsdruck. Wir machen Aufklärung rund um Hunde- und
+      Katzen-Versicherung. Ihr ladet ein, für jeden abgeschlossenen
+      Vertrag fließt eine Spende direkt in Eure Vereinskasse.
+    </p>
+
+    <div class="meta-bar">
+      <div class="meta-item">
+        <span class="meta-label">Format</span>
+        <span class="meta-value">Online · Hundestube via Zoom</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Frequenz</span>
+        <span class="meta-value">Mehrmals jährlich · planbar</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Teilnahme</span>
+        <span class="meta-value">Hunde- &amp; Katzen-Adoptanten · Pflegestellen · Ehrenamt</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Kosten</span>
+        <span class="meta-value">Keine · für alle Beteiligten</span>
+      </div>
+    </div>
+
+    <div class="cta-group">
+      <a href="#anfrage" class="btn btn-primary-glow">
+        <span>Hundestube für unseren Verein anfragen</span>
+        <span class="btn-arrow">→</span>
+      </a>
+      <a href="https://wa.me/49XXXXXXXXXX?text=Hallo%20Otto%2C%20wir%20sind%20ein%20Tierschutzverein%2FTierheim%20und%20interessieren%20uns%20f%C3%BCr%20eine%20Hundestube%20und%20die%20F%C3%B6rder-Kooperation."
+         class="btn btn-whatsapp" target="_blank" rel="noopener">
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M16.003 3C9.376 3 4 8.376 4 15.003c0 2.117.554 4.184 1.605 6.005L4 28l7.166-1.566a11.95 11.95 0 004.834 1.025h.005C22.628 27.46 28 22.087 28 15.46c0-3.205-1.248-6.219-3.514-8.486A11.93 11.93 0 0016.003 3zm0 21.964h-.004a9.96 9.96 0 01-5.078-1.393l-.364-.216-4.252.929.91-4.147-.237-.378a9.967 9.967 0 01-1.526-5.756c0-5.514 4.49-10.004 10.005-10.004 2.673 0 5.184 1.04 7.073 2.93a9.92 9.92 0 012.929 7.078c0 5.515-4.49 10.003-10.005 10.003zm5.475-7.5c-.3-.15-1.776-.876-2.052-.976-.275-.1-.476-.15-.676.15-.2.3-.776.976-.95 1.176-.176.2-.35.225-.65.075-.3-.15-1.267-.467-2.413-1.49-.892-.795-1.494-1.776-1.668-2.076-.176-.3-.019-.461.13-.611.135-.134.3-.35.45-.526.15-.176.2-.3.3-.5.1-.2.05-.376-.025-.526-.075-.15-.676-1.628-.926-2.227-.244-.585-.49-.505-.676-.515-.176-.008-.376-.01-.576-.01-.2 0-.526.075-.801.376-.275.3-1.05 1.026-1.05 2.501s1.075 2.902 1.225 3.103c.15.2 2.114 3.226 5.123 4.524.715.31 1.273.494 1.708.633.717.228 1.37.196 1.886.119.575-.086 1.776-.726 2.027-1.426.25-.701.25-1.301.175-1.427-.075-.125-.275-.2-.575-.35z"/>
+        </svg>
+        <span>Per WhatsApp anfragen</span>
+      </a>
+      <a href="#wie-laeuft" class="btn btn-ghost">
+        <span>Wie läuft das ab?</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- ====== LEITSATZ ====== -->
+<section class="cream reveal">
+  <div class="container">
+    <div class="section-eyebrow">Unser Leitsatz</div>
+    <h2>Tierschutz bedeutet <em>auch Absicherung.</em></h2>
+    <div class="divider"></div>
+    <p class="lead">
+      Jede Familie kann irgendwann in einen Notfall geraten — ein Unfall,
+      eine OP, ein Befund am Wochenende. <strong>Akute Tierarzt-Rechnungen
+      bewegen sich heute schnell bei 5.000 €</strong> (allein ein CT/MRT
+      kostet 1.000–2.500 €). Dazu chronische Befunde wie Arthrose,
+      Niereninsuffizienz oder Epilepsie über die Jahre.
+    </p>
+
+    <div class="highlight-banner">
+      <h3>„Niemand soll auf eine Adoption verzichten müssen, nur weil er nicht fünftausend Euro auf der hohen Kante hat."</h3>
+      <p>
+        Eine gute Krankenvoll- oder OP-Versicherung macht das Risiko
+        <strong>planbar und fair</strong> — vorausgesetzt, die Beratung
+        dahinter ist ehrlich. Genau dafür sind wir da. Und für jeden
+        abgeschlossenen Vertrag fließt eine Spende <strong>direkt in Eure
+        Vereinskasse</strong>.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ====== RISIKOMOMENTE NACH DER ADOPTION ====== -->
+<section class="reveal">
+  <div class="container">
+    <div class="section-eyebrow">Diese Momente trifft jede Adoptionsfamilie</div>
+    <h2>Vier typische Situationen, in denen es <em>kippen kann.</em></h2>
+    <div class="divider"></div>
+
+    <div class="teaser-grid cols-2">
+      <div class="teaser">
+        <div class="teaser-num">I</div>
+        <h3>Umzug ins neue Zuhause</h3>
+        <p>
+          Stress senkt das Immunsystem — Magen/Darm beim Hund, reviergebundene Krise bei der Katze. Die Wochen direkt nach der Adoption sind genau die Zeit, in der eine Versicherung schon laufen muss.
+        </p>
+      </div>
+
+      <div class="teaser">
+        <div class="teaser-num">II</div>
+        <h3>Integration ins Rudel</h3>
+        <p>
+          Rangelei mit dem Familienhund, Beißvorfall beim ersten Spaziergang, Auseinandersetzung mit der Resident-Katze. Passiert auch in liebevollen Haushalten — Haftpflicht und Krankenschutz schützen alle Beteiligten.
+        </p>
+      </div>
+
+      <div class="teaser">
+        <div class="teaser-num">III</div>
+        <h3>Begegnungen draußen</h3>
+        <p>
+          Der freilaufende fremde Hund. Das Kind, das ungefragt streichelt. Bei Freigänger-Katzen: Reviergrenzen, Abszesse, Autos, Marder. Eine Sekunde Pech — und es geht zum Tierarzt oder Anwalt.
+        </p>
+      </div>
+
+      <div class="teaser">
+        <div class="teaser-num">IV</div>
+        <h3>Routine-Termin wird Notfall</h3>
+        <p>
+          Magendrehung, Bandscheibe, Tumor-Befund, FIP, Harnverhalt beim Kater. Innerhalb von Stunden stehen 2.000–5.000 € im Raum. Ohne Versicherung steht die Entscheidung „behandeln oder loslassen" — die niemand treffen soll.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== VALUE FÜR VEREIN + ADOPTANTEN ====== -->
+<section class="cream reveal">
+  <div class="container">
+    <div class="section-eyebrow">Für Euren Verein</div>
+    <h2>Was Eure Adoptanten davon haben — <em>und was Ihr.</em></h2>
+    <div class="divider"></div>
+
+    <div class="value-grid">
+      <div class="value-card">
+        <div class="value-icon">i</div>
+        <h3>Für Eure Adoptanten — Hund &amp; Katze</h3>
+        <p>
+          Ehrliche Beratung zu <strong>Haftpflicht, OP- und Krankenvoll­versicherung</strong> —
+          inklusive der typischen Adoptions­tier-Fragen: Vorerkrankungen,
+          Hunde aus dem Ausland, Notfellchen-Katzen. Keine Versprechen,
+          die wir nicht halten können.
+        </p>
+      </div>
+
+      <div class="value-card">
+        <div class="value-icon">ii</div>
+        <h3>Für Euren Verein</h3>
+        <p>
+          Für jeden abgeschlossenen Vertrag fließt eine <strong>Spende
+          direkt in Eure Vereinskasse</strong> — auf Wunsch mit
+          Spendenquittung. Wir liefern Einladungs-Mail, Aushänge und
+          digitales Infomaterial. Ihr leitet weiter.
+          <strong>Kein Verwaltungsaufwand, keine Listen.</strong>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== INHALT — WAS LERNEN ADOPTANTEN ====== -->
+<section class="reveal">
+  <div class="container">
+    <div class="section-eyebrow">Inhalt in der Hundestube</div>
+    <h2>Was die Teilnehmer mitnehmen</h2>
+    <div class="divider"></div>
+    <p class="lead">
+      Sechs Themen, durchgehend im Dialog. Kein Verkaufsvortrag — ein
+      offener Infoabend von Tierhaltern für Tierhalter.
+    </p>
+
+    <div class="teaser-grid">
+      <div class="teaser">
+        <div class="teaser-num">I</div>
+        <h3>Brauchen wir wirklich eine Haftpflicht?</h3>
+        <p>Ja — fast immer. Bei Hunden in sieben Bundesländern sogar Pflicht. Was passiert, wenn der Hund jemanden anspringt oder die Katze einen Unfall verursacht? Wir klären, was sinnvoll abgesichert sein muss.</p>
+      </div>
+
+      <div class="teaser">
+        <div class="teaser-num">II</div>
+        <h3>OP-Versicherung oder Krankenvoll — was passt zu uns?</h3>
+        <p>Die OP-Versicherung greift bei großen Eingriffen. Die Krankenvoll übernimmt auch Tierarzt-Alltag und chronische Behandlungen. Was zu Eurem Tier und Eurem Geldbeutel passt — besprechen wir ohne Verkaufsdruck.</p>
+      </div>
+
+      <div class="teaser">
+        <div class="teaser-num">III</div>
+        <h3>Was, wenn unser Tier eine Vorgeschichte hat?</h3>
+        <p>Auslandshunde mit Mittelmeerkrankheiten, Tierheim-Katzen mit FIV/FeLV, unklare Anamnese: Wir sagen offen, welche Versicherer damit umgehen — und welche nicht. Keine Versprechen ohne Substanz.</p>
+      </div>
+
+      <div class="teaser">
+        <div class="teaser-num">IV</div>
+        <h3>Was kostet ein Notfall heute wirklich?</h3>
+        <p>Eine Kreuzband-OP heute: 2.500–5.000 €. Magendrehung 3.000–5.000 €. Bandscheibe 3.500–5.500 €. Selbst ein CT oder MRT geht bei 1.000 € los. Damit niemand vor der Wahl „behandeln oder loslassen" steht.</p>
+      </div>
+
+      <div class="teaser">
+        <div class="teaser-num">V</div>
+        <h3>Was wird teuer im Alter oder bei chronischen Diagnosen?</h3>
+        <p>Arthrose, Niereninsuffizienz, Herzschwäche, Epilepsie — Tabletten, Spezialfutter und regelmäßige Kontrollen summieren sich über Jahre zu fünfstelligen Beträgen. <strong>Das deckt nur eine Krankenvoll­versicherung</strong> — niemand denkt daran, wenn das Tier frisch einzieht.</p>
+      </div>
+
+      <div class="teaser">
+        <div class="teaser-num">VI</div>
+        <h3>Was, wenn wir später Hilfe brauchen?</h3>
+        <p>Im Schadenfall, beim Tarifwechsel, beim Halterwechsel — wir bleiben Eure Ansprechpartner. Auch fünf Jahre nach Abschluss greift Ihr zum Hörer und wir sind da.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== HUNDESTUBE-SHOWCASE ====== -->
+<section class="cream reveal">
+  <div class="container">
+    <div class="showcase">
+      <div class="showcase-img-wrap">
+        <img
+          src="https://images.unsplash.com/photo-1583511655802-41816b472ed5?w=1200&q=80&auto=format&fit=crop"
+          alt="Hund und Katze — Symbolbild Adoption"
+          loading="lazy"
+        >
+        <div class="img-tag">Hundestube</div>
+      </div>
+      <div>
+        <div class="section-eyebrow">Was in der Hundestube passiert</div>
+        <h2>Kein Verkauf. <em>Ein Gespräch auf Augenhöhe.</em></h2>
+        <div class="divider"></div>
+        <p>
+          Eure Adoptanten stellen Fragen, wir antworten konkret und
+          ehrlich. Wer mag, mit Kamera; wer lieber zuhört, im Chat.
+          <strong>Keine Pflicht, kein Druck.</strong> Faire Tarife für
+          jedes Budget — gerade weil viele Adoptanten knapp planen.
+        </p>
+        <p style="font-style: italic; color: var(--royal-mid); font-size: 18px; margin-top: 20px;">
+          „Wir machen aus dem Versicherungsdschungel eine Karte —
+          mit der sich jede Adoptionsfamilie selbst orientieren kann."
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FLEXIBILITÄT — WIE & WO ====== -->
+<section class="reveal">
+  <div class="container">
+    <div class="section-eyebrow">Flexibel</div>
+    <h2>Wann und wie — <em>genau so wie es zu Euch passt.</em></h2>
+    <div class="divider"></div>
+    <p class="lead">
+      Drei Wege — Ihr entscheidet. Termine flexibel, werktags abends oder am Wochenende.
+    </p>
+
+    <div class="flex-options">
+      <div class="flex-option">
+        <div class="flex-icon">⌂</div>
+        <h3>Jeder von zuhause</h3>
+        <p>Eigenes Gerät, eigener Zoom-Login. Niemand muss extra fahren.</p>
+      </div>
+
+      <div class="flex-option">
+        <div class="flex-icon">⇄</div>
+        <h3>Vereinsabend</h3>
+        <p>Beamer im Vereinsheim, Kaffee &amp; Kuchen, wir kommen online dazu.</p>
+      </div>
+
+      <div class="flex-option">
+        <div class="flex-icon">⊞</div>
+        <h3>Hybrid</h3>
+        <p>Ein Teil vor Ort, ein Teil zuhause — beides geht.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== ABLAUF ====== -->
+<section id="wie-laeuft" class="process-section reveal">
+  <div class="container">
+    <div class="section-eyebrow">Ablauf</div>
+    <h2>So einfach läuft das ab</h2>
+    <div class="divider"></div>
+    <p class="lead">Vier Schritte — vom Kontakt bis zur ersten Hundestube ca. 2–3 Wochen.</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Anfrage</h3>
+        <p>Kurzes Formular unten ausfüllen.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Bedarfsgespräch</h3>
+        <p>20-Min-Telefonat: Termin, Link-Einrichtung, Logo-Einbindung.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Einladung &amp; Link</h3>
+        <p>Wir liefern Einladungs-Mail, Aushänge und Vereinslink.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h3>Hundestube-Abend</h3>
+        <p>90 Minuten Dialog — Vorstand dabei oder nicht, wie Ihr wollt.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FÖRDER-KOOPERATION ====== -->
+<section class="referral-section reveal">
+  <div class="container">
+    <div class="referral-card">
+      <div>
+        <span class="referral-tag">Spende für Eure Vereinskasse</span>
+        <h2>Förder-Kooperation — <em>als Spende in Eure Vereinskasse.</em></h2>
+        <p>
+          Für jeden abgeschlossenen Vertrag fließt eine
+          <strong style="color: var(--gold-bright); font-weight: normal;">Spende direkt an
+          Euren Verein</strong> — auf Wunsch mit Spenden­quittung. So bleibt
+          Eure Gemeinnützigkeit unangetastet, und Otto kann die Förderung
+          steuerlich absetzen.
+        </p>
+        <p style="margin-bottom: 28px;">
+          Das Modell läuft <strong style="color: var(--gold-bright); font-weight: normal;">dauerhaft</strong>:
+          Solange Ihr Hunde und Katzen vermittelt, fließt für jeden
+          Vertrag über Euren Vereinslink oder im Anschluss an die
+          Hundestube eine neue Spende. Keine manuelle Erfassung,
+          keine Listen — quartalsweise Abrechnung.
+        </p>
+        <a href="https://wa.me/49XXXXXXXXXX?text=Hallo%20Otto%2C%20bitte%20schickt%20uns%20Details%20zur%20F%C3%B6rder-Kooperation%20f%C3%BCr%20Tierschutzvereine."
+           class="btn btn-referral" target="_blank" rel="noopener">
+          <span>Details zur Förder-Kooperation</span>
+          <span class="btn-arrow">→</span>
+        </a>
+      </div>
+
+      <div class="referral-stages">
+        <div class="referral-stage">
+          <strong>25 €</strong>
+          <span>Spende<br>pro abgeschlossenem Vertrag</span>
+        </div>
+        <div class="referral-stage">
+          <strong>+100 €</strong>
+          <span>extra Spende<br>für jeden 25. Vertrag</span>
+        </div>
+      </div>
+    </div>
+    <p style="text-align: center; margin-top: 32px; color: var(--text-muted); font-size: 14px; font-style: italic; max-width: 880px; margin-left: auto; margin-right: auto;">
+      Hinweis: Die endgültige Vertrags­gestaltung (Spende oder Sponsoring)
+      stimmen wir mit Euch und Eurem Steuerberater ab. Wir geben keine
+      Steuerberatung, sondern beschreiben das Modell, mit dem Otto die
+      Vereinsarbeit unterstützen will — ohne Eure Gemeinnützigkeit zu gefährden.
+    </p>
+  </div>
+</section>
+
+<!-- ====== AUCH FÜR EUCH ALS VEREIN ====== -->
+<section class="cream reveal">
+  <div class="container">
+    <div class="section-eyebrow">Auch für Euch als Verein</div>
+    <h2>Was Tierschutzvereine & Tierheime <em>selbst brauchen.</em></h2>
+    <div class="divider"></div>
+    <p class="lead">
+      Drei Bereiche, in denen wir Euch zusätzlich beraten — wenn Ihr wollt.
+    </p>
+
+    <div class="value-grid">
+      <div class="value-card">
+        <div class="value-icon">⌂</div>
+        <h3>Einrichtung &amp; Gebäude</h3>
+        <p>Tierheim-Betriebshaftpflicht, Gebäude- und Inhaltsversicherung für Tierheim, Quarantäne, Futter- und Medikamentenvorrat.</p>
+      </div>
+
+      <div class="value-card">
+        <div class="value-icon">♥</div>
+        <h3>Eure Heimtiere</h3>
+        <p>Tierhalter-Haftpflicht als <strong>Sammelpolice</strong> (deutlich günstiger als einzeln), auf Wunsch mit OP-/Krankenkostenschutz.</p>
+      </div>
+
+      <div class="value-card">
+        <div class="value-icon">⚲</div>
+        <h3>Vorstand &amp; Ehrenamt</h3>
+        <p>D&amp;O für Vorstand, Vereins-Rechtsschutz, Vertrauensschaden, Absicherung für Pflegestellen-Familien.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== ABOUT ====== -->
+<section class="about reveal">
+  <div class="container">
+    <div class="section-eyebrow" style="color: var(--gold-soft);">Wer wir sind</div>
+    <h2>Mit Leidenschaft für <em>Tier und Halter.</em></h2>
+    <div class="divider"></div>
+
+    <div class="about-grid">
+      <div>
+        <p>
+          Hinter Natürlich Abgesichert steht <strong style="color: var(--gold-soft); font-weight: normal; font-style: italic;">Otto Boldt</strong>
+          mit seinem Team — selbst Tierhalter, mit jahrelanger Erfahrung
+          als Tier-Versicherungs­spezialisten. Unser Team kommt aus den
+          <strong style="color: var(--gold-soft); font-weight: normal;">unterschiedlichsten
+          Berufen des Klein- und Großtier­sektors</strong> (Klinik,
+          Beratung, Vereins- und Tierschutzarbeit).
+        </p>
+        <p>
+          Tierschutzvereine und Tierheime sind für uns natürliche Partner —
+          weil wir denselben Grundauftrag teilen: <strong>dass es Tier
+          und Familie auch nach der Vermittlung gut geht.</strong>
+          Wir sind die Agentur, die <em>danach</em> noch ansprechbar bleibt.
+        </p>
+
+        <div class="competence-row">
+          <div class="competence-pill">
+            <div class="competence-icon">♥</div>
+            <h4>Eigene Tier-<br>halter</h4>
+            <span>aus Überzeugung</span>
+          </div>
+          <div class="competence-pill">
+            <div class="competence-icon">⚕</div>
+            <h4>Klein- &amp; Großtier-<br>Berufe</h4>
+            <span>aus Klinik, Beratung, Tierschutz</span>
+          </div>
+          <div class="competence-pill">
+            <div class="competence-icon">⚖</div>
+            <h4>§34d-Makler<br>regulierter Stand</h4>
+            <span>BaFin-konform</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-portrait">
+        <img
+          src="https://natuerlichabgesichert.de/wp-content/uploads/2025/04/Otto-mit-dem-Pferd-1.png"
+          onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1591946614720-90a587da4a36?w=900&q=80&auto=format&fit=crop';"
+          alt="Otto Boldt — Inhaber Natürlich Abgesichert"
+          loading="lazy"
+        >
+        <div class="portrait-badge">
+          <strong>Otto Boldt</strong>
+          <span>Inhaber · Natürlich Abgesichert</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FAQ ====== -->
+<section class="reveal">
+  <div class="container">
+    <div class="section-eyebrow">Häufige Fragen</div>
+    <h2>Bevor Ihr anfragt</h2>
+    <div class="divider"></div>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <h3>Was kostet uns das?</h3>
+        <p>Immer nichts. Zugang zu guter Gesundheits-Absicherung sollte jedem Halter offenstehen — egal welches Budget. Niemand muss abschließen.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Wie viele Teilnehmer sind sinnvoll?</h3>
+        <p>Mindestens 5, damit sich der Dialog lohnt. Maximal 25, damit jeder zu Wort kommt.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Auslandshunde, Notfellchen-Katzen, Vorerkrankungen — ehrlich: was geht?</h3>
+        <p>Mittelmeer­krankheiten, FIV/FeLV, chronische Befunde, unklare Anamnese: Wir sagen offen, welche Versicherer mit welcher Vorgeschichte umgehen — <strong>und welche nicht</strong>. Versprechen, die wir nicht halten können, machen wir keine.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Wer hält die Hundestube — wie neutral ist das?</h3>
+        <p>Otto Boldt und Team. <strong>Unabhängiger Versicherungsmakler nach §34d Abs. 1 GewO</strong> — Markt­vergleich statt Vertretung.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Sind wir nach Vertragsabschluss allein?</h3>
+        <p>Nein. Wir bleiben Ansprechpartner — im Schadenfall, beim Tarifwechsel, bei Halterwechsel. Auch Jahre nach Abschluss.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Müssen wir uns als Verein um Steuerthemen kümmern?</h3>
+        <p>Wir gestalten die Förderung als <strong>Spende oder Sponsoring</strong> — beide Wege sind unkompliziert für gemeinnützige Vereine und schonen Eure Gemeinnützigkeit. Konkrete Vertrags­gestaltung gemeinsam mit Eurem Steuerberater.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== ANFRAGE-FORMULAR ====== -->
+<section id="anfrage" class="form-section reveal">
+  <div class="container">
+    <div class="section-eyebrow">Anfrage stellen</div>
+    <h2>Hundestube &amp; Förder-Kooperation für Euren Verein</h2>
+    <div class="divider"></div>
+    <p class="lead">
+      Kurze Eckdaten — wir melden uns innerhalb von 2 Werktagen. Unverbindlich.
+    </p>
+
+    <form class="form-wrap" action="[FORM-BACKEND-URL]" method="POST">
+
+      <div class="form-row">
+        <div>
+          <label for="anrede">Anrede</label>
+          <select id="anrede" name="anrede" required>
+            <option value="">Bitte wählen…</option>
+            <option>Frau</option>
+            <option>Herr</option>
+            <option>Divers / keine Angabe</option>
+          </select>
+        </div>
+        <div>
+          <label for="rolle">Eure Rolle</label>
+          <select id="rolle" name="rolle" required>
+            <option value="">Bitte wählen…</option>
+            <option>Vorstand / 1. Vorsitzende:r</option>
+            <option>Tierheim-Leitung</option>
+            <option>Vermittlungs-Koordination</option>
+            <option>Pflegestellen-Koordination</option>
+            <option>Ehrenamtliche:r Helfer:in</option>
+            <option>Sonstige Funktion</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div>
+          <label for="vorname">Vorname</label>
+          <input type="text" id="vorname" name="vorname" required>
+        </div>
+        <div>
+          <label for="nachname">Nachname</label>
+          <input type="text" id="nachname" name="nachname" required>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 20px;">
+        <label for="verein">Name des Vereins / Tierheims</label>
+        <input type="text" id="verein" name="verein" placeholder="z. B. Tierschutzverein Musterstadt e. V." required>
+      </div>
+
+      <div class="form-row">
+        <div>
+          <label for="email">E-Mail</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+          <label for="telefon">Telefon</label>
+          <input type="tel" id="telefon" name="telefon" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div>
+          <label for="plz">PLZ <span class="opt">(des Vereinssitzes)</span></label>
+          <input type="text" id="plz" name="plz" maxlength="5" pattern="[0-9]{5}">
+        </div>
+        <div>
+          <label for="vermittlungen">Vermittlungen pro Jahr <span class="opt">(ca.)</span></label>
+          <input type="number" id="vermittlungen" name="vermittlungen" min="5" max="2000" placeholder="z. B. 80">
+        </div>
+      </div>
+
+      <div style="margin-bottom: 20px;">
+        <label for="frequenz">Gewünschte Wunsch-Frequenz</label>
+        <select id="frequenz" name="frequenz">
+          <option value="">Bitte wählen…</option>
+          <option>Einmaliger Pilot-Hundestube zum Kennenlernen</option>
+          <option>Halbjährlich (2× pro Jahr)</option>
+          <option>Quartalsweise (4× pro Jahr)</option>
+          <option>Flexibel — schlagt uns einen Rhythmus vor</option>
+        </select>
+      </div>
+
+      <div style="margin-bottom: 20px;">
+        <label for="link-interesse">Permanenter Empfehlungslink</label>
+        <select id="link-interesse" name="link_interesse">
+          <option value="">Bitte wählen…</option>
+          <option>Ja — Link bitte direkt mit einrichten</option>
+          <option>Erst beim Bedarfsgespräch besprechen</option>
+          <option>Interessiert uns nicht — nur die Hundestube</option>
+        </select>
+      </div>
+
+      <div style="margin-bottom: 20px;">
+        <label for="anmerkung">Anmerkungen, Fragen, Besonderheiten <span class="opt">(optional)</span></label>
+        <textarea id="anmerkung" name="anmerkung" placeholder="z. B. ‚Einbindung unseres Vereinslogos gewünscht', ‚Wir haben besonders viele Notfälle aus dem Ausland', ‚Spendenquittung wäre uns wichtig'…"></textarea>
+      </div>
+
+      <div class="consent">
+        <input type="checkbox" id="consent-dsgvo" name="consent_dsgvo" required>
+        <label for="consent-dsgvo">
+          Ich willige ein, dass meine Daten zum Zweck der Kontaktaufnahme
+          und Hundestube-/Kooperations-Organisation verarbeitet werden. Die
+          <a href="../../Webinar-Pferde-OP/datenschutz.html">Datenschutzerklärung</a>
+          habe ich gelesen. Die Einwilligung ist jederzeit per E-Mail widerrufbar.
+        </label>
+      </div>
+
+      <div class="consent">
+        <input type="checkbox" id="consent-news" name="consent_news">
+        <label for="consent-news">
+          <em>Optional:</em> Ich möchte gelegentlich (ca. 4×/Jahr)
+          Informationen zu neuen Hundestube-Themen, Tarif-Updates und
+          unserem Vertragscheck per E-Mail erhalten. Jederzeit abbestellbar.
+        </label>
+      </div>
+
+      <button type="submit" class="btn form-submit">
+        <span>Anfrage absenden</span>
+        <span class="btn-arrow">→</span>
+      </button>
+
+      <p class="form-note">
+        Eure Anfrage ist unverbindlich. Erst nach dem Bedarfsgespräch
+        legen wir gemeinsam Termin, Format und Kooperations-Details fest.
+      </p>
+    </form>
+  </div>
+</section>
+
+<!-- ====== COMPLIANCE ====== -->
+<div class="compliance">
+  <div class="container">
+    Veranstaltet werden die Hundestuben durch <strong>Natürlich Abgesichert — Inhaber Otto Boldt</strong>,
+    tätig als [Versicherungsmakler nach §34d Abs. 1 GewO, eingetragen im Vermittlerregister].
+    Die Beratung erfolgt auf Basis hinreichender Marktanalyse gemäß §60 VVG.
+    Erstinformation gemäß §15 VersVermV:
+    <a href="../../Webinar-Pferde-OP/erstinformation.pdf">PDF zum Download</a>.
+  </div>
+</div>
+
+<!-- ====== FOOTER ====== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Natürlich Abgesichert</h4>
+        <p style="font-style: italic; line-height: 1.7; color: rgba(250, 247, 242, 0.78); margin-bottom: 18px;">
+          Spezialisierte Beratung rund um Hund, Katze, Pferd und Reiter-Unfall.
+          Sachlich, persönlich, ehrlich. Tierschutz beginnt bei der
+          Aufklärung.
+        </p>
+        <dl class="footer-meta">
+          <dt>Inhaber</dt><dd>Otto Boldt</dd>
+          <dt>Sitz</dt><dd>Dresdner Str. 7b · 04103 Leipzig</dd>
+          <dt>Status</dt><dd>[Versicherungsmakler nach §34d Abs. 1 GewO]</dd>
+          <dt>Schwerpunkt</dt><dd>Tier · Reiter · Rundum-Schutz</dd>
+          <dt>Reg.-Nr.</dt><dd>[D-XXXX-XXXX-XX]</dd>
+        </dl>
+      </div>
+
+      <div>
+        <h4>Kontakt</h4>
+        <a href="https://wa.me/49XXXXXXXXXX" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="#" onclick="Calendly.initPopupWidget({url:'https://calendly.com/[CALENDLY-USERNAME]/tierschutz-kooperation'});return false;">Termin buchen</a>
+        <a href="mailto:[E-Mail einfügen]">[E-Mail]</a>
+        <a href="tel:[Telefon einfügen]">[Telefon]</a>
+        <a href="#anfrage">Hundestube-Anfrage</a>
+      </div>
+
+      <div>
+        <h4>Rechtliches</h4>
+        <a href="../../Webinar-Pferde-OP/impressum.html">Impressum</a>
+        <a href="../../Webinar-Pferde-OP/datenschutz.html">Datenschutz</a>
+        <a href="../../Webinar-Pferde-OP/erstinformation.pdf">Erstinformation §15 VersVermV</a>
+        <a href="../../Webinar-Pferde-OP/vermittlerregister.html">Vermittlerregister</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Natürlich Abgesichert · Inhaber Otto Boldt</span>
+      <span>Eingetragen im Vermittlerregister · IHK [...]</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ====== WHATSAPP FLOATING BUTTON ====== -->
+<a href="https://wa.me/49XXXXXXXXXX?text=Hallo%20Otto%2C%20ich%20bin%20vom%20Tierschutzverein%20und%20habe%20eine%20Frage%20zur%20F%C3%B6rder-Kooperation."
+   class="whatsapp-float"
+   target="_blank"
+   rel="noopener"
+   aria-label="Per WhatsApp Kontakt aufnehmen">
+  <svg viewBox="0 0 32 32" aria-hidden="true">
+    <path d="M16.003 3C9.376 3 4 8.376 4 15.003c0 2.117.554 4.184 1.605 6.005L4 28l7.166-1.566a11.95 11.95 0 004.834 1.025h.005C22.628 27.46 28 22.087 28 15.46c0-3.205-1.248-6.219-3.514-8.486A11.93 11.93 0 0016.003 3zm0 21.964h-.004a9.96 9.96 0 01-5.078-1.393l-.364-.216-4.252.929.91-4.147-.237-.378a9.967 9.967 0 01-1.526-5.756c0-5.514 4.49-10.004 10.005-10.004 2.673 0 5.184 1.04 7.073 2.93a9.92 9.92 0 012.929 7.078c0 5.515-4.49 10.003-10.005 10.003zm5.475-7.5c-.3-.15-1.776-.876-2.052-.976-.275-.1-.476-.15-.676.15-.2.3-.776.976-.95 1.176-.176.2-.35.225-.65.075-.3-.15-1.267-.467-2.413-1.49-.892-.795-1.494-1.776-1.668-2.076-.176-.3-.019-.461.13-.611.135-.134.3-.35.45-.526.15-.176.2-.3.3-.5.1-.2.05-.376-.025-.526-.075-.15-.676-1.628-.926-2.227-.244-.585-.49-.505-.676-.515-.176-.008-.376-.01-.576-.01-.2 0-.526.075-.801.376-.275.3-1.05 1.026-1.05 2.501s1.075 2.902 1.225 3.103c.15.2 2.114 3.226 5.123 4.524.715.31 1.273.494 1.708.633.717.228 1.37.196 1.886.119.575-.086 1.776-.726 2.027-1.426.25-.701.25-1.301.175-1.427-.075-.125-.275-.2-.575-.35z"/>
+  </svg>
+  <span class="whatsapp-float-label">Schreib uns!</span>
+</a>
+
+<!-- ====== SCROLL-REVEAL JS ====== -->
+<script>
+  (function() {
+    document.documentElement.classList.add('js-reveal');
+    const reveals = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) {
+      reveals.forEach(el => el.classList.add('is-visible'));
+      return;
+    }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+    reveals.forEach(el => io.observe(el));
+    setTimeout(() => { reveals.forEach(el => el.classList.add('is-visible')); }, 4000);
+  })();
+
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', function(e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

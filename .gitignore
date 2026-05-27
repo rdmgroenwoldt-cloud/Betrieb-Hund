@@ -1,0 +1,28 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*~
+
+# Node (falls später eingesetzt)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+
+# Logs / Temp
+*.log
+*.tmp
+tmp/
+.cache/
+
+# Sensible Live-Daten (falls jemand mal Form-Backends einbaut)
+.env
+.env.local
+*.secret
