@@ -1143,6 +1143,32 @@
     margin-top: 22px;
     font-style: italic;
   }
+  .form-success {
+    text-align: center;
+    padding: 40px 28px;
+    background: linear-gradient(135deg, var(--ivory) 0%, var(--cream-warm) 100%);
+    border-top: 4px solid var(--gold);
+    border-radius: 4px;
+  }
+  .form-success h3 {
+    color: var(--wine-deep);
+    font-size: 26px;
+    margin-bottom: 14px;
+    font-style: italic;
+  }
+  .form-success p { color: var(--text-dark); font-size: 16px; margin: 0; }
+  .form-success a { color: var(--wine-deep); text-decoration: underline; }
+  .form-error {
+    background: rgba(139, 37, 64, 0.10);
+    border-left: 3px solid var(--wine-bright);
+    padding: 16px 20px;
+    margin-bottom: 18px;
+    color: var(--wine-deep);
+    font-size: 14px;
+    line-height: 1.55;
+    border-radius: 4px;
+  }
+  .form-error a { color: var(--wine-deep); text-decoration: underline; }
 
   /* FAQ */
   .faq-list {
@@ -1985,7 +2011,11 @@
       Kurze Eckdaten — wir melden uns innerhalb von 2 Werktagen. Unverbindlich.
     </p>
 
-    <form class="form-wrap" action="mailto:Info@natuerlichabgesichert.de?subject=Trainer-%2F%20Vereins-Partnerschaft-Anfrage" method="POST" enctype="text/plain">
+    <form id="anfrage-form" class="form-wrap" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="WEB3FORMS_ACCESS_KEY_HIER_EINTRAGEN">
+      <input type="hidden" name="subject" value="Trainer-/Vereins-Partnerschafts-Anfrage">
+      <input type="hidden" name="from_name" value="Hundestuben-Landingpage (Hundetrainer)">
+      <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
 
       <div class="form-row">
         <div>
@@ -2229,6 +2259,53 @@
       }
     });
   });
+
+  /* Web3Forms — Anfrage absenden ohne Page-Reload */
+  (function() {
+    const form = document.getElementById('anfrage-form');
+    if (!form) return;
+    const submitBtn = form.querySelector('button[type="submit"]');
+
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span>Wird gesendet…</span>';
+      }
+      try {
+        const data = new FormData(form);
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+        const json = await res.json().catch(() => ({}));
+        if (res.ok && json.success !== false) {
+          form.innerHTML = '<div class="form-success">'
+            + '<h3>Danke — Deine Anfrage ist angekommen.</h3>'
+            + '<p>Otto und sein Team melden sich innerhalb von 2 Werktagen bei Dir. '
+            + 'Wenn Du in der Zwischenzeit eine kurze Rückmeldung brauchst, schreib '
+            + 'gerne direkt an <a href="mailto:Info@natuerlichabgesichert.de">Info@natuerlichabgesichert.de</a> '
+            + 'oder per <a href="https://wa.me/491791194096" target="_blank" rel="noopener">WhatsApp</a>.</p>'
+            + '</div>';
+          form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+          throw new Error(json.message || 'Unbekannter Fehler');
+        }
+      } catch (err) {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = '<span>Anfrage absenden</span><span class="btn-arrow">→</span>';
+        }
+        const fallback = document.createElement('div');
+        fallback.className = 'form-error';
+        fallback.innerHTML = '<strong>Leider hat das Absenden gerade nicht geklappt.</strong><br>'
+          + 'Bitte schreib uns direkt an <a href="mailto:Info@natuerlichabgesichert.de">Info@natuerlichabgesichert.de</a> '
+          + 'oder per <a href="https://wa.me/491791194096" target="_blank" rel="noopener">WhatsApp</a>.';
+        form.insertBefore(fallback, submitBtn);
+      }
+    });
+  })();
 </script>
 
 </body>

@@ -439,6 +439,35 @@ section.section-dark .highlight-banner p strong, section.section-dark-wine .high
 }
 @media (max-width: 720px) { .cta-group { flex-direction: column; align-items: stretch; } }
 
+/* Form-Success + Form-Error (fuer Web3Forms-Submit) */
+.form-success {
+  text-align: center;
+  padding: 40px 28px;
+  background: linear-gradient(135deg, var(--ivory) 0%, var(--cream-warm) 100%);
+  border-top: 4px solid var(--gold);
+  border-radius: 4px;
+}
+.form-success h3 {
+  color: var(--wine-deep);
+  font-size: 26px;
+  margin-bottom: 14px;
+  font-style: italic;
+}
+.form-success p { color: var(--text-dark); font-size: 16px; margin: 0; }
+.form-success a { color: var(--wine-deep); text-decoration: underline; }
+
+.form-error {
+  background: rgba(139, 37, 64, 0.10);
+  border-left: 3px solid var(--wine-bright);
+  padding: 16px 20px;
+  margin-bottom: 18px;
+  color: var(--wine-deep);
+  font-size: 14px;
+  line-height: 1.55;
+  border-radius: 4px;
+}
+.form-error a { color: var(--wine-deep); text-decoration: underline; }
+
 /* ---------- FAQ ---------- */
 .faq-list {
   margin-top: 48px;
