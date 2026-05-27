@@ -42,9 +42,8 @@
     border-bottom: 2px solid var(--gold);
   }
   .screen-hint strong { color: var(--gold-bright); }
-  .screen-hint a { color: var(--gold-bright); text-decoration: underline; }
 
-  /* A5 Sheet hochformat 148 x 210mm */
+  /* A5 Sheet 148 x 210mm */
   .sheet {
     width: 148mm;
     height: 210mm;
@@ -54,7 +53,7 @@
       radial-gradient(ellipse at bottom left, rgba(110, 21, 46, 0.50) 0%, transparent 55%),
       linear-gradient(160deg, var(--royal-deep) 0%, var(--wine-deep) 65%, var(--royal-mid) 100%);
     color: var(--cream);
-    padding: 11mm 12mm;
+    padding: 9mm 11mm;
     position: relative;
     overflow: hidden;
     box-shadow: 0 24px 80px rgba(0,0,0,0.55);
@@ -77,36 +76,32 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 12px;
-    padding-bottom: 5mm;
+    gap: 10px;
+    padding-bottom: 4mm;
     border-bottom: 1px solid rgba(212, 184, 124, 0.25);
   }
-  .head img.logo { height: 38px; width: auto; }
+  .head img.logo { height: 36px; width: auto; }
   .head .head-tag {
-    font-size: 9px;
-    letter-spacing: 2.2px;
+    font-size: 8.5px;
+    letter-spacing: 2px;
     text-transform: uppercase;
     color: var(--gold-soft);
     border: 1px solid rgba(212, 184, 124, 0.5);
-    padding: 5px 9px;
+    padding: 4px 9px;
     border-radius: 100px;
     text-align: center;
     line-height: 1.3;
   }
 
-  /* HERO: Bild + Headline */
-  .hero {
-    margin-top: 6mm;
-    text-align: center;
-  }
+  /* HERO: Bild gross */
   .hero-image {
     width: 100%;
-    aspect-ratio: 24 / 9;
+    aspect-ratio: 16 / 9;
     border-radius: 8px;
     overflow: hidden;
     border: 1px solid rgba(212, 184, 124, 0.4);
     box-shadow: 0 5px 14px rgba(0,0,0,0.30);
-    margin-bottom: 5mm;
+    margin-top: 5mm;
   }
   .hero-image img {
     width: 100%;
@@ -114,8 +109,14 @@
     object-fit: cover;
     display: block;
   }
+
+  /* HEADLINE BLOCK */
+  .headline-block {
+    margin-top: 5mm;
+    text-align: center;
+  }
   .headline {
-    font-size: 24px;
+    font-size: 22px;
     line-height: 1.15;
     font-weight: normal;
     letter-spacing: -0.3px;
@@ -126,70 +127,77 @@
     font-style: italic;
   }
   .lead {
-    margin-top: 4mm;
-    font-size: 12px;
-    line-height: 1.55;
+    margin-top: 3mm;
+    font-size: 11.5px;
+    line-height: 1.5;
     color: rgba(248, 244, 232, 0.92);
+    max-width: 115mm;
+    margin-left: auto;
+    margin-right: auto;
   }
   .lead strong { color: var(--gold-bright); font-weight: bold; }
 
-  /* BULLETS — was die 1:1-Beratung bietet */
-  .offer {
+  /* ACTION-CARD: Bullets links + QR rechts in EINER Box */
+  .action-card {
     margin-top: 6mm;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(110, 21, 46, 0.32) 100%);
-    border-left: 3px solid var(--gold);
-    border-radius: 4px;
-    padding: 5mm 6mm;
+    border: 1px solid var(--gold);
+    border-radius: 8px;
+    padding: 5mm 5mm;
   }
-  .offer-eyebrow {
-    font-size: 10px;
+  .action-eyebrow {
+    font-size: 9.5px;
     letter-spacing: 2.5px;
     text-transform: uppercase;
     color: var(--gold-soft);
     font-weight: bold;
+    text-align: center;
     margin-bottom: 4px;
   }
-  .offer h2 {
+  .action-headline {
     font-size: 16px;
     line-height: 1.2;
     color: var(--cream);
-    margin-bottom: 4mm;
+    text-align: center;
+    margin-bottom: 5mm;
     font-weight: normal;
   }
-  .offer h2 em { color: var(--gold-bright); font-style: italic; }
-  .offer ul { list-style: none; }
-  .offer ul li {
-    font-size: 11.5px;
+  .action-headline em { color: var(--gold-bright); font-style: italic; }
+
+  .action-grid {
+    display: grid;
+    grid-template-columns: 1fr 38mm;
+    gap: 5mm;
+    align-items: center;
+  }
+  .action-grid ul { list-style: none; }
+  .action-grid ul li {
+    font-size: 11px;
     color: rgba(248, 244, 232, 0.92);
     padding-left: 18px;
-    margin-bottom: 5px;
+    margin-bottom: 6px;
     position: relative;
-    line-height: 1.4;
+    line-height: 1.45;
   }
-  .offer ul li::before {
+  .action-grid ul li:last-child { margin-bottom: 0; }
+  .action-grid ul li::before {
     content: '✓';
     position: absolute;
     left: 0;
     color: var(--gold-bright);
     font-weight: bold;
   }
-  .offer ul li strong { color: var(--gold-bright); }
+  .action-grid ul li strong { color: var(--gold-bright); }
 
-  /* QR-Slot für Termin */
-  .qr-section {
-    margin-top: 6mm;
-    background: rgba(0,0,0,0.30);
-    border: 1px solid var(--gold);
-    border-radius: 6px;
-    padding: 5mm 5mm 4mm;
-    display: grid;
-    grid-template-columns: 36mm 1fr;
-    gap: 5mm;
+  .qr-block {
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    gap: 2mm;
   }
   .qr-placeholder {
-    width: 36mm;
-    height: 36mm;
+    width: 38mm;
+    height: 38mm;
     background: rgba(255,255,255,0.05);
     border: 2px dashed rgba(212, 184, 124, 0.55);
     border-radius: 4px;
@@ -198,69 +206,62 @@
     justify-content: center;
     text-align: center;
     color: rgba(212, 184, 124, 0.7);
-    font-size: 8.5px;
+    font-size: 8px;
     letter-spacing: 1.5px;
     text-transform: uppercase;
     line-height: 1.4;
     padding: 3mm;
   }
-  .qr-text .qr-eyebrow {
-    font-size: 10px;
-    letter-spacing: 2.5px;
+  .qr-caption {
+    font-size: 9px;
+    color: var(--gold-bright);
+    text-align: center;
     text-transform: uppercase;
-    color: var(--gold-soft);
+    letter-spacing: 1.5px;
     font-weight: bold;
-    margin-bottom: 4px;
+    line-height: 1.3;
   }
-  .qr-text h3 {
-    font-size: 15px;
-    color: var(--cream);
-    margin-bottom: 4px;
+  .qr-caption-sub {
+    font-size: 8.5px;
+    color: rgba(248, 244, 232, 0.78);
+    text-align: center;
+    line-height: 1.35;
+    text-transform: none;
+    letter-spacing: 0;
     font-weight: normal;
-    font-style: italic;
-  }
-  .qr-text h3 em { color: var(--gold-bright); font-style: normal; font-weight: bold; }
-  .qr-text p {
-    font-size: 11px;
-    line-height: 1.45;
-    color: rgba(248, 244, 232, 0.85);
   }
 
-  /* Kontakt-Block (Alternative zu QR) */
+  /* KONTAKT-ZEILE */
   .contact-line {
     margin-top: 4mm;
     text-align: center;
-    font-size: 10.5px;
-    color: rgba(248, 244, 232, 0.85);
-    padding: 3mm 5mm;
-    background: rgba(255,255,255,0.04);
-    border-radius: 4px;
-    line-height: 1.45;
+    font-size: 10px;
+    color: rgba(248, 244, 232, 0.82);
+    line-height: 1.5;
   }
   .contact-line strong { color: var(--gold-bright); }
   .contact-line .sep { color: var(--gold-soft); margin: 0 6px; }
 
-  /* FOOTER: Otto-Kontakt + Empfehlung */
+  /* FOOTER */
   .foot {
     margin-top: auto;
     padding-top: 4mm;
     border-top: 1px solid rgba(212, 184, 124, 0.30);
     text-align: center;
-    font-size: 9px;
+    font-size: 8.5px;
     color: rgba(248, 244, 232, 0.7);
     line-height: 1.55;
   }
   .foot .empfehlung {
     color: var(--gold-bright);
     font-style: italic;
-    font-size: 10px;
-    margin-bottom: 4px;
-    letter-spacing: 0.3px;
+    font-size: 9.5px;
+    margin-bottom: 3px;
   }
   .foot .imprint strong { color: rgba(248, 244, 232, 0.85); }
   .foot .legal {
-    margin-top: 2px;
-    font-size: 8px;
+    margin-top: 1px;
+    font-size: 7.5px;
     color: rgba(248, 244, 232, 0.55);
     font-style: italic;
   }
@@ -269,10 +270,9 @@
 <body>
 
 <div class="screen-hint">
-  <strong>Vorschau · A5 hochformat</strong> · Drucken mit <strong>Strg + P</strong> →
-  „Als PDF speichern" für WhatsApp/E-Mail oder direkt auf A5/A4 ausdrucken.<br>
-  Vor dem Druck: im Druck-Dialog die Option <strong>„Hintergrundgrafiken"</strong>
-  aktivieren — sonst kommt das Royal+Wein nicht durch.
+  <strong>Vorschau · A5 hochformat</strong> · <strong>Strg + P</strong> →
+  „Als PDF speichern" für WhatsApp/E-Mail oder direkt drucken. Im Druck-Dialog
+  <strong>„Hintergrundgrafiken"</strong> aktivieren — sonst kommt das Royal+Wein nicht durch.
 </div>
 
 <div class="sheet">
@@ -283,44 +283,43 @@
     <div class="head-tag">Persönliche Beratung<br>für neue Tierhalter</div>
   </div>
 
-  <!-- HERO -->
-  <div class="hero">
-    <div class="hero-image">
-      <img src="https://images.unsplash.com/photo-1563460716037-460a3ad24ba9?w=900&q=80&auto=format&fit=crop" alt="Hund und Katze zusammen — Adoptionstiere">
-    </div>
+  <!-- HERO BILD -->
+  <div class="hero-image">
+    <img src="https://images.unsplash.com/photo-1563460716037-460a3ad24ba9?w=900&q=80&auto=format&fit=crop" alt="Hund und Katze zusammen — Adoptionstiere">
+  </div>
+
+  <!-- HEADLINE + LEAD -->
+  <div class="headline-block">
     <h1 class="headline">Herzlichen Glückwunsch zu Deinem <em>neuen Familienmitglied!</em></h1>
     <p class="lead">
-      Eine Adoption ist ein wunderschöner Schritt — und der Beginn eines
-      Lebens voller Verantwortung. <strong>Damit Du Dein Tier von Anfang an
-      gut absichern kannst</strong>, begleiten wir Dich auf Wunsch persönlich
-      durch den Versicherungs-Dschungel.
+      <strong>Damit Du Dein Tier von Anfang an gut absichern kannst</strong> —
+      wir begleiten Dich auf Wunsch persönlich durch den Versicherungs-Dschungel.
     </p>
   </div>
 
-  <!-- OFFER -->
-  <div class="offer">
-    <div class="offer-eyebrow">1 : 1 Beratung mit Natürlich Abgesichert</div>
-    <h2>Persönlich, ehrlich, <em>unverbindlich</em></h2>
-    <ul>
-      <li><strong>Persönliches Gespräch</strong> per Telefon</li>
-      <li>Wir schauen uns die <strong>Vorgeschichte Deines Tieres</strong> gemeinsam an</li>
-      <li><strong>Kostenfrei und unverbindlich</strong> — Du entscheidest danach in Ruhe</li>
-    </ul>
-  </div>
+  <!-- ACTION-CARD: Bullets + QR in einer Karte -->
+  <div class="action-card">
+    <div class="action-eyebrow">1 : 1 Beratung mit Natürlich Abgesichert</div>
+    <h2 class="action-headline">Persönlich, ehrlich, <em>unverbindlich</em></h2>
 
-  <!-- QR + Termin -->
-  <div class="qr-section">
-    <div class="qr-placeholder">QR-Code<br>hier aufkleben</div>
-    <div class="qr-text">
-      <div class="qr-eyebrow">Termin direkt buchen</div>
-      <h3>Such Dir einen Termin <em>aus dem Kalender</em></h3>
-      <p>Scanne den QR-Code mit Deinem Handy und wähle eine Zeit, die zu Dir passt — 30 Minuten am Telefon oder per Zoom.</p>
+    <div class="action-grid">
+      <ul>
+        <li><strong>Persönliches Gespräch</strong> per Telefon</li>
+        <li>Wir schauen uns die <strong>Vorgeschichte Deines Tieres</strong> gemeinsam an</li>
+        <li><strong>Kostenfrei und unverbindlich</strong> — Du entscheidest danach in Ruhe</li>
+      </ul>
+
+      <div class="qr-block">
+        <div class="qr-placeholder">QR-Code<br>hier aufkleben</div>
+        <div class="qr-caption">Termin buchen</div>
+        <div class="qr-caption-sub">Direkt einen Termin im Kalender wählen</div>
+      </div>
     </div>
   </div>
 
-  <!-- ALTERNATIVE -->
+  <!-- KONTAKT-ZEILE -->
   <div class="contact-line">
-    Lieber direkt anrufen oder schreiben?
+    Lieber anrufen oder schreiben?
     <span class="sep">·</span><strong>+49 179 1194096</strong>
     <span class="sep">·</span><strong>Info@natuerlichabgesichert.de</strong>
   </div>
