@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<title>Natürlich Abgesichert — Hundestube für Tierschutzvereine (Flyer)</title>
+<title>Natürlich Abgesichert — Pfotenstube für Tierschutzvereine (Flyer)</title>
 <link rel="icon" type="image/svg+xml" href="../assets/logo.svg">
 <style>
   :root {
@@ -56,7 +56,7 @@
       radial-gradient(ellipse at bottom left, rgba(110, 21, 46, 0.45) 0%, transparent 55%),
       linear-gradient(160deg, var(--royal-deep) 0%, var(--wine-deep) 65%, var(--royal-mid) 100%);
     color: var(--cream);
-    padding: 18mm 16mm;
+    padding: 12mm 14mm;
     position: relative;
     overflow: hidden;
     box-shadow: 0 24px 80px rgba(0,0,0,0.55);
@@ -81,17 +81,17 @@
     align-items: center;
     justify-content: space-between;
     gap: 16px;
-    padding-bottom: 12mm;
+    padding-bottom: 6mm;
     border-bottom: 1px solid rgba(212, 184, 124, 0.25);
   }
-  .head img.logo { height: 56px; width: auto; }
+  .head img.logo { height: 44px; width: auto; }
   .head .head-tag {
-    font-size: 10px;
-    letter-spacing: 3px;
+    font-size: 9px;
+    letter-spacing: 2.5px;
     text-transform: uppercase;
     color: var(--gold-soft);
     border: 1px solid rgba(212, 184, 124, 0.5);
-    padding: 6px 12px;
+    padding: 5px 10px;
     border-radius: 100px;
     text-align: center;
     line-height: 1.4;
@@ -99,8 +99,8 @@
 
   /* HEADLINE */
   .headline {
-    margin-top: 10mm;
-    font-size: 38px;
+    margin-top: 6mm;
+    font-size: 30px;
     line-height: 1.1;
     font-weight: normal;
     letter-spacing: -0.5px;
@@ -111,11 +111,11 @@
     font-style: italic;
   }
   .subhead {
-    margin-top: 6mm;
-    font-size: 15px;
-    line-height: 1.55;
+    margin-top: 4mm;
+    font-size: 12.5px;
+    line-height: 1.5;
     color: rgba(248, 244, 232, 0.92);
-    max-width: 145mm;
+    max-width: 160mm;
   }
   .subhead strong { color: var(--gold-bright); font-weight: bold; }
 
@@ -123,26 +123,25 @@
   .content {
     display: grid;
     grid-template-columns: 1.4fr 1fr;
-    gap: 10mm;
-    margin-top: 10mm;
-    flex: 1;
+    gap: 8mm;
+    margin-top: 6mm;
   }
 
   /* Themen-Liste links */
   .topics {
     display: flex;
     flex-direction: column;
-    gap: 5mm;
+    gap: 3.5mm;
   }
   .topic {
     display: grid;
-    grid-template-columns: 36px 1fr;
-    gap: 12px;
+    grid-template-columns: 28px 1fr;
+    gap: 10px;
     align-items: start;
   }
   .topic .num {
-    width: 32px;
-    height: 32px;
+    width: 26px;
+    height: 26px;
     background: linear-gradient(135deg, var(--gold) 0%, var(--gold-deep) 100%);
     color: var(--royal-deep);
     border-radius: 50%;
@@ -150,21 +149,21 @@
     align-items: center;
     justify-content: center;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 12px;
     font-style: italic;
     flex-shrink: 0;
   }
   .topic .text h3 {
-    font-size: 13px;
+    font-size: 11.5px;
     color: var(--gold-bright);
-    margin-bottom: 3px;
+    margin-bottom: 2px;
     font-weight: bold;
     line-height: 1.25;
   }
   .topic .text p {
-    font-size: 11.5px;
+    font-size: 10px;
     color: rgba(248, 244, 232, 0.85);
-    line-height: 1.45;
+    line-height: 1.4;
   }
 
   /* Highlight-Box rechts */
@@ -172,42 +171,34 @@
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(110, 21, 46, 0.40) 100%);
     border: 1px solid rgba(212, 184, 124, 0.45);
     border-radius: 8px;
-    padding: 8mm 7mm;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    padding: 6mm 5mm;
   }
   .highlight .h-eyebrow {
-    font-size: 10px;
+    font-size: 9px;
     letter-spacing: 2.5px;
     text-transform: uppercase;
     color: var(--gold-soft);
     font-weight: bold;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
   }
   .highlight h2 {
-    font-size: 22px;
-    line-height: 1.15;
+    font-size: 16px;
+    line-height: 1.2;
     color: var(--cream);
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     font-weight: normal;
   }
   .highlight h2 em { color: var(--gold-bright); font-style: italic; }
-  .highlight p {
-    font-size: 12px;
-    color: rgba(248, 244, 232, 0.88);
-    line-height: 1.5;
-    margin-bottom: 6mm;
-  }
-  .highlight ul { list-style: none; margin-bottom: 6mm; }
+  .highlight ul { list-style: none; margin-top: 4mm; }
   .highlight ul li {
-    font-size: 12px;
+    font-size: 10.5px;
     color: rgba(248, 244, 232, 0.92);
-    padding-left: 18px;
+    padding-left: 16px;
     margin-bottom: 5px;
     position: relative;
-    line-height: 1.45;
+    line-height: 1.4;
   }
+  .highlight ul li strong { color: var(--gold-bright); }
   .highlight ul li::before {
     content: '✓';
     position: absolute;
@@ -218,42 +209,42 @@
 
   /* QR-Section — zwei Platzhalter zum Aufkleben */
   .qr-section {
-    margin-top: 8mm;
+    margin-top: 6mm;
     background: rgba(0,0,0,0.30);
     border: 1px solid var(--gold);
     border-radius: 6px;
-    padding: 6mm;
+    padding: 5mm;
   }
   .qr-section .qr-eyebrow {
-    font-size: 10px;
+    font-size: 9px;
     letter-spacing: 2.5px;
     text-transform: uppercase;
     color: var(--gold-soft);
     font-weight: bold;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
     text-align: center;
   }
   .qr-section .qr-headline {
-    font-size: 16px;
+    font-size: 13px;
     color: var(--gold-bright);
     text-align: center;
-    margin-bottom: 5mm;
+    margin-bottom: 4mm;
     font-style: italic;
   }
   .qr-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 6mm;
+    gap: 5mm;
   }
   .qr-slot {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 3mm;
+    gap: 2mm;
   }
   .qr-placeholder {
-    width: 42mm;
-    height: 42mm;
+    width: 36mm;
+    height: 36mm;
     background: rgba(255,255,255,0.05);
     border: 2px dashed rgba(212, 184, 124, 0.55);
     border-radius: 4px;
@@ -262,38 +253,38 @@
     justify-content: center;
     text-align: center;
     color: rgba(212, 184, 124, 0.7);
-    font-size: 9px;
-    letter-spacing: 2px;
+    font-size: 8px;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
     line-height: 1.4;
-    padding: 4mm;
+    padding: 3mm;
   }
   .qr-label {
     text-align: center;
-    line-height: 1.4;
+    line-height: 1.3;
   }
   .qr-label .num {
     display: inline-block;
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
     background: var(--gold);
     color: var(--royal-deep);
     border-radius: 50%;
-    font-size: 11px;
+    font-size: 10px;
     font-weight: bold;
-    line-height: 18px;
+    line-height: 16px;
     margin-right: 4px;
   }
   .qr-label strong {
-    font-size: 12px;
+    font-size: 10.5px;
     color: var(--gold-bright);
     text-transform: uppercase;
-    letter-spacing: 1.2px;
+    letter-spacing: 1px;
   }
   .qr-label span {
     display: block;
-    font-size: 11px;
-    color: rgba(248, 244, 232, 0.85);
+    font-size: 9.5px;
+    color: rgba(248, 244, 232, 0.82);
     margin-top: 2px;
     font-family: Georgia, serif;
     letter-spacing: 0;
@@ -301,18 +292,18 @@
   }
   /* FOOTER: Otto-Kontakt */
   .foot {
-    margin-top: 6mm;
-    padding-top: 5mm;
+    margin-top: auto;
+    padding-top: 4mm;
     border-top: 1px solid rgba(212, 184, 124, 0.30);
     text-align: center;
-    font-size: 9.5px;
-    color: rgba(248, 244, 232, 0.75);
-    line-height: 1.6;
-  }
-  .foot .contact { margin-bottom: 4px; }
-  .foot .contact strong { color: var(--gold-bright); font-size: 11px; margin-right: 6px; }
-  .foot .legal {
     font-size: 9px;
+    color: rgba(248, 244, 232, 0.75);
+    line-height: 1.55;
+  }
+  .foot .contact { margin-bottom: 3px; }
+  .foot .contact strong { color: var(--gold-bright); font-size: 10px; margin-right: 5px; }
+  .foot .legal {
+    font-size: 8.5px;
     color: rgba(248, 244, 232, 0.6);
     font-style: italic;
   }
@@ -331,16 +322,15 @@
   <!-- HEADER -->
   <div class="head">
     <img src="../assets/logo.svg" alt="Natürlich Abgesichert" class="logo">
-    <div class="head-tag">Förder-Kooperation<br>für Tierschutzvereine</div>
+    <div class="head-tag">Pfotenstube<br>für Adoptanten</div>
   </div>
 
   <!-- HEADLINE -->
   <h1 class="headline">Damit eine Adoption <em>nicht am Ersparten scheitert.</em></h1>
   <p class="subhead">
-    Ein kostenfreier <strong>Online-Abend</strong> für Adoptanten von
-    Hunden und Katzen. <strong>Kein Verkauf, kein Markenname</strong> —
-    wir geben einen ehrlichen Überblick zum aktuellen Stand am
-    Versicherungsmarkt, von Menschen, die den Tierarzt-Alltag kennen.
+    Eine kostenfreie <strong>Pfotenstube</strong> für Adoptanten von
+    Hunden und Katzen. <strong>Kein Verkauf, kein Markenname</strong> — wir geben
+    einen ehrlichen Überblick zum aktuellen Stand am Versicherungsmarkt.
   </p>
 
   <!-- CONTENT -->
@@ -359,7 +349,7 @@
         <div class="num">II</div>
         <div class="text">
           <h3>OP- oder Krankenvoll — was passt zu uns?</h3>
-          <p>Vor- und Nachteile beider Tarife, ohne Verkaufsdruck.</p>
+          <p>Vor- und Nachteile beider Tarife klar gegenübergestellt.</p>
         </div>
       </div>
       <div class="topic">
@@ -412,7 +402,7 @@
   <!-- QR-CODE-BEREICH zum Aufkleben (personalisiert pro Verein) -->
   <div class="qr-section">
     <div class="qr-eyebrow">Direkt loslegen</div>
-    <div class="qr-headline">Einfach Scannen — zwei Wege zu Eurer Hundestube</div>
+    <div class="qr-headline">Einfach scannen — zwei Wege zur Pfotenstube</div>
     <div class="qr-grid">
       <div class="qr-slot">
         <div class="qr-placeholder">QR-Code<br>hier aufkleben</div>
