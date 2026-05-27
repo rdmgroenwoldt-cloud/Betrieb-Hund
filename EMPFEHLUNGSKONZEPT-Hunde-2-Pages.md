@@ -58,9 +58,8 @@ Beide Pages liegen unter `Hundestuben/`, optisch identisch zum Pferde-Design (Ro
 
 ### Beträge (Vorschlag — finale Staffel mit Otto abstimmen)
 
-- **30–80 €** pro Vertrag in die Vereinskasse (je nach Tarif: Hundehaftpflicht ~30 €, OP-Versicherung ~50 €, Krankenversicherung Premium ~80 €)
-- **+100 €** Bonus-Spende ab der 10. Vermittlung pro Jahr
-- **+250 €** Bonus-Spende ab der 25. Vermittlung pro Jahr
+- **25 €** Spende pro abgeschlossenem Vertrag (einheitlich, unabhängig vom Tarif)
+- **+100 €** Bonus-Spende für jeden 25. Vertrag (skaliert mit Aktivität)
 - Auf Wunsch direkt als Spendenquittung gemeinnützig verbucht (Otto stellt aus)
 
 ### Inhaltliche Bausteine der Page
@@ -136,10 +135,10 @@ Beide Pages liegen unter `Hundestuben/`, optisch identisch zum Pferde-Design (Ro
 
 ### Beträge (Vorschlag — finale Staffel mit Otto abstimmen)
 
-- **35–85 €** pro Vertrag (Trainer-Provision)
-- **+75 €** Bonus ab der 10. Vermittlung pro Jahr
-- **+150 €** Bonus ab der 20. Vermittlung pro Jahr
-- Jahres-Premium-Bonus „Top-Trainer-Partner" bei >30 Vermittlungen
+- **25 €** pro abgeschlossenem Vertrag (einheitlich mit Tierschutz)
+  - Bei selbstständigen Trainer:innen: **Provision** direkt
+  - Bei Hundesport­vereinen: **Spende** in die Vereinskasse (auf Wunsch mit Spendenquittung)
+- **+100 €** Bonus für jeden 25. Vertrag
 
 ### Inhaltliche Bausteine der Page
 
