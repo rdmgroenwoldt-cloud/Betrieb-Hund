@@ -8,21 +8,33 @@
 
 <style>
   :root {
-    --royal-deep: #2D2A6B;
-    --royal-mid: #4A4290;
-    --royal-light: #6B5FB5;
-    --royal-glow: rgba(107, 95, 181, 0.4);
-    --gold: #B89A5C;
-    --gold-soft: #D4BC83;
-    --gold-bright: #E5CB97;
-    --cream: #FAF7F2;
-    --cream-warm: #F4EFE4;
-    --text-dark: #1F1E2E;
-    --text-muted: #6B6678;
-    --line: #E2D9C8;
-    --shadow-sm: 0 2px 8px rgba(45, 42, 107, 0.08);
-    --shadow-md: 0 8px 28px rgba(45, 42, 107, 0.14);
-    --shadow-lg: 0 16px 48px rgba(45, 42, 107, 0.22);
+    --royal-deep: #0F1132;
+    --royal-mid:  #1E2153;
+    --royal-light:#3A3F7E;
+    --royal-glow: rgba(30, 33, 83, 0.55);
+    --wine-deep:  #4A0E1F;
+    --wine-mid:   #6E152E;
+    --wine-bright:#8B2540;
+    --wine-glow:  rgba(110, 21, 46, 0.45);
+    --gold:       #C9A14E;
+    --gold-soft:  #D4B87C;
+    --gold-bright:#E6C98F;
+    --gold-deep:  #A8862F;
+    --cream:      #FBF8F0;
+    --cream-warm: #F2EBDB;
+    --ivory:      #FDFCF7;
+    --text-dark:  #14172A;
+    --text-muted: #5C5F6E;
+    --text-soft:  #8A8B97;
+    --line:       #E5DCC7;
+    --line-strong:#C9B998;
+    --shadow-xs: 0 2px 6px rgba(15, 17, 50, 0.06);
+    --shadow-sm: 0 4px 14px rgba(15, 17, 50, 0.10);
+    --shadow-md: 0 14px 36px rgba(15, 17, 50, 0.18);
+    --shadow-lg: 0 28px 72px rgba(15, 17, 50, 0.28);
+    --shadow-xl: 0 40px 100px rgba(15, 17, 50, 0.36);
+    --shadow-wine: 0 18px 52px rgba(110, 21, 46, 0.30);
+    --shadow-gold: 0 18px 48px rgba(201, 161, 78, 0.30);
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -52,11 +64,18 @@
     inset: 0;
     z-index: 0;
     background-image:
-      linear-gradient(135deg, rgba(45, 42, 107, 0.85) 0%, rgba(74, 66, 144, 0.75) 100%),
-      url('https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=2000&q=80&auto=format&fit=crop');
+      linear-gradient(135deg, rgba(15, 17, 50, 0.90) 0%, rgba(74, 14, 31, 0.75) 60%, rgba(15, 17, 50, 0.85) 100%),
+      url('https://images.unsplash.com/photo-1601758174114-e711c0cbaa69?w=2000&q=80&auto=format&fit=crop');
     background-size: cover;
     background-position: center;
     animation: heroZoom 30s ease-in-out infinite alternate;
+  }
+  .hero-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at top right, rgba(201, 161, 78, 0.12) 0%, transparent 60%);
+    pointer-events: none;
   }
   @keyframes heroZoom {
     from { transform: scale(1); }
@@ -164,22 +183,22 @@
     display: inline-flex;
     align-items: center;
     gap: 12px;
-    background: var(--gold);
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-deep) 100%);
     color: var(--royal-deep);
-    padding: 20px 44px;
+    padding: 22px 48px;
     text-decoration: none;
     font-family: Georgia, serif;
-    font-size: 17px;
+    font-size: 16px;
     font-weight: bold;
-    letter-spacing: 1.2px;
+    letter-spacing: 1.6px;
     text-transform: uppercase;
     border: none;
     cursor: pointer;
     border-radius: 100px;
     position: relative;
     overflow: hidden;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 4px 16px rgba(184, 154, 92, 0.35);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 6px 22px rgba(201, 161, 78, 0.40), 0 0 0 1px rgba(168, 134, 47, 0.30);
   }
   .btn::before {
     content: '';
@@ -190,9 +209,9 @@
     transition: left 0.6s ease;
   }
   .btn:hover {
-    background: var(--gold-bright);
-    transform: translateY(-3px);
-    box-shadow: 0 12px 28px rgba(184, 154, 92, 0.5);
+    background: linear-gradient(135deg, var(--gold-bright) 0%, var(--gold) 100%);
+    transform: translateY(-4px);
+    box-shadow: 0 18px 40px rgba(201, 161, 78, 0.55), 0 0 0 1px var(--gold);
   }
   .btn:hover::before { left: 100%; }
   .btn:active { transform: translateY(-1px); }
@@ -289,13 +308,23 @@
     margin-top: 56px;
   }
   .value-card {
-    background: var(--cream);
-    padding: 40px 32px;
+    background: var(--ivory);
+    padding: 44px 36px;
     border-top: 3px solid var(--gold);
     box-shadow: var(--shadow-sm);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     position: relative;
     overflow: hidden;
+    border-radius: 4px;
+  }
+  .value-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, transparent 0%, rgba(110, 21, 46, 0.03) 100%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
   }
   .value-card::after {
     content: '';
@@ -304,46 +333,70 @@
     left: 0;
     height: 3px;
     width: 0%;
-    background: var(--royal-mid);
-    transition: width 0.5s ease;
+    background: linear-gradient(90deg, var(--gold) 0%, var(--wine-bright) 100%);
+    transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   }
-  .value-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
+  .value-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-lg); }
+  .value-card:hover::before { opacity: 1; }
   .value-card:hover::after { width: 100%; }
 
   .value-icon {
-    width: 60px; height: 60px;
-    background: linear-gradient(135deg, var(--royal-deep), var(--royal-mid));
-    color: var(--gold-soft);
+    width: 64px; height: 64px;
+    background: linear-gradient(135deg, var(--royal-deep) 0%, var(--wine-mid) 100%);
+    color: var(--gold-bright);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 28px;
     font-style: italic;
-    margin-bottom: 24px;
+    margin-bottom: 28px;
     font-family: Georgia, serif;
-    box-shadow: var(--shadow-sm);
+    box-shadow: var(--shadow-md), inset 0 1px 2px rgba(255,255,255,0.15);
+    position: relative;
   }
+  .value-icon::after {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: 50%;
+    border: 1px solid var(--gold);
+    opacity: 0.4;
+    transition: opacity 0.4s ease;
+  }
+  .value-card:hover .value-icon::after { opacity: 1; }
   .value-card h3 { font-size: 22px; margin-bottom: 14px; }
   .value-card p { color: var(--text-muted); font-size: 16px; margin-bottom: 0; }
 
   /* DIFFERENZIERUNGS-CALLOUT */
   .differenzierungs-callout {
     margin-top: 64px;
-    padding: 48px 40px;
-    background: linear-gradient(135deg, var(--royal-deep) 0%, var(--royal-mid) 100%);
+    padding: 56px 48px;
+    background: linear-gradient(135deg, var(--royal-deep) 0%, var(--wine-deep) 100%);
     color: var(--cream);
-    border-radius: 12px;
-    box-shadow: var(--shadow-lg);
+    border-radius: 8px;
+    box-shadow: var(--shadow-xl), 0 0 0 1px rgba(201,161,78,0.15) inset;
     position: relative;
     overflow: hidden;
   }
   .differenzierungs-callout::before {
     content: '';
     position: absolute;
-    top: -100px; right: -100px;
-    width: 400px; height: 400px;
-    background: radial-gradient(circle, rgba(184, 154, 92, 0.20) 0%, transparent 70%);
+    top: -120px; right: -120px;
+    width: 450px; height: 450px;
+    background: radial-gradient(circle, rgba(201, 161, 78, 0.25) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .differenzierungs-callout::after {
+    content: '"';
+    position: absolute;
+    bottom: -20px; left: 30px;
+    font-size: 180px;
+    font-family: Georgia, serif;
+    color: var(--gold);
+    opacity: 0.15;
+    line-height: 1;
+    font-style: italic;
     pointer-events: none;
   }
   .differenzierungs-callout h3 {
@@ -452,7 +505,7 @@
 
   /* ABOUT */
   .about {
-    background: linear-gradient(135deg, var(--royal-deep) 0%, var(--royal-mid) 100%);
+    background: linear-gradient(135deg, var(--royal-deep) 0%, var(--wine-deep) 55%, var(--royal-deep) 100%);
     color: var(--cream);
     position: relative;
     overflow: hidden;
@@ -461,8 +514,16 @@
     content: '';
     position: absolute;
     top: -200px; right: -200px;
-    width: 600px; height: 600px;
-    background: radial-gradient(circle, rgba(184, 154, 92, 0.15) 0%, transparent 70%);
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, rgba(201, 161, 78, 0.18) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .about::after {
+    content: '';
+    position: absolute;
+    bottom: -150px; left: -150px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(139, 37, 64, 0.20) 0%, transparent 65%);
     pointer-events: none;
   }
   .about h2 { color: var(--cream); }
@@ -809,14 +870,14 @@
   /* REFERRAL */
   .referral-section { padding: 80px 0; background: var(--cream-warm); }
   .referral-card {
-    background: linear-gradient(135deg, var(--royal-deep) 0%, var(--royal-mid) 100%);
+    background: linear-gradient(135deg, var(--royal-deep) 0%, var(--wine-deep) 100%);
     color: var(--cream);
-    border-radius: 12px;
-    padding: 56px 48px;
-    box-shadow: var(--shadow-lg);
+    border-radius: 8px;
+    padding: 64px 56px;
+    box-shadow: var(--shadow-xl), 0 0 0 1px rgba(201,161,78,0.15) inset;
     display: grid;
     grid-template-columns: 1.4fr 1fr;
-    gap: 48px;
+    gap: 56px;
     align-items: center;
     position: relative;
     overflow: hidden;
@@ -824,9 +885,17 @@
   .referral-card::before {
     content: '';
     position: absolute;
-    top: -120px; right: -120px;
-    width: 380px; height: 380px;
-    background: radial-gradient(circle, rgba(184,154,92,0.22) 0%, transparent 70%);
+    top: -150px; right: -150px;
+    width: 450px; height: 450px;
+    background: radial-gradient(circle, rgba(201,161,78,0.28) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .referral-card::after {
+    content: '';
+    position: absolute;
+    bottom: -100px; left: -100px;
+    width: 350px; height: 350px;
+    background: radial-gradient(circle, rgba(139, 37, 64, 0.35) 0%, transparent 65%);
     pointer-events: none;
   }
   @media (max-width: 800px) {
@@ -1306,8 +1375,8 @@
     <div class="showcase">
       <div class="showcase-img-wrap">
         <img
-          src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?w=1200&q=80&auto=format&fit=crop"
-          alt="Hundetrainer im Outdoor-Training — Symbolbild Trainer-Hundestube"
+          src="https://images.unsplash.com/photo-1561037404-61cd46aa615b?w=1200&q=80&auto=format&fit=crop"
+          alt="Hund im Training — Symbolbild Trainer-Hundestube"
           loading="lazy"
         >
         <div class="img-tag">Trainer-Hundestube · mit Eurem Logo</div>

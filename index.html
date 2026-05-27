@@ -7,25 +7,31 @@
 <title>Natürlich Abgesichert — Hundestuben · Auswahl</title>
 <style>
   :root {
-    --royal-deep: #2D2A6B;
-    --royal-mid: #4A4290;
-    --gold: #B89A5C;
-    --gold-soft: #D4BC83;
-    --gold-bright: #E5CB97;
-    --cream: #FAF7F2;
-    --cream-warm: #F4EFE4;
-    --text-dark: #1F1E2E;
-    --text-muted: #6B6678;
-    --line: #E2D9C8;
-    --shadow-md: 0 8px 28px rgba(45, 42, 107, 0.14);
-    --shadow-lg: 0 16px 48px rgba(45, 42, 107, 0.22);
+    --royal-deep: #0F1132;
+    --royal-mid:  #1E2153;
+    --wine-deep:  #4A0E1F;
+    --wine-mid:   #6E152E;
+    --wine-bright:#8B2540;
+    --gold:       #C9A14E;
+    --gold-soft:  #D4B87C;
+    --gold-bright:#E6C98F;
+    --gold-deep:  #A8862F;
+    --cream:      #FBF8F0;
+    --cream-warm: #F2EBDB;
+    --ivory:      #FDFCF7;
+    --text-dark:  #14172A;
+    --text-muted: #5C5F6E;
+    --line:       #E5DCC7;
+    --shadow-md: 0 14px 36px rgba(15, 17, 50, 0.18);
+    --shadow-lg: 0 28px 72px rgba(15, 17, 50, 0.28);
+    --shadow-xl: 0 40px 100px rgba(15, 17, 50, 0.36);
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
     font-family: Georgia, 'Times New Roman', serif;
     background:
-      linear-gradient(135deg, rgba(45, 42, 107, 0.92) 0%, rgba(74, 66, 144, 0.85) 100%),
-      url('https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=2000&q=80&auto=format&fit=crop');
+      linear-gradient(135deg, rgba(15, 17, 50, 0.93) 0%, rgba(74, 14, 31, 0.78) 60%, rgba(15, 17, 50, 0.88) 100%),
+      url('https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=2000&q=80&auto=format&fit=crop');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -83,14 +89,14 @@
     .options { grid-template-columns: 1fr; gap: 24px; }
   }
   .option {
-    background: var(--cream);
+    background: var(--ivory);
     color: var(--text-dark);
-    padding: 48px 36px;
-    border-radius: 12px;
+    padding: 56px 44px;
+    border-radius: 8px;
     text-align: left;
     text-decoration: none;
-    box-shadow: var(--shadow-md);
-    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: var(--shadow-lg);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     border-top: 4px solid var(--gold);
     position: relative;
     overflow: hidden;
@@ -101,29 +107,30 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, transparent 60%, rgba(184, 154, 92, 0.10));
+    background: linear-gradient(135deg, transparent 55%, rgba(110, 21, 46, 0.06) 100%);
     opacity: 0;
-    transition: opacity 0.35s ease;
+    transition: opacity 0.5s ease;
     pointer-events: none;
   }
   .option:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-lg);
-    border-top-color: var(--royal-mid);
+    transform: translateY(-12px);
+    box-shadow: var(--shadow-xl);
+    border-top-color: var(--wine-bright);
   }
   .option:hover::after { opacity: 1; }
   .option-tag {
     display: inline-block;
-    background: var(--royal-deep);
-    color: var(--gold-soft);
-    padding: 6px 14px;
+    background: linear-gradient(135deg, var(--royal-deep) 0%, var(--wine-mid) 100%);
+    color: var(--gold-bright);
+    padding: 8px 18px;
     font-size: 11px;
-    letter-spacing: 2px;
+    letter-spacing: 2.5px;
     text-transform: uppercase;
     font-weight: bold;
     border-radius: 100px;
-    margin-bottom: 18px;
+    margin-bottom: 22px;
     align-self: flex-start;
+    box-shadow: 0 2px 8px rgba(15, 17, 50, 0.25);
   }
   .option h2 {
     color: var(--royal-deep);
