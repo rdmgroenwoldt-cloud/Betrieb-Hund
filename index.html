@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Natürlich Abgesichert — Online-Hundestuben und Kooperationen rund um Hunde- und Katzen-Versicherung. Zwei Landingpages: für Tierschutzvereine/Tierheime (Hund &amp; Katze) und für Hundetrainer.">
 <title>Natürlich Abgesichert — Hundestuben · Auswahl</title>
+<link rel="icon" type="image/svg+xml" href="assets/logo.svg">
 <style>
   :root {
     --royal-deep: #0F1132;
@@ -50,7 +51,7 @@
   .brand-line {
     display: inline-flex;
     align-items: center;
-    gap: 16px;
+    gap: 18px;
     font-size: 13px;
     letter-spacing: 5px;
     text-transform: uppercase;
@@ -58,11 +59,19 @@
     margin-bottom: 36px;
     font-weight: bold;
   }
-  .brand-line::before, .brand-line::after {
-    content: '';
-    width: 40px;
-    height: 1px;
-    background: var(--gold);
+  .brand-logo {
+    height: 56px;
+    width: auto;
+    display: block;
+  }
+  .brand-tagline {
+    border-left: 1px solid rgba(212, 184, 124, 0.45);
+    padding-left: 18px;
+  }
+  @media (max-width: 600px) {
+    .brand-line { flex-direction: column; align-items: flex-start; gap: 12px; }
+    .brand-tagline { border-left: none; padding-left: 0; }
+    .brand-logo { height: 48px; }
   }
   h1 {
     font-size: clamp(32px, 5vw, 54px);
@@ -208,7 +217,10 @@
 <body>
 
 <div class="wrap">
-  <div class="brand-line">Natürlich Abgesichert · Hundestuben</div>
+  <div class="brand-line">
+    <img src="assets/logo.svg" alt="Natürlich Abgesichert" class="brand-logo">
+    <span class="brand-tagline">Hundestuben</span>
+  </div>
   <h1>Online-Hundestuben &amp; Kooperationen <em>rund um Hunde- &amp; Katzen-Versicherung.</em></h1>
   <p class="sub">
     Zwei Zielgruppen — zwei eigene Landingpages. Wählt aus, was zu Euch passt:

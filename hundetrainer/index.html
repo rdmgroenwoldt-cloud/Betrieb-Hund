@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Online-Hundestuben rund um Hundeversicherung — exklusiv für Hundetrainer, Hundeschulen und Hundesportvereine. Hebt Euch ab — ohne mehr Arbeit. Mit Eurem Logo, permanenter Empfehlungs-Link, passive Vergütung für Trainer oder Spende in die Vereinskasse.">
 <title>Natürlich Abgesichert — Partnerschaft für Hundetrainer, Hundeschulen & Hundesportvereine</title>
+<link rel="icon" type="image/svg+xml" href="../assets/logo.svg">
 
 <style>
   :root {
@@ -95,7 +96,7 @@
   .brand-line {
     display: inline-flex;
     align-items: center;
-    gap: 16px;
+    gap: 18px;
     font-size: 13px;
     letter-spacing: 5px;
     text-transform: uppercase;
@@ -105,7 +106,20 @@
     opacity: 0;
     animation: fadeUp 0.8s ease-out 0.1s forwards;
   }
-  .brand-line::before { content: ''; width: 40px; height: 1px; background: var(--gold); }
+  .brand-logo {
+    height: 52px;
+    width: auto;
+    display: block;
+  }
+  .brand-tagline {
+    border-left: 1px solid rgba(212, 184, 124, 0.45);
+    padding-left: 18px;
+  }
+  @media (max-width: 600px) {
+    .brand-line { flex-direction: column; align-items: flex-start; gap: 12px; }
+    .brand-tagline { border-left: none; padding-left: 0; }
+    .brand-logo { height: 44px; }
+  }
 
   .hero-tag {
     display: inline-block;
@@ -1487,6 +1501,13 @@
     margin-bottom: 36px;
   }
   @media (max-width: 700px) { .footer-grid { grid-template-columns: 1fr; gap: 28px; } }
+  .footer-logo {
+    height: 42px;
+    width: auto;
+    display: block;
+    margin-bottom: 18px;
+    opacity: 0.95;
+  }
   footer h4 {
     color: var(--gold-soft);
     font-size: 13px;
@@ -1541,7 +1562,10 @@
 <header class="hero">
   <div class="hero-bg"></div>
   <div class="container hero-content">
-    <div class="brand-line">Natürlich Abgesichert · Spezialist für Tierversicherung</div>
+    <div class="brand-line">
+      <img src="../assets/logo.svg" alt="Natürlich Abgesichert" class="brand-logo">
+      <span class="brand-tagline">Spezialist für Tierversicherung</span>
+    </div>
 
     <span class="hero-tag">Exklusiv · für Hundetrainer, Hundeschulen & Hundesportvereine</span>
 
@@ -2164,6 +2188,7 @@
   <div class="container">
     <div class="footer-grid">
       <div>
+        <img src="../assets/logo.svg" alt="Natürlich Abgesichert" class="footer-logo">
         <h4>Natürlich Abgesichert</h4>
         <p style="font-style: italic; line-height: 1.7; color: rgba(250, 247, 242, 0.78); margin-bottom: 18px;">
           Spezialisierte Beratung rund um Hund, Katze und Pferd.
