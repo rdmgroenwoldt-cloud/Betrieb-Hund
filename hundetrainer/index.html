@@ -144,9 +144,9 @@
   }
 
   .meta-bar {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 36px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
     margin-bottom: 56px;
     padding: 28px 32px;
     background: rgba(250, 247, 242, 0.05);
@@ -156,7 +156,9 @@
     opacity: 0;
     animation: fadeUp 0.8s ease-out 0.7s forwards;
   }
-  .meta-item { display: flex; flex-direction: column; gap: 6px; }
+  @media (max-width: 900px) { .meta-bar { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 520px) { .meta-bar { grid-template-columns: 1fr; } }
+  .meta-item { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
   .meta-label {
     font-size: 11px;
     letter-spacing: 2.5px;
@@ -164,15 +166,17 @@
     color: var(--gold-soft);
     font-weight: bold;
   }
-  .meta-value { font-size: 17px; color: var(--cream); }
+  .meta-value { font-size: 15px; color: #F8F4E8; line-height: 1.4; }
 
   .cta-group {
     display: flex;
-    gap: 20px;
+    gap: 16px;
     flex-wrap: wrap;
+    align-items: center;
     opacity: 0;
     animation: fadeUp 0.8s ease-out 0.9s forwards;
   }
+  @media (max-width: 720px) { .cta-group { flex-direction: column; align-items: stretch; } }
 
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(30px); }
@@ -1415,8 +1419,18 @@
     .whatsapp-float { width: 56px; height: 56px; bottom: 20px; right: 20px; }
     .whatsapp-float-label { display: none; }
   }
-  .btn-whatsapp { background: #25D366; color: #fff; box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35); }
-  .btn-whatsapp:hover { background: #1FAE54; color: #fff; box-shadow: 0 12px 28px rgba(37, 211, 102, 0.5); }
+  .btn-whatsapp {
+    background: linear-gradient(135deg, var(--wine-mid) 0%, var(--wine-deep) 100%);
+    color: #F8F4E8;
+    border: 1px solid rgba(212, 184, 124, 0.5);
+    box-shadow: 0 6px 20px rgba(110, 21, 46, 0.4);
+  }
+  .btn-whatsapp:hover {
+    background: linear-gradient(135deg, var(--wine-bright) 0%, var(--wine-mid) 100%);
+    color: var(--gold-bright);
+    border-color: var(--gold);
+    box-shadow: 0 14px 32px rgba(110, 21, 46, 0.55), 0 0 0 1px var(--gold);
+  }
   .btn-whatsapp svg { width: 22px; height: 22px; fill: currentColor; }
   .btn-calendly { background: var(--royal-deep); color: var(--cream); box-shadow: 0 6px 20px rgba(45, 42, 107, 0.3); }
   .btn-calendly:hover { background: var(--royal-mid); box-shadow: 0 12px 28px rgba(45, 42, 107, 0.45); }
