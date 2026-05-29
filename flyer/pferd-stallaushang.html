@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Aushang · Pferdebesitzer-Abend im Stall — Natürlich Abgesichert</title>
+<link rel="icon" type="image/svg+xml" href="../assets/logo.svg">
+<style>
+  :root {
+    --royal-deep:  #0F1132;
+    --royal-mid:   #1E2153;
+    --wine-deep:   #4A0E1F;
+    --wine-mid:    #6E152E;
+    --wine-bright: #8B2540;
+    --gold:        #C9A14E;
+    --gold-soft:   #D4B87C;
+    --gold-bright: #E6C98F;
+    --gold-deep:   #A8862F;
+    --cream:       #F8F4E8;
+    --ivory:       #FFFDF6;
+    --cream-warm:  #F5EFE2;
+    --text-dark:   #14172A;
+    --text-muted:  #5C5F6E;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    font-family: Georgia, 'Times New Roman', serif;
+    color: var(--cream);
+    background: #4a4a52;
+    line-height: 1.45;
+  }
+
+  /* ---------- A4 SHEET — 210 × 297 mm, EXAKT ---------- */
+  /* Aufteilung der 297mm Höhe (Summe muss = 297mm sein):
+     - header:    24mm
+     - hero:      48mm
+     - topics:    78mm
+     - free:      18mm
+     - about:     22mm
+     - cta:       66mm
+     - cobrand:   14mm
+     - footer:    27mm
+     SUMME:      297mm                                     */
+  .page {
+    width: 210mm;
+    height: 297mm;
+    margin: 16px auto;
+    position: relative;
+    overflow: hidden;
+    color: var(--cream);
+    background:
+      radial-gradient(ellipse at top right, rgba(201,161,78,0.18) 0%, transparent 55%),
+      radial-gradient(ellipse at bottom left, rgba(110,21,46,0.45) 0%, transparent 55%),
+      linear-gradient(160deg, var(--royal-deep) 0%, var(--wine-deep) 55%, var(--royal-mid) 100%);
+    box-shadow: 0 18px 50px rgba(0,0,0,0.45);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .page::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, transparent 0%, var(--gold) 25%, var(--wine-bright) 50%, var(--gold) 75%, transparent 100%);
+  }
+  .page::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, transparent 0%, var(--gold) 50%, transparent 100%);
+  }
+
+  /* ---------- Innen-Container Block-für-Block, feste Höhen ---------- */
+  .block {
+    padding: 0 18mm;
+    overflow: hidden;
+  }
+
+  /* ============ HEADER 24mm ============ */
+  .b-head {
+    height: 24mm;
+    padding-top: 8mm;
+    padding-bottom: 4mm;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8mm;
+    border-bottom: 1px solid rgba(212,184,124,0.22);
+  }
+  .b-head .logo {
+    height: 11mm;
+    width: auto;
+    /* SVG ist bereits weiß → kein Filter nötig */
+  }
+  .b-head .micro {
+    color: var(--gold-bright);
+    font-size: 9pt;
+    letter-spacing: 2pt;
+    text-transform: uppercase;
+    background: rgba(212,184,124,0.08);
+    border: 1px solid rgba(212,184,124,0.45);
+    border-radius: 100px;
+    padding: 4pt 14pt;
+    font-weight: bold;
+    white-space: nowrap;
+  }
+
+  /* ============ HERO 48mm ============ */
+  .b-hero {
+    height: 48mm;
+    padding-top: 6mm;
+  }
+  .b-hero .eyebrow {
+    color: var(--gold-soft);
+    text-transform: uppercase;
+    letter-spacing: 3pt;
+    font-size: 9.5pt;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .b-hero .eyebrow::before {
+    content: '';
+    width: 24px;
+    height: 1px;
+    background: var(--gold);
+  }
+  .b-hero h1 {
+    margin-top: 4mm;
+    font-size: 24pt;
+    line-height: 1.12;
+    font-weight: normal;
+    letter-spacing: -0.5px;
+    color: var(--cream);
+  }
+  .b-hero h1 em {
+    color: var(--gold-soft);
+    font-style: italic;
+  }
+  .b-hero .lead {
+    margin-top: 4mm;
+    font-size: 11pt;
+    line-height: 1.45;
+    color: rgba(248,244,232,0.94);
+    max-width: 170mm;
+  }
+  .b-hero .lead strong {
+    color: var(--gold-bright);
+    font-weight: bold;
+  }
+
+  /* ============ TOPICS 78mm ============ */
+  .b-topics {
+    height: 78mm;
+    padding-top: 4mm;
+    padding-bottom: 4mm;
+  }
+  .b-topics .inner {
+    height: 100%;
+    padding: 5mm 7mm;
+    background: rgba(0,0,0,0.32);
+    border: 1px solid rgba(212,184,124,0.32);
+    border-radius: 4px;
+  }
+  .b-topics .label {
+    color: var(--gold-soft);
+    text-transform: uppercase;
+    letter-spacing: 2.5pt;
+    font-size: 9pt;
+    font-weight: bold;
+    margin-bottom: 4mm;
+    display: block;
+  }
+  .b-topics ul { list-style: none; }
+  .b-topics li {
+    display: grid;
+    grid-template-columns: 9mm 1fr;
+    gap: 4mm;
+    margin-bottom: 4mm;
+    align-items: start;
+  }
+  .b-topics li:last-child { margin-bottom: 0; }
+  .b-topics li .marker {
+    width: 8mm;
+    height: 8mm;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-deep) 100%);
+    color: var(--royal-deep);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: italic;
+    font-size: 11pt;
+    font-weight: bold;
+  }
+  .b-topics li .txt strong {
+    color: var(--gold-bright);
+    font-weight: bold;
+    display: block;
+    margin-bottom: 1mm;
+    font-size: 11pt;
+    line-height: 1.25;
+  }
+  .b-topics li .txt span {
+    color: rgba(248,244,232,0.88);
+    font-size: 10pt;
+    line-height: 1.4;
+  }
+
+  /* ============ KOSTENFREI 18mm ============ */
+  .b-free {
+    height: 18mm;
+    padding-top: 0;
+    padding-bottom: 4mm;
+  }
+  .b-free .inner {
+    height: 100%;
+    padding: 3mm 7mm;
+    background: linear-gradient(135deg, rgba(201,161,78,0.18) 0%, rgba(74,14,31,0.55) 100%);
+    border-left: 3px solid var(--gold);
+    border-radius: 3px;
+    font-size: 10pt;
+    line-height: 1.45;
+    color: var(--cream);
+    display: flex;
+    align-items: center;
+  }
+  .b-free strong {
+    color: var(--gold-bright);
+    font-weight: bold;
+  }
+
+  /* ============ ABOUT 22mm ============ */
+  .b-about {
+    height: 22mm;
+    padding-top: 0;
+    padding-bottom: 4mm;
+  }
+  .b-about .inner {
+    height: 100%;
+    padding: 3mm 7mm;
+    background: rgba(0,0,0,0.30);
+    border: 1px solid rgba(212,184,124,0.25);
+    border-radius: 3px;
+    display: grid;
+    grid-template-columns: 14mm 1fr;
+    gap: 5mm;
+    align-items: center;
+  }
+  .b-about .badge {
+    width: 14mm;
+    height: 14mm;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-deep) 100%);
+    color: var(--royal-deep);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-size: 14pt;
+    font-weight: bold;
+  }
+  .b-about h3 {
+    font-size: 11pt;
+    color: var(--gold-bright);
+    font-weight: bold;
+    margin-bottom: 1mm;
+  }
+  .b-about h3 em {
+    color: var(--gold-soft);
+    font-style: italic;
+  }
+  .b-about p {
+    font-size: 9.5pt;
+    color: rgba(248,244,232,0.90);
+    line-height: 1.4;
+  }
+  .b-about p strong {
+    color: var(--cream);
+    font-weight: bold;
+  }
+
+  /* ============ CTA 66mm ============ */
+  .b-cta {
+    height: 66mm;
+    padding-top: 0;
+    padding-bottom: 4mm;
+  }
+  .b-cta .inner {
+    height: 100%;
+    padding: 5mm 6mm;
+    background: var(--ivory);
+    border-radius: 4px;
+    color: var(--text-dark);
+    display: flex;
+    flex-direction: column;
+  }
+  .b-cta h3 {
+    font-size: 13pt;
+    color: var(--royal-deep);
+    font-weight: normal;
+    margin-bottom: 3mm;
+    line-height: 1.2;
+    text-align: center;
+  }
+  .b-cta h3 em {
+    color: var(--wine-bright);
+    font-style: italic;
+  }
+  .b-cta .dual {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1px 1fr;
+    gap: 5mm;
+    align-items: stretch;
+  }
+  .b-cta .divider {
+    width: 1px;
+    background: rgba(15,17,50,0.15);
+  }
+  .b-cta .opt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .b-cta .opt .qr {
+    width: 42mm;
+    height: 42mm;
+    background: var(--cream-warm);
+    border: 2px dashed var(--gold-deep);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 9pt;
+    color: var(--text-muted);
+    line-height: 1.4;
+    padding: 3mm;
+    font-style: italic;
+    margin-bottom: 3mm;
+  }
+  .b-cta .opt h4 {
+    font-size: 12pt;
+    color: var(--royal-deep);
+    font-weight: bold;
+    margin-bottom: 1mm;
+    line-height: 1.2;
+  }
+  .b-cta .opt h4 .accent {
+    color: var(--wine-deep);
+  }
+  .b-cta .opt p {
+    font-size: 9.5pt;
+    color: var(--text-muted);
+    line-height: 1.4;
+  }
+
+  /* ============ COBRANDING 14mm ============ */
+  .b-cobrand {
+    height: 14mm;
+    padding-top: 0;
+    padding-bottom: 4mm;
+  }
+  .b-cobrand .inner {
+    height: 100%;
+    padding: 2mm 7mm;
+    background: rgba(248,244,232,0.04);
+    border-left: 3px solid var(--gold);
+    border-radius: 3px;
+    font-size: 10pt;
+    color: var(--cream);
+    display: flex;
+    align-items: center;
+    gap: 4mm;
+  }
+  .b-cobrand .label {
+    color: var(--gold-bright);
+    font-weight: bold;
+    flex-shrink: 0;
+  }
+  .b-cobrand .blank {
+    flex: 1;
+    border-bottom: 1px solid var(--gold-soft);
+    height: 6mm;
+  }
+
+  /* ============ FOOTER 27mm ============ */
+  .b-foot {
+    height: 27mm;
+    padding-top: 3mm;
+    padding-bottom: 6mm;
+    border-top: 1px solid rgba(212,184,124,0.25);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6mm;
+    font-size: 9pt;
+    color: rgba(248,244,232,0.75);
+  }
+  .b-foot .left { line-height: 1.5; }
+  .b-foot .left .brand {
+    color: var(--gold-bright);
+    font-weight: bold;
+    letter-spacing: 0.5pt;
+    font-size: 10.5pt;
+    display: block;
+    margin-bottom: 1.5mm;
+  }
+  .b-foot .right { text-align: right; line-height: 1.5; }
+  .b-foot .right .url {
+    color: var(--gold-bright);
+    font-weight: bold;
+    font-size: 11pt;
+    letter-spacing: 0.5pt;
+    display: block;
+    margin-bottom: 1mm;
+  }
+
+  /* ---------- PRINT ---------- */
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+  @media print {
+    html, body {
+      background: white;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      color-adjust: exact !important;
+    }
+    *, *::before, *::after {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      color-adjust: exact !important;
+    }
+    .page {
+      margin: 0 !important;
+      box-shadow: none !important;
+      width: 210mm !important;
+      height: 297mm !important;
+      page-break-after: avoid !important;
+      page-break-inside: avoid !important;
+      break-after: avoid !important;
+      break-inside: avoid !important;
+    }
+    .screen-hint { display: none !important; }
+  }
+
+  .screen-hint {
+    text-align: center;
+    padding: 14mm 16px 6mm;
+    color: #d4b87c;
+    font-size: 11pt;
+    line-height: 1.55;
+    max-width: 210mm;
+    margin: 0 auto;
+  }
+  .screen-hint strong { color: #E6C98F; }
+</style>
+</head>
+<body>
+
+<div class="screen-hint">
+  <strong>Stall-Aushang · A4 hochformat</strong> — drucken mit <strong>Strg + P</strong> oder als PDF speichern.<br>
+  Im Druck-Dialog: <strong>„Hintergrundgrafiken"</strong> aktivieren und Ränder auf <strong>„Keine"</strong> stellen,
+  sonst verschiebt sich das Layout.
+</div>
+
+<div class="page">
+
+  <!-- 24mm -->
+  <div class="block b-head">
+    <img src="../assets/logo.svg" alt="Natürlich Abgesichert" class="logo">
+    <span class="micro">Pferdebesitzer-Abend im Stall</span>
+  </div>
+
+  <!-- 48mm -->
+  <div class="block b-hero">
+    <span class="eyebrow">Liebe Pferdebesitzer</span>
+    <h1>Damit eine Klinikrechnung <em>nicht zur Stallkrise wird.</em></h1>
+    <p class="lead">
+      Wir kommen virtuell zu Euch in den Stall und verbringen
+      <strong>einen Abend mit Euch</strong> — um Licht ins Dunkel zu bringen.
+    </p>
+  </div>
+
+  <!-- 78mm -->
+  <div class="block b-topics">
+    <div class="inner">
+      <span class="label">Worüber wir an dem Abend reden</span>
+      <ul>
+        <li>
+          <div class="marker">I</div>
+          <div class="txt">
+            <strong>Warum eine Klinikrechnung 2026 fünfstellig ist</strong>
+            <span>GOT-Reform 2022 plus stille Material- und Medikamenten-Inflation — jede OP kostet 30–60 % mehr als vor 4 Jahren.</span>
+          </div>
+        </li>
+        <li>
+          <div class="marker">II</div>
+          <div class="txt">
+            <strong>Das Kleingedruckte und seine Tücken</strong>
+            <span>Welche Eingriffe sind heimlich ausgeschlossen, welche Wartezeiten greifen wirklich — und woran erkennt Ihr in 30 Sekunden, was Euer Vertrag taugt?</span>
+          </div>
+        </li>
+        <li>
+          <div class="marker">III</div>
+          <div class="txt">
+            <strong>Und Euer eigener Schutz?</strong>
+            <span>Reiter-Unfall, Reiter-Rechtsschutz, Berufsunfähigkeit — einzeln nötig, oder gibt es smartere Bündel-Lösungen?</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 18mm -->
+  <div class="block b-free">
+    <div class="inner">
+      <span><strong>Kostenfrei für alle.</strong> Kein Verkaufsgespräch, keine Pflicht. Wir suchen das Gespräch und klären auf — persönlich, sachlich, ehrlich. Wer mag, kann danach einen kostenfreien Vertragscheck machen lassen.</span>
+    </div>
+  </div>
+
+  <!-- 22mm -->
+  <div class="block b-about">
+    <div class="inner">
+      <div class="badge">N</div>
+      <div>
+        <h3>Von <em>Pferdemenschen</em> für <em>Pferdemenschen.</em></h3>
+        <p>Otto Boldt und Team — <strong>Natürlich Abgesichert.</strong> Aus dem Stallalltag, nicht aus dem Lehrbuch.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 66mm -->
+  <div class="block b-cta">
+    <div class="inner">
+      <h3>Jetzt <em>anmelden</em> — zwei Wege.</h3>
+      <div class="dual">
+        <div class="opt">
+          <div class="qr">QR-Code<br>Salon-Abend<br>hier einkleben</div>
+          <h4><span class="accent">Zum Salon-Abend</span> anmelden</h4>
+          <p>Beim Stallabend dabei sein — QR scannen.</p>
+        </div>
+        <div class="divider"></div>
+        <div class="opt">
+          <div class="qr">QR-Code<br>Terminbuchung<br>hier einkleben</div>
+          <h4><span class="accent">1:1-Beratung</span> buchen</h4>
+          <p>Lieber direkt persönlich? Termin scannen.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 14mm -->
+  <div class="block b-cobrand">
+    <div class="inner">
+      <span class="label">In Kooperation mit:</span>
+      <span class="blank"></span>
+    </div>
+  </div>
+
+  <!-- 27mm -->
+  <div class="block b-foot">
+    <div class="left">
+      <span class="brand">Natürlich Abgesichert</span>
+      Spezialist für Tierversicherung · Inhaber Otto Boldt · Leipzig<br>
+      Versicherungs­vertreter nach §34d Abs. 7 GewO · Reg.-Nr. D-L5WZ-XHTN0-22
+    </div>
+    <div class="right">
+      <span class="url">tierischabgesichert.de</span>
+      WhatsApp +49 152 23937130<br>
+      Info@natuerlichabgesichert.de
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
