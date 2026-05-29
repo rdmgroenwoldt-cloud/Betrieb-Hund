@@ -27,20 +27,11 @@
     font-family: Georgia, 'Times New Roman', serif;
     color: var(--cream);
     background: #4a4a52;
-    line-height: 1.45;
+    line-height: 1.4;
   }
 
-  /* ---------- A4 SHEET — 210 × 297 mm, EXAKT ---------- */
-  /* Aufteilung der 297mm Höhe (Summe muss = 297mm sein):
-     - header:    24mm
-     - hero:      48mm
-     - topics:    78mm
-     - free:      18mm
-     - about:     22mm
-     - cta:       66mm
-     - cobrand:   14mm
-     - footer:    27mm
-     SUMME:      297mm                                     */
+  /* A4 PAGE — CSS Grid mit festen Rows, jeder Block overflow:hidden */
+  /* 297mm Aufteilung:  head 22  hero 46  topics 76  free 16  about 22  cta 68  cobrand 14  foot 33 = 297 */
   .page {
     width: 210mm;
     height: 297mm;
@@ -55,6 +46,8 @@
     box-shadow: 0 18px 50px rgba(0,0,0,0.45);
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
+    display: grid;
+    grid-template-rows: 22mm 46mm 76mm 16mm 22mm 68mm 14mm 33mm;
   }
   .page::before {
     content: '';
@@ -62,6 +55,7 @@
     top: 0; left: 0; right: 0;
     height: 6px;
     background: linear-gradient(90deg, transparent 0%, var(--gold) 25%, var(--wine-bright) 50%, var(--gold) 75%, transparent 100%);
+    z-index: 5;
   }
   .page::after {
     content: '';
@@ -69,53 +63,51 @@
     bottom: 0; left: 0; right: 0;
     height: 4px;
     background: linear-gradient(90deg, transparent 0%, var(--gold) 50%, transparent 100%);
+    z-index: 5;
   }
 
-  /* ---------- Innen-Container Block-für-Block, feste Höhen ---------- */
   .block {
     padding: 0 18mm;
     overflow: hidden;
   }
 
-  /* ============ HEADER 24mm ============ */
+  /* ============ HEADER 22mm ============ */
   .b-head {
-    height: 24mm;
-    padding-top: 8mm;
-    padding-bottom: 4mm;
+    padding-top: 7mm;
+    padding-bottom: 3mm;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 8mm;
     border-bottom: 1px solid rgba(212,184,124,0.22);
   }
-  .b-head .logo {
-    height: 11mm;
-    width: auto;
-    /* SVG ist bereits weiß → kein Filter nötig */
-  }
+  .b-head .logo { height: 10mm; width: auto; }
   .b-head .micro {
     color: var(--gold-bright);
-    font-size: 9pt;
+    font-size: 8.5pt;
     letter-spacing: 2pt;
     text-transform: uppercase;
     background: rgba(212,184,124,0.08);
     border: 1px solid rgba(212,184,124,0.45);
     border-radius: 100px;
-    padding: 4pt 14pt;
+    padding: 4pt 13pt;
     font-weight: bold;
     white-space: nowrap;
   }
 
-  /* ============ HERO 48mm ============ */
+  /* ============ HERO 46mm ============ */
   .b-hero {
-    height: 48mm;
-    padding-top: 6mm;
+    padding-top: 5mm;
+    padding-bottom: 3mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   .b-hero .eyebrow {
     color: var(--gold-soft);
     text-transform: uppercase;
     letter-spacing: 3pt;
-    font-size: 9.5pt;
+    font-size: 9pt;
     font-weight: bold;
     display: inline-flex;
     align-items: center;
@@ -123,16 +115,16 @@
   }
   .b-hero .eyebrow::before {
     content: '';
-    width: 24px;
+    width: 22px;
     height: 1px;
     background: var(--gold);
   }
   .b-hero h1 {
-    margin-top: 4mm;
-    font-size: 24pt;
-    line-height: 1.12;
+    margin-top: 3mm;
+    font-size: 21pt;
+    line-height: 1.1;
     font-weight: normal;
-    letter-spacing: -0.5px;
+    letter-spacing: -0.3px;
     color: var(--cream);
   }
   .b-hero h1 em {
@@ -140,51 +132,50 @@
     font-style: italic;
   }
   .b-hero .lead {
-    margin-top: 4mm;
-    font-size: 11pt;
-    line-height: 1.45;
+    margin-top: 3mm;
+    font-size: 10pt;
+    line-height: 1.4;
     color: rgba(248,244,232,0.94);
-    max-width: 170mm;
   }
   .b-hero .lead strong {
     color: var(--gold-bright);
     font-weight: bold;
   }
 
-  /* ============ TOPICS 78mm ============ */
+  /* ============ TOPICS 76mm ============ */
   .b-topics {
-    height: 78mm;
-    padding-top: 4mm;
-    padding-bottom: 4mm;
+    padding-top: 3mm;
+    padding-bottom: 3mm;
   }
   .b-topics .inner {
     height: 100%;
-    padding: 5mm 7mm;
+    padding: 4mm 6mm;
     background: rgba(0,0,0,0.32);
     border: 1px solid rgba(212,184,124,0.32);
     border-radius: 4px;
+    overflow: hidden;
   }
   .b-topics .label {
     color: var(--gold-soft);
     text-transform: uppercase;
     letter-spacing: 2.5pt;
-    font-size: 9pt;
+    font-size: 8.5pt;
     font-weight: bold;
-    margin-bottom: 4mm;
+    margin-bottom: 3mm;
     display: block;
   }
   .b-topics ul { list-style: none; }
   .b-topics li {
     display: grid;
-    grid-template-columns: 9mm 1fr;
+    grid-template-columns: 8mm 1fr;
     gap: 4mm;
-    margin-bottom: 4mm;
+    margin-bottom: 3mm;
     align-items: start;
   }
   .b-topics li:last-child { margin-bottom: 0; }
   .b-topics li .marker {
-    width: 8mm;
-    height: 8mm;
+    width: 7mm;
+    height: 7mm;
     background: linear-gradient(135deg, var(--gold) 0%, var(--gold-deep) 100%);
     color: var(--royal-deep);
     border-radius: 50%;
@@ -192,66 +183,64 @@
     align-items: center;
     justify-content: center;
     font-style: italic;
-    font-size: 11pt;
+    font-size: 10pt;
     font-weight: bold;
   }
   .b-topics li .txt strong {
     color: var(--gold-bright);
     font-weight: bold;
     display: block;
-    margin-bottom: 1mm;
-    font-size: 11pt;
-    line-height: 1.25;
+    margin-bottom: 0.5mm;
+    font-size: 10pt;
+    line-height: 1.2;
   }
   .b-topics li .txt span {
     color: rgba(248,244,232,0.88);
-    font-size: 10pt;
-    line-height: 1.4;
+    font-size: 9pt;
+    line-height: 1.35;
+    display: block;
   }
 
-  /* ============ KOSTENFREI 18mm ============ */
+  /* ============ KOSTENFREI 16mm ============ */
   .b-free {
-    height: 18mm;
     padding-top: 0;
-    padding-bottom: 4mm;
+    padding-bottom: 3mm;
   }
   .b-free .inner {
     height: 100%;
-    padding: 3mm 7mm;
+    padding: 2.5mm 6mm;
     background: linear-gradient(135deg, rgba(201,161,78,0.18) 0%, rgba(74,14,31,0.55) 100%);
     border-left: 3px solid var(--gold);
     border-radius: 3px;
-    font-size: 10pt;
-    line-height: 1.45;
+    font-size: 9.5pt;
+    line-height: 1.4;
     color: var(--cream);
     display: flex;
     align-items: center;
+    overflow: hidden;
   }
-  .b-free strong {
-    color: var(--gold-bright);
-    font-weight: bold;
-  }
+  .b-free strong { color: var(--gold-bright); font-weight: bold; }
 
   /* ============ ABOUT 22mm ============ */
   .b-about {
-    height: 22mm;
     padding-top: 0;
-    padding-bottom: 4mm;
+    padding-bottom: 3mm;
   }
   .b-about .inner {
     height: 100%;
-    padding: 3mm 7mm;
+    padding: 3mm 6mm;
     background: rgba(0,0,0,0.30);
     border: 1px solid rgba(212,184,124,0.25);
     border-radius: 3px;
     display: grid;
-    grid-template-columns: 14mm 1fr;
+    grid-template-columns: 13mm 1fr;
     gap: 5mm;
     align-items: center;
+    overflow: hidden;
   }
   .b-about .badge {
-    width: 14mm;
-    height: 14mm;
+    width: 13mm;
+    height: 13mm;
     background: linear-gradient(135deg, var(--gold) 0%, var(--gold-deep) 100%);
     color: var(--royal-deep);
     border-radius: 50%;
@@ -260,76 +249,76 @@
     justify-content: center;
     font-family: Georgia, serif;
     font-style: italic;
-    font-size: 14pt;
+    font-size: 13pt;
     font-weight: bold;
   }
   .b-about h3 {
-    font-size: 11pt;
+    font-size: 10.5pt;
     color: var(--gold-bright);
     font-weight: bold;
     margin-bottom: 1mm;
+    line-height: 1.2;
   }
   .b-about h3 em {
     color: var(--gold-soft);
     font-style: italic;
   }
   .b-about p {
-    font-size: 9.5pt;
+    font-size: 9pt;
     color: rgba(248,244,232,0.90);
-    line-height: 1.4;
+    line-height: 1.35;
   }
   .b-about p strong {
     color: var(--cream);
     font-weight: bold;
   }
 
-  /* ============ CTA 66mm ============ */
+  /* ============ CTA 68mm ============ */
   .b-cta {
-    height: 66mm;
     padding-top: 0;
-    padding-bottom: 4mm;
+    padding-bottom: 3mm;
   }
   .b-cta .inner {
     height: 100%;
-    padding: 5mm 6mm;
+    padding: 4mm 5mm;
     background: var(--ivory);
     border-radius: 4px;
     color: var(--text-dark);
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    overflow: hidden;
   }
   .b-cta h3 {
-    font-size: 13pt;
+    font-size: 12pt;
     color: var(--royal-deep);
     font-weight: normal;
-    margin-bottom: 3mm;
+    margin-bottom: 2.5mm;
     line-height: 1.2;
     text-align: center;
   }
-  .b-cta h3 em {
-    color: var(--wine-bright);
-    font-style: italic;
-  }
+  .b-cta h3 em { color: var(--wine-bright); font-style: italic; }
   .b-cta .dual {
-    flex: 1;
     display: grid;
     grid-template-columns: 1fr 1px 1fr;
-    gap: 5mm;
-    align-items: stretch;
+    gap: 4mm;
+    align-items: center;
   }
   .b-cta .divider {
     width: 1px;
     background: rgba(15,17,50,0.15);
+    align-self: stretch;
+    margin: 2mm 0;
   }
   .b-cta .opt {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    gap: 2mm;
   }
   .b-cta .opt .qr {
-    width: 42mm;
-    height: 42mm;
+    width: 38mm;
+    height: 38mm;
     background: var(--cream-warm);
     border: 2px dashed var(--gold-deep);
     border-radius: 4px;
@@ -337,46 +326,38 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    font-size: 9pt;
+    font-size: 8.5pt;
     color: var(--text-muted);
-    line-height: 1.4;
-    padding: 3mm;
+    line-height: 1.3;
+    padding: 2mm;
     font-style: italic;
-    margin-bottom: 3mm;
   }
   .b-cta .opt h4 {
-    font-size: 12pt;
+    font-size: 10.5pt;
     color: var(--royal-deep);
     font-weight: bold;
-    margin-bottom: 1mm;
     line-height: 1.2;
+    margin-top: 1mm;
   }
-  .b-cta .opt h4 .accent {
-    color: var(--wine-deep);
-  }
-  .b-cta .opt p {
-    font-size: 9.5pt;
-    color: var(--text-muted);
-    line-height: 1.4;
-  }
+  .b-cta .opt h4 .accent { color: var(--wine-deep); }
 
   /* ============ COBRANDING 14mm ============ */
   .b-cobrand {
-    height: 14mm;
     padding-top: 0;
-    padding-bottom: 4mm;
+    padding-bottom: 3mm;
   }
   .b-cobrand .inner {
     height: 100%;
-    padding: 2mm 7mm;
+    padding: 2mm 6mm;
     background: rgba(248,244,232,0.04);
     border-left: 3px solid var(--gold);
     border-radius: 3px;
-    font-size: 10pt;
+    font-size: 9.5pt;
     color: var(--cream);
     display: flex;
     align-items: center;
     gap: 4mm;
+    overflow: hidden;
   }
   .b-cobrand .label {
     color: var(--gold-bright);
@@ -386,20 +367,19 @@
   .b-cobrand .blank {
     flex: 1;
     border-bottom: 1px solid var(--gold-soft);
-    height: 6mm;
+    height: 5mm;
   }
 
-  /* ============ FOOTER 27mm ============ */
+  /* ============ FOOTER 33mm ============ */
   .b-foot {
-    height: 27mm;
-    padding-top: 3mm;
+    padding-top: 4mm;
     padding-bottom: 6mm;
     border-top: 1px solid rgba(212,184,124,0.25);
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 6mm;
-    font-size: 9pt;
+    font-size: 8.5pt;
     color: rgba(248,244,232,0.75);
   }
   .b-foot .left { line-height: 1.5; }
@@ -407,7 +387,7 @@
     color: var(--gold-bright);
     font-weight: bold;
     letter-spacing: 0.5pt;
-    font-size: 10.5pt;
+    font-size: 10pt;
     display: block;
     margin-bottom: 1.5mm;
   }
@@ -415,7 +395,7 @@
   .b-foot .right .url {
     color: var(--gold-bright);
     font-weight: bold;
-    font-size: 11pt;
+    font-size: 10.5pt;
     letter-spacing: 0.5pt;
     display: block;
     margin-bottom: 1mm;
@@ -453,10 +433,10 @@
 
   .screen-hint {
     text-align: center;
-    padding: 14mm 16px 6mm;
+    padding: 12mm 16px 4mm;
     color: #d4b87c;
     font-size: 11pt;
-    line-height: 1.55;
+    line-height: 1.5;
     max-width: 210mm;
     margin: 0 auto;
   }
@@ -466,30 +446,28 @@
 <body>
 
 <div class="screen-hint">
-  <strong>Stall-Aushang · A4 hochformat</strong> — drucken mit <strong>Strg + P</strong> oder als PDF speichern.<br>
-  Im Druck-Dialog: <strong>„Hintergrundgrafiken"</strong> aktivieren und Ränder auf <strong>„Keine"</strong> stellen,
-  sonst verschiebt sich das Layout.
+  <strong>Stall-Aushang · A4 hochformat</strong> — <strong>Strg + P</strong> drucken oder als PDF speichern.
+  Im Druck-Dialog: <strong>Ränder „Keine"</strong>, <strong>Skalierung 100 %</strong>, <strong>„Hintergrundgrafiken" aktivieren</strong>.
 </div>
 
 <div class="page">
 
-  <!-- 24mm -->
+  <!-- 22mm Header -->
   <div class="block b-head">
     <img src="../assets/logo.svg" alt="Natürlich Abgesichert" class="logo">
     <span class="micro">Pferdebesitzer-Abend im Stall</span>
   </div>
 
-  <!-- 48mm -->
+  <!-- 46mm Hero -->
   <div class="block b-hero">
     <span class="eyebrow">Liebe Pferdebesitzer</span>
     <h1>Damit eine Klinikrechnung <em>nicht zur Stallkrise wird.</em></h1>
     <p class="lead">
-      Wir kommen virtuell zu Euch in den Stall und verbringen
-      <strong>einen Abend mit Euch</strong> — um Licht ins Dunkel zu bringen.
+      Wir kommen virtuell zu Euch in den Stall und verbringen <strong>einen Abend mit Euch</strong> — um Licht ins Dunkel zu bringen.
     </p>
   </div>
 
-  <!-- 78mm -->
+  <!-- 76mm Topics -->
   <div class="block b-topics">
     <div class="inner">
       <span class="label">Worüber wir an dem Abend reden</span>
@@ -505,28 +483,28 @@
           <div class="marker">II</div>
           <div class="txt">
             <strong>Das Kleingedruckte und seine Tücken</strong>
-            <span>Welche Eingriffe sind heimlich ausgeschlossen, welche Wartezeiten greifen wirklich — und woran erkennt Ihr in 30 Sekunden, was Euer Vertrag taugt?</span>
+            <span>Welche Eingriffe sind heimlich ausgeschlossen, welche Wartezeiten greifen — und woran erkennt Ihr in 30 Sekunden, was Euer Vertrag taugt?</span>
           </div>
         </li>
         <li>
           <div class="marker">III</div>
           <div class="txt">
             <strong>Und Euer eigener Schutz?</strong>
-            <span>Reiter-Unfall, Reiter-Rechtsschutz, Berufsunfähigkeit — einzeln nötig, oder gibt es smartere Bündel-Lösungen?</span>
+            <span>Reiter-Unfall, Rechtsschutz, Berufsunfähigkeit — einzeln nötig oder gibt es smartere Bündel-Lösungen?</span>
           </div>
         </li>
       </ul>
     </div>
   </div>
 
-  <!-- 18mm -->
+  <!-- 16mm Kostenfrei -->
   <div class="block b-free">
     <div class="inner">
-      <span><strong>Kostenfrei für alle.</strong> Kein Verkaufsgespräch, keine Pflicht. Wir suchen das Gespräch und klären auf — persönlich, sachlich, ehrlich. Wer mag, kann danach einen kostenfreien Vertragscheck machen lassen.</span>
+      <span><strong>Kostenfrei für alle.</strong> Kein Verkaufsgespräch, keine Pflicht — wir klären auf, persönlich, sachlich, ehrlich.</span>
     </div>
   </div>
 
-  <!-- 22mm -->
+  <!-- 22mm About -->
   <div class="block b-about">
     <div class="inner">
       <div class="badge">N</div>
@@ -537,27 +515,25 @@
     </div>
   </div>
 
-  <!-- 66mm -->
+  <!-- 68mm CTA -->
   <div class="block b-cta">
     <div class="inner">
-      <h3>Jetzt <em>anmelden</em> — zwei Wege.</h3>
+      <h3>Jetzt <em>anmelden</em> — zwei Wege</h3>
       <div class="dual">
         <div class="opt">
           <div class="qr">QR-Code<br>Salon-Abend<br>hier einkleben</div>
-          <h4><span class="accent">Zum Salon-Abend</span> anmelden</h4>
-          <p>Beim Stallabend dabei sein — QR scannen.</p>
+          <h4><span class="accent">Zum Salon-Abend</span><br>anmelden</h4>
         </div>
         <div class="divider"></div>
         <div class="opt">
           <div class="qr">QR-Code<br>Terminbuchung<br>hier einkleben</div>
-          <h4><span class="accent">1:1-Beratung</span> buchen</h4>
-          <p>Lieber direkt persönlich? Termin scannen.</p>
+          <h4><span class="accent">1:1-Beratung</span><br>buchen</h4>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- 14mm -->
+  <!-- 14mm Cobranding -->
   <div class="block b-cobrand">
     <div class="inner">
       <span class="label">In Kooperation mit:</span>
@@ -565,7 +541,7 @@
     </div>
   </div>
 
-  <!-- 27mm -->
+  <!-- 33mm Footer -->
   <div class="block b-foot">
     <div class="left">
       <span class="brand">Natürlich Abgesichert</span>
